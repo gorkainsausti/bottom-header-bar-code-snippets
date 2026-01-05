@@ -1,0 +1,36 @@
+---
+alwaysApply: true
+---
+
+Solo puedes modificar comentarios, colores, textos visibles y el coupon code.
+
+No cambies el código base.
+
+Si ves incorrecciones o bugs avisa, pero no cambies. Pide solicitación explícita para cambiar algo.
+
+Verifica siempre que las urls que se usen sean las siguientes donde corresponda:
+    es: https://www.quirumed.com/es/ofertas/ofertas-quirumed
+    pt: https://www.quirumed.com/pt/ofertas/quirumed-ofertas
+    gr: https://www.quirumed.com/gr/prosfores/quirumed-prosfores
+    ro: https://www.quirumed.com/ro/oferte/quirumed-oferte
+    ie: https://www.quirumed.com/ie/offers/quirumed-offers
+    int_en: https://www.quirumed.com/int_en/offers/quirumed-offers
+    cz: https://www.quirumed.com/cz/nabidky/quirumed-nabidky
+    fr: https://www.quirumed.com/fr/offres/quirumed-promotions
+    pl: https://www.quirumed.com/pl/oferty/quirumed-rabaty
+    be_nl: https://www.quirumed.com/be_nl/aanbiedingen/quirumed-actie
+    be_fr: https://www.quirumed.com/be_fr/offres/quirumed-promotions
+    it: https://www.quirumed.com/it/offerte/quirumed-promozioni
+    de: https://www.quirumed.com/de/angebote/quirumed-blitzangebote
+    nl: https://www.quirumed.com/nl/aanbiedingen/quirumed-deals
+    fi: https://www.quirumed.com/fi/tarjoukset/quirumed-erikoistarjoukset
+    at: https://www.quirumed.com/at/angebote/quirumed-aktionen
+    se: https://www.quirumed.com/se/erbjudanden/quirumed-kampanjer
+    ch_de: https://www.quirumed.com/ch_de/angebote/quirumed-sonderangebote
+    ch_fr: https://www.quirumed.com/ch_fr/offres/quirumed-offres-speciales
+    ch_it: https://www.quirumed.com/ch_it/offerte/quirumed-offerte-imperdibili
+    uk: https://www.quirumed.com/uk/offers/quirumed-deals
+
+    Si contiene el atajo store direct_url= esto construye la url hasta el locale, tenlo en cuenta.
+
+Verifica siempre que el mensaje se reduzca en mobile para que no se divida el texto en dos líneas.
