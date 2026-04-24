@@ -3,49 +3,117 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Preview – Barras promocionales CARE</title>
+  <title>Preview barras</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Arial, sans-serif; background: #eee; padding: 24px; }
-    h1 { font-size: 20px; margin-bottom: 6px; color: #333; }
-    .subtitle { font-size: 13px; color: #666; margin-bottom: 24px; }
-    .tabs { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
-    .tab-btn {
-      padding: 6px 14px; border: 2px solid #718064; border-radius: 20px;
-      background: white; color: #718064; cursor: pointer; font-size: 12px; font-weight: bold;
-      transition: all .15s;
+    html, body { height: 100%; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+      font-size: 13px;
+      color: #333;
+      display: flex;
+      overflow: hidden;
     }
-    .tab-btn.active, .tab-btn:hover { background: #718064; color: white; }
+
+    .sidebar {
+      width: 10.5rem;
+      flex-shrink: 0;
+      border-right: 1px solid #e0e0e0;
+      background: #fafafa;
+      padding: 0.75rem 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      overflow-y: auto;
+    }
+    .sidebar h1 {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #888;
+    }
+    .sidebar .hint {
+      font-size: 0.65rem;
+      line-height: 1.35;
+      color: #999;
+    }
+
+    .seg {
+      display: flex;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .seg button {
+      flex: 1;
+      border: 0;
+      background: #fff;
+      padding: 0.35rem 0.25rem;
+      font-size: 0.65rem;
+      cursor: pointer;
+      color: #555;
+    }
+    .seg button.active {
+      background: #333;
+      color: #fff;
+    }
+
+    .locales {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      margin-top: 0.25rem;
+    }
+    .locales button {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 0.35rem 0.45rem;
+      border: 0;
+      border-radius: 2px;
+      background: transparent;
+      font-size: 0.72rem;
+      color: #444;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .locales button:hover { background: #eee; }
+    .locales button.active {
+      background: #718064;
+      color: #fff;
+    }
+
+    .stage {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      background: #ececec;
+      min-width: 0;
+    }
 
     .section { display: none; }
     .section.active { display: block; }
 
-    .device-toggle { display: flex; gap: 8px; margin-bottom: 14px; align-items: center; }
-    .device-btn {
-      padding: 5px 12px; border: 1px solid #999; border-radius: 4px;
-      background: white; cursor: pointer; font-size: 12px;
-    }
-    .device-btn.active { background: #333; color: white; border-color: #333; }
-
-    /* Simulación de la barra tal como aparece en la tienda */
     .bar-wrapper {
-      max-width: 1200px;
-      margin: 0 auto 6px auto;
-      border-radius: 4px;
+      max-width: 960px;
+      width: 100%;
+      border-radius: 2px;
       overflow: hidden;
-      box-shadow: 0 1px 4px rgba(0,0,0,.12);
+      border: 1px solid #e0ddd6;
     }
-    .bar-wrapper.mobile-view { max-width: 390px; }
+    .bar-wrapper.mobile-view { max-width: 360px; }
 
     .bar-desktop, .bar-mobile { display: none; }
     .show-desktop .bar-desktop { display: block; }
     .show-mobile .bar-mobile { display: block; }
 
-    /* DESKTOP */
     .bar-desktop {
       background: #faf8f4;
       text-align: center;
-      padding: 10px 20px;
+      padding: 10px 16px;
       font-size: 16px;
       color: #718064;
     }
@@ -53,92 +121,81 @@
     .bar-desktop .code {
       background: #718064; color: #fff;
       padding: 2px 8px; border-radius: 4px;
-      font-family: monospace; font-size: 15px;
+      font-family: ui-monospace, monospace; font-size: 15px;
     }
-    .bar-desktop a { color: #718064; font-weight: bold; text-decoration: underline; }
+    .bar-desktop a { color: #718064; font-weight: 600; text-decoration: underline; }
 
-    /* MOBILE */
     .bar-mobile {
       background: #faf8f4;
       text-align: center;
-      padding: 6px 12px;
+      padding: 6px 10px;
       font-size: 12px;
       color: #718064;
     }
     .bar-mobile .code {
       background: #718064; color: #fff;
       padding: 1px 5px; border-radius: 3px;
-      font-family: monospace; font-size: 12px;
+      font-family: ui-monospace, monospace; font-size: 12px;
     }
-    .bar-mobile a { color: #718064; font-weight: bold; text-decoration: underline; }
+    .bar-mobile a { color: #718064; font-weight: 600; text-decoration: underline; }
 
-    .country-label {
-      font-size: 11px; font-weight: bold; color: #888;
-      margin-bottom: 4px; margin-top: 16px; text-transform: uppercase; letter-spacing: .5px;
-    }
-
-    /* HYVA */
     .bar-hyva-desktop {
       background: #faf8f4;
       text-align: center;
-      padding: 4px 12px;
+      padding: 4px 10px;
       font-size: 14px;
       color: #718064;
     }
     .bar-hyva-mobile {
       background: #faf8f4;
       text-align: center;
-      padding: 4px 12px;
+      padding: 4px 10px;
       font-size: 12px;
       color: #718064;
     }
-    .badge { font-size: 11px; background: #e8ede5; color: #718064; border: 1px solid #718064;
-      padding: 1px 6px; border-radius: 3px; margin-left: 6px; vertical-align: middle; }
   </style>
 </head>
 <body>
 
-<h1>Preview – Barras promocionales Quirumed</h1>
-<p class="subtitle">Cupón <strong>CARE7</strong> (ES / PT &nbsp;·&nbsp; 7%) &nbsp;·&nbsp; Cupón <strong>CARE5</strong> (Resto &nbsp;·&nbsp; 5%) &nbsp;·&nbsp; 22/04 – 5/5</p>
+<aside class="sidebar">
+  <h1>Preview</h1>
+  <p class="hint">CARE7 ES/PT · CARE5 resto · 22/04–5/5</p>
+  <div class="seg" role="group" aria-label="Vista">
+    <button type="button" class="active" data-device="desktop">Desktop</button>
+    <button type="button" data-device="mobile">Mobile</button>
+  </div>
+  <nav class="locales" aria-label="Locales">
+    <button type="button" class="active" data-tab="es">ES</button>
+    <button type="button" data-tab="pt">PT</button>
+    <button type="button" data-tab="de">DE</button>
+    <button type="button" data-tab="at">AT</button>
+    <button type="button" data-tab="fr">FR</button>
+    <button type="button" data-tab="be_fr">BE-FR</button>
+    <button type="button" data-tab="be_nl">BE-NL</button>
+    <button type="button" data-tab="nl">NL</button>
+    <button type="button" data-tab="nl_hyva">NL Hyva</button>
+    <button type="button" data-tab="it">IT</button>
+    <button type="button" data-tab="ch_de">CH-DE</button>
+    <button type="button" data-tab="ch_fr">CH-FR</button>
+    <button type="button" data-tab="ch_it">CH-IT</button>
+    <button type="button" data-tab="uk">UK</button>
+    <button type="button" data-tab="ie">IE</button>
+    <button type="button" data-tab="int_en">INT</button>
+    <button type="button" data-tab="gr">GR</button>
+    <button type="button" data-tab="gr_hyva">GR Hyva</button>
+    <button type="button" data-tab="ro">RO</button>
+    <button type="button" data-tab="ro_hyva">RO Hyva</button>
+    <button type="button" data-tab="pl">PL</button>
+    <button type="button" data-tab="cz">CZ</button>
+    <button type="button" data-tab="fi">FI</button>
+    <button type="button" data-tab="se">SE</button>
+  </nav>
+</aside>
 
-<div class="device-toggle">
-  <strong style="font-size:13px;color:#555;">Vista:</strong>
-  <button class="device-btn active" onclick="setDevice('desktop',this)">🖥 Desktop</button>
-  <button class="device-btn" onclick="setDevice('mobile',this)">📱 Mobile</button>
-</div>
-
-<div class="tabs">
-  <button class="tab-btn active" onclick="showTab('es',this)">🇪🇸 ES</button>
-  <button class="tab-btn" onclick="showTab('pt',this)">🇵🇹 PT</button>
-  <button class="tab-btn" onclick="showTab('de',this)">🇩🇪 DE</button>
-  <button class="tab-btn" onclick="showTab('at',this)">🇦🇹 AT</button>
-  <button class="tab-btn" onclick="showTab('fr',this)">🇫🇷 FR</button>
-  <button class="tab-btn" onclick="showTab('be_fr',this)">🇧🇪 BE-FR</button>
-  <button class="tab-btn" onclick="showTab('be_nl',this)">🇧🇪 BE-NL</button>
-  <button class="tab-btn" onclick="showTab('nl',this)">🇳🇱 NL</button>
-  <button class="tab-btn" onclick="showTab('nl_hyva',this)">🇳🇱 NL Hyva</button>
-  <button class="tab-btn" onclick="showTab('it',this)">🇮🇹 IT</button>
-  <button class="tab-btn" onclick="showTab('ch_de',this)">🇨🇭 CH-DE</button>
-  <button class="tab-btn" onclick="showTab('ch_fr',this)">🇨🇭 CH-FR</button>
-  <button class="tab-btn" onclick="showTab('ch_it',this)">🇨🇭 CH-IT</button>
-  <button class="tab-btn" onclick="showTab('uk',this)">🇬🇧 UK</button>
-  <button class="tab-btn" onclick="showTab('ie',this)">🇮🇪 IE</button>
-  <button class="tab-btn" onclick="showTab('int_en',this)">🌍 INT</button>
-  <button class="tab-btn" onclick="showTab('gr',this)">🇬🇷 GR</button>
-  <button class="tab-btn" onclick="showTab('gr_hyva',this)">🇬🇷 GR Hyva</button>
-  <button class="tab-btn" onclick="showTab('ro',this)">🇷🇴 RO</button>
-  <button class="tab-btn" onclick="showTab('ro_hyva',this)">🇷🇴 RO Hyva</button>
-  <button class="tab-btn" onclick="showTab('pl',this)">🇵🇱 PL</button>
-  <button class="tab-btn" onclick="showTab('cz',this)">🇨🇿 CZ</button>
-  <button class="tab-btn" onclick="showTab('fi',this)">🇫🇮 FI</button>
-  <button class="tab-btn" onclick="showTab('se',this)">🇸🇪 SE</button>
-</div>
-
+<main class="stage">
 <div id="wrap" class="show-desktop">
 
-  <!-- ES -->
   <div id="tab-es" class="section active">
-    <div class="country-label">España &nbsp;<span class="badge">CARE7 · 7%</span></div>
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <strong class="label">Cuidar marca la diferencia</strong> &ndash; 7% con el código
@@ -155,9 +212,7 @@
     </div>
   </div>
 
-  <!-- PT -->
   <div id="tab-pt" class="section">
-    <div class="country-label">Portugal &nbsp;<span class="badge">CARE7 · 7%</span></div>
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <strong class="label">Cuidar faz a diferença</strong> &ndash; 7% com o código
@@ -174,9 +229,7 @@
     </div>
   </div>
 
-  <!-- DE -->
   <div id="tab-de" class="section">
-    <div class="country-label">Alemania &nbsp;<span class="badge">CARE5 · 5%</span></div>
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <strong class="label">Pflege macht den Unterschied</strong> &ndash; 5% mit Code
@@ -193,9 +246,7 @@
     </div>
   </div>
 
-  <!-- AT -->
   <div id="tab-at" class="section">
-    <div class="country-label">Austria &nbsp;<span class="badge">CARE5 · 5%</span></div>
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <strong class="label">Pflege macht den Unterschied</strong> &ndash; 5% mit Code
@@ -212,9 +263,7 @@
     </div>
   </div>
 
-  <!-- FR -->
   <div id="tab-fr" class="section">
-    <div class="country-label">Francia &nbsp;<span class="badge">CARE5 · 5%</span></div>
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <strong class="label">Prendre soin fait la différence</strong> &ndash; 5% avec le code
@@ -231,9 +280,7 @@
     </div>
   </div>
 
-  <!-- BE-FR -->
   <div id="tab-be_fr" class="section">
-    <div class="country-label">Bélgica Francés &nbsp;<span class="badge">CARE5 · 5%</span></div>
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <strong class="label">Prendre soin fait la différence</strong> &ndash; 5% avec le code
@@ -250,9 +297,7 @@
     </div>
   </div>
 
-  <!-- BE-NL -->
   <div id="tab-be_nl" class="section">
-    <div class="country-label">Bélgica Neerlandés &nbsp;<span class="badge">CARE5 · 5%</span></div>
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <strong class="label">Zorg maakt het verschil</strong> &ndash; 5% met code
@@ -269,9 +314,7 @@
     </div>
   </div>
 
-  <!-- NL -->
   <div id="tab-nl" class="section">
-    <div class="country-label">Holanda &nbsp;<span class="badge">CARE5 · 5%</span></div>
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <strong class="label">Zorg maakt het verschil</strong> &ndash; 5% met code
@@ -288,9 +331,7 @@
     </div>
   </div>
 
-  <!-- NL Hyva -->
   <div id="tab-nl_hyva" class="section">
-    <div class="country-label">Holanda – Hyva &nbsp;<span class="badge">CARE5 · 5%</span></div>
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <div class="bar-hyva-desktop">
@@ -312,9 +353,7 @@
     </div>
   </div>
 
-  <!-- IT -->
   <div id="tab-it" class="section">
-    <div class="country-label">Italia &nbsp;<span class="badge">CARE5 · 5%</span></div>
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <strong class="label">La cura fa la differenza</strong> &ndash; 5% con codice
@@ -331,9 +370,7 @@
     </div>
   </div>
 
-  <!-- CH-DE -->
   <div id="tab-ch_de" class="section">
-    <div class="country-label">Suiza Alemán &nbsp;<span class="badge">CARE5 · 5%</span></div>
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <strong class="label">Pflege macht den Unterschied</strong> &ndash; 5% mit Code
@@ -350,9 +387,7 @@
     </div>
   </div>
 
-  <!-- CH-FR -->
   <div id="tab-ch_fr" class="section">
-    <div class="country-label">Suiza Francés &nbsp;<span class="badge">CARE5 · 5%</span></div>
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <strong class="label">Prendre soin fait la différence</strong> &ndash; 5% avec le code
@@ -369,9 +404,7 @@
     </div>
   </div>
 
-  <!-- CH-IT -->
   <div id="tab-ch_it" class="section">
-    <div class="country-label">Suiza Italiano &nbsp;<span class="badge">CARE5 · 5%</span></div>
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <strong class="label">La cura fa la differenza</strong> &ndash; 5% con codice
@@ -388,9 +421,7 @@
     </div>
   </div>
 
-  <!-- UK -->
   <div id="tab-uk" class="section">
-    <div class="country-label">Reino Unido &nbsp;<span class="badge">CARE5 · 5%</span></div>
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <strong class="label">Caring makes the difference</strong> &ndash; 5% with code
@@ -407,9 +438,7 @@
     </div>
   </div>
 
-  <!-- IE -->
   <div id="tab-ie" class="section">
-    <div class="country-label">Irlanda &nbsp;<span class="badge">CARE5 · 5%</span></div>
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <strong class="label">Caring makes the difference</strong> &ndash; 5% with code
@@ -426,9 +455,7 @@
     </div>
   </div>
 
-  <!-- INT_EN -->
   <div id="tab-int_en" class="section">
-    <div class="country-label">Internacional &nbsp;<span class="badge">CARE5 · 5%</span></div>
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <strong class="label">Caring makes the difference</strong> &ndash; 5% with code
@@ -445,9 +472,7 @@
     </div>
   </div>
 
-  <!-- GR -->
   <div id="tab-gr" class="section">
-    <div class="country-label">Grecia &nbsp;<span class="badge">CARE5 · 5%</span></div>
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <strong class="label">Η φροντίδα κάνει τη διαφορά</strong> &ndash; 5% με κωδικό
@@ -464,9 +489,7 @@
     </div>
   </div>
 
-  <!-- GR Hyva -->
   <div id="tab-gr_hyva" class="section">
-    <div class="country-label">Grecia – Hyva &nbsp;<span class="badge">CARE5 · 5%</span></div>
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <div class="bar-hyva-desktop">
@@ -488,9 +511,7 @@
     </div>
   </div>
 
-  <!-- RO -->
   <div id="tab-ro" class="section">
-    <div class="country-label">Rumanía &nbsp;<span class="badge">CARE5 · 5%</span></div>
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <strong class="label">Îngrijirea face diferența</strong> &ndash; 5% cu codul
@@ -507,9 +528,7 @@
     </div>
   </div>
 
-  <!-- RO Hyva -->
   <div id="tab-ro_hyva" class="section">
-    <div class="country-label">Rumanía – Hyva &nbsp;<span class="badge">CARE5 · 5%</span></div>
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <div class="bar-hyva-desktop">
@@ -531,9 +550,7 @@
     </div>
   </div>
 
-  <!-- PL -->
   <div id="tab-pl" class="section">
-    <div class="country-label">Polonia &nbsp;<span class="badge">CARE5 · 5%</span></div>
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <strong class="label">Troska robi różnicę</strong> &ndash; 5% z kodem
@@ -550,9 +567,7 @@
     </div>
   </div>
 
-  <!-- CZ -->
   <div id="tab-cz" class="section">
-    <div class="country-label">República Checa &nbsp;<span class="badge">CARE5 · 5%</span></div>
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <strong class="label">Péče dělá rozdíl</strong> &ndash; 5% s kódem
@@ -569,9 +584,7 @@
     </div>
   </div>
 
-  <!-- FI -->
   <div id="tab-fi" class="section">
-    <div class="country-label">Finlandia &nbsp;<span class="badge">CARE5 · 5%</span></div>
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <strong class="label">Hoito tekee eron</strong> &ndash; 5% koodilla
@@ -588,9 +601,7 @@
     </div>
   </div>
 
-  <!-- SE -->
   <div id="tab-se" class="section">
-    <div class="country-label">Suecia &nbsp;<span class="badge">CARE5 · 5%</span></div>
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <strong class="label">Att vårda gör skillnad</strong> &ndash; 5% med koden
@@ -607,24 +618,32 @@
     </div>
   </div>
 
-</div><!-- #wrap -->
+</div>
+</main>
 
 <script>
-  function showTab(id, btn) {
-    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector('.locales').addEventListener('click', function (e) {
+    const btn = e.target.closest('[data-tab]');
+    if (!btn) return;
+    const id = btn.getAttribute('data-tab');
+    document.querySelectorAll('.section').forEach(function (s) { s.classList.remove('active'); });
+    document.querySelectorAll('.locales button').forEach(function (b) { b.classList.remove('active'); });
     document.getElementById('tab-' + id).classList.add('active');
     btn.classList.add('active');
-  }
-  function setDevice(mode, btn) {
+  });
+
+  document.querySelector('.seg').addEventListener('click', function (e) {
+    const btn = e.target.closest('[data-device]');
+    if (!btn) return;
+    const mode = btn.getAttribute('data-device');
     const wrap = document.getElementById('wrap');
     wrap.className = mode === 'mobile' ? 'show-mobile' : 'show-desktop';
-    document.querySelectorAll('.device-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.seg button').forEach(function (b) { b.classList.remove('active'); });
     btn.classList.add('active');
-    document.querySelectorAll('.bar-wrapper').forEach(b => {
+    document.querySelectorAll('.bar-wrapper').forEach(function (b) {
       b.classList.toggle('mobile-view', mode === 'mobile');
     });
-  }
+  });
 </script>
 </body>
 </html>
