@@ -171,7 +171,7 @@ LOCALES = {
         "coupon": "SEASON5",
         "claim": "Your centre ready for summer",
         "discount": "5% with code",
-        "hyva_discount": "5% WITH CODE ",
+        "hyva_discount": "5% DISCOUNT CODE ",
         "mobile_word": "code",
         "cta_d": "VIEW PRODUCTS",
         "cta_m": "PRODUCTS",
