@@ -283,7 +283,18 @@ LOCALES = {
     },
 }
 
-HYVA_LOCALES = ["nl", "gr", "ro", "uk", "ie", "int_en"]
+HYVA_LOCALES = [
+    "nl",
+    "gr",
+    "ro",
+    "uk",
+    "ie",
+    "int_en",
+    "at",
+    "fi",
+    "be_nl",
+    "be_fr",
+]
 
 
 def standard_html(cfg: dict) -> str:
@@ -382,9 +393,12 @@ PREVIEW_TAB_ORDER = [
     "pt",
     "de",
     "at",
+    "at_hyva",
     "fr",
     "be_fr",
+    "be_fr_hyva",
     "be_nl",
+    "be_nl_hyva",
     "nl",
     "nl_hyva",
     "it",
@@ -404,6 +418,7 @@ PREVIEW_TAB_ORDER = [
     "pl",
     "cz",
     "fi",
+    "fi_hyva",
     "se",
 ]
 
