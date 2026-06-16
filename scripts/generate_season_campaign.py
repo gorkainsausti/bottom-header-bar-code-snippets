@@ -1,19 +1,22 @@
 #!/usr/bin/env python3
-"""Generate SEASON campaign bar snippets for all locales."""
+"""Generate SUMMER campaign bar snippets for all locales."""
 
 from pathlib import Path
 
-BG = "#f1ecdf"
-GREEN = "#8b927f"
-BROWN = "#7a5b46"
+BG = "#81a4c9"
+GREEN = "#ffffff"
+BROWN = "#ffffff"
+BADGE_BG = "#ffffff"
+BADGE_TEXT = "#81a4c9"
+CLAIM = "Hello Summer!"
 
 LOCALES = {
     "es": {
         "comment": "ESPA&#209;A",
-        "tag": "SEASON7",
+        "tag": "SUMMER7",
         "pct": 7,
-        "coupon": "SEASON7",
-        "claim": "Tu centro listo para verano",
+        "coupon": "SUMMER7",
+        "claim": CLAIM,
         "discount": "7% con el c&#243;digo",
         "hyva_discount": "7% CON EL C&#211;DIGO ",
         "mobile_word": "cup&#243;n",
@@ -23,10 +26,10 @@ LOCALES = {
     },
     "pt": {
         "comment": "PORTUGAL",
-        "tag": "SEASON7",
+        "tag": "SUMMER7",
         "pct": 7,
-        "coupon": "SEASON7",
-        "claim": "O seu centro pronto para o ver&#227;o",
+        "coupon": "SUMMER7",
+        "claim": CLAIM,
         "discount": "7% com o c&#243;digo",
         "hyva_discount": "7% COM O C&#211;DIGO ",
         "mobile_word": "cup&#227;o",
@@ -36,10 +39,10 @@ LOCALES = {
     },
     "de": {
         "comment": "ALEMANIA",
-        "tag": "SEASON5",
+        "tag": "SUMMER5",
         "pct": 5,
-        "coupon": "SEASON5",
-        "claim": "Ihr Zentrum bereit f&#252;r den Sommer",
+        "coupon": "SUMMER5",
+        "claim": CLAIM,
         "discount": "5% mit Code",
         "hyva_discount": "5% MIT CODE ",
         "mobile_word": "Code",
@@ -49,10 +52,10 @@ LOCALES = {
     },
     "at": {
         "comment": "AUSTRIA",
-        "tag": "SEASON5",
+        "tag": "SUMMER5",
         "pct": 5,
-        "coupon": "SEASON5",
-        "claim": "Ihr Zentrum bereit f&#252;r den Sommer",
+        "coupon": "SUMMER5",
+        "claim": CLAIM,
         "discount": "5% mit Code",
         "hyva_discount": "5% MIT CODE ",
         "mobile_word": "Code",
@@ -62,10 +65,10 @@ LOCALES = {
     },
     "fr": {
         "comment": "FRANCIA",
-        "tag": "SEASON5",
+        "tag": "SUMMER5",
         "pct": 5,
-        "coupon": "SEASON5",
-        "claim": "Votre centre pr&#234;t pour l&#8217;&#233;t&#233;",
+        "coupon": "SUMMER5",
+        "claim": CLAIM,
         "discount": "5% avec le code",
         "hyva_discount": "5% AVEC LE CODE ",
         "mobile_word": "code",
@@ -75,10 +78,10 @@ LOCALES = {
     },
     "be_fr": {
         "comment": "B&#201;LGICA FR",
-        "tag": "SEASON5",
+        "tag": "SUMMER5",
         "pct": 5,
-        "coupon": "SEASON5",
-        "claim": "Votre centre pr&#234;t pour l&#8217;&#233;t&#233;",
+        "coupon": "SUMMER5",
+        "claim": CLAIM,
         "discount": "5% avec le code",
         "hyva_discount": "5% AVEC LE CODE ",
         "mobile_word": "code",
@@ -88,10 +91,10 @@ LOCALES = {
     },
     "be_nl": {
         "comment": "B&#201;LGICA NL",
-        "tag": "SEASON5",
+        "tag": "SUMMER5",
         "pct": 5,
-        "coupon": "SEASON5",
-        "claim": "Uw centrum klaar voor de zomer",
+        "coupon": "SUMMER5",
+        "claim": CLAIM,
         "discount": "5% met code",
         "hyva_discount": "5% MET CODE ",
         "mobile_word": "code",
@@ -101,10 +104,10 @@ LOCALES = {
     },
     "nl": {
         "comment": "HOLANDA",
-        "tag": "SEASON5",
+        "tag": "SUMMER5",
         "pct": 5,
-        "coupon": "SEASON5",
-        "claim": "Uw centrum klaar voor de zomer",
+        "coupon": "SUMMER5",
+        "claim": CLAIM,
         "discount": "5% met code",
         "hyva_discount": "5% MET CODE ",
         "mobile_word": "code",
@@ -114,10 +117,10 @@ LOCALES = {
     },
     "it": {
         "comment": "ITALIA",
-        "tag": "SEASON5",
+        "tag": "SUMMER5",
         "pct": 5,
-        "coupon": "SEASON5",
-        "claim": "Il tuo centro pronto per l&#8217;estate",
+        "coupon": "SUMMER5",
+        "claim": CLAIM,
         "discount": "5% con codice",
         "hyva_discount": "5% CON CODICE ",
         "mobile_word": "codice",
@@ -127,10 +130,10 @@ LOCALES = {
     },
     "ch_de": {
         "comment": "SUIZA ALEM&#193;N",
-        "tag": "SEASON5",
+        "tag": "SUMMER5",
         "pct": 5,
-        "coupon": "SEASON5",
-        "claim": "Ihr Zentrum bereit f&#252;r den Sommer",
+        "coupon": "SUMMER5",
+        "claim": CLAIM,
         "discount": "5% mit Code",
         "hyva_discount": "5% MIT CODE ",
         "mobile_word": "Code",
@@ -140,10 +143,10 @@ LOCALES = {
     },
     "ch_fr": {
         "comment": "SUIZA FR",
-        "tag": "SEASON5",
+        "tag": "SUMMER5",
         "pct": 5,
-        "coupon": "SEASON5",
-        "claim": "Votre centre pr&#234;t pour l&#8217;&#233;t&#233;",
+        "coupon": "SUMMER5",
+        "claim": CLAIM,
         "discount": "5% avec le code",
         "hyva_discount": "5% AVEC LE CODE ",
         "mobile_word": "code",
@@ -153,10 +156,10 @@ LOCALES = {
     },
     "ch_it": {
         "comment": "SUIZA IT",
-        "tag": "SEASON5",
+        "tag": "SUMMER5",
         "pct": 5,
-        "coupon": "SEASON5",
-        "claim": "Il tuo centro pronto per l&#8217;estate",
+        "coupon": "SUMMER5",
+        "claim": CLAIM,
         "discount": "5% con codice",
         "hyva_discount": "5% CON CODICE ",
         "mobile_word": "codice",
@@ -166,10 +169,10 @@ LOCALES = {
     },
     "uk": {
         "comment": "REINO UNIDO",
-        "tag": "SEASON5",
+        "tag": "SUMMER5",
         "pct": 5,
-        "coupon": "SEASON5",
-        "claim": "Your centre ready for summer",
+        "coupon": "SUMMER5",
+        "claim": CLAIM,
         "discount": "5% with code",
         "hyva_discount": "5% DISCOUNT CODE ",
         "mobile_word": "code",
@@ -179,10 +182,10 @@ LOCALES = {
     },
     "ie": {
         "comment": "IRLANDA",
-        "tag": "SEASON5",
+        "tag": "SUMMER5",
         "pct": 5,
-        "coupon": "SEASON5",
-        "claim": "Your centre ready for summer",
+        "coupon": "SUMMER5",
+        "claim": CLAIM,
         "discount": "5% with code",
         "hyva_discount": "5% DISCOUNT CODE ",
         "mobile_word": "code",
@@ -192,10 +195,10 @@ LOCALES = {
     },
     "int_en": {
         "comment": "INTERNACIONAL",
-        "tag": "SEASON5",
+        "tag": "SUMMER5",
         "pct": 5,
-        "coupon": "SEASON5",
-        "claim": "Your centre ready for summer",
+        "coupon": "SUMMER5",
+        "claim": CLAIM,
         "discount": "5% with code",
         "hyva_discount": "5% DISCOUNT CODE ",
         "mobile_word": "code",
@@ -205,10 +208,10 @@ LOCALES = {
     },
     "gr": {
         "comment": "GRECIA",
-        "tag": "SEASON5",
+        "tag": "SUMMER5",
         "pct": 5,
-        "coupon": "SEASON5",
-        "claim": "&#932;&#959; &#954;&#941;&#957;&#964;&#961;&#959; &#963;&#945;&#962; &#941;&#964;&#959;&#953;&#956;&#959; &#947;&#953;&#945; &#964;&#959; &#954;&#945;&#955;&#959;&#954;&#945;&#943;&#961;&#953;",
+        "coupon": "SUMMER5",
+        "claim": CLAIM,
         "discount": "5% &#956;&#949; &#954;&#969;&#948;&#953;&#954;&#972;",
         "hyva_discount": "5% &#924;&#917; &#922;&#937;&#916;&#921;&#922;&#927; ",
         "mobile_word": "&#954;&#969;&#948;.",
@@ -218,10 +221,10 @@ LOCALES = {
     },
     "ro": {
         "comment": "RUMAN&#205;A",
-        "tag": "SEASON5",
+        "tag": "SUMMER5",
         "pct": 5,
-        "coupon": "SEASON5",
-        "claim": "Centrul dvs. preg&#259;tit pentru var&#259;",
+        "coupon": "SUMMER5",
+        "claim": CLAIM,
         "discount": "5% cu codul",
         "hyva_discount": "5% CU CODUL ",
         "mobile_word": "cod",
@@ -231,10 +234,10 @@ LOCALES = {
     },
     "pl": {
         "comment": "POLONIA",
-        "tag": "SEASON5",
+        "tag": "SUMMER5",
         "pct": 5,
-        "coupon": "SEASON5",
-        "claim": "Twoje centrum gotowe na lato",
+        "coupon": "SUMMER5",
+        "claim": CLAIM,
         "discount": "5% z kodem",
         "hyva_discount": "5% Z KODEM ",
         "mobile_word": "kod",
@@ -244,10 +247,10 @@ LOCALES = {
     },
     "cz": {
         "comment": "REP&#218;BLICA CHECA",
-        "tag": "SEASON5",
+        "tag": "SUMMER5",
         "pct": 5,
-        "coupon": "SEASON5",
-        "claim": "Va&#353;e centrum p&#345;ipraven&#233; na l&#233;to",
+        "coupon": "SUMMER5",
+        "claim": CLAIM,
         "discount": "5% s k&#243;dem",
         "hyva_discount": "5% S K&#211;DEM ",
         "mobile_word": "k&#243;d",
@@ -257,10 +260,10 @@ LOCALES = {
     },
     "fi": {
         "comment": "FINLANDIA",
-        "tag": "SEASON5",
+        "tag": "SUMMER5",
         "pct": 5,
-        "coupon": "SEASON5",
-        "claim": "Keskuksesi valmiina kes&#228;&#228;n",
+        "coupon": "SUMMER5",
+        "claim": CLAIM,
         "discount": "5% koodilla",
         "hyva_discount": "5% KOODILLA ",
         "mobile_word": "koodi",
@@ -270,10 +273,10 @@ LOCALES = {
     },
     "se": {
         "comment": "SUECIA",
-        "tag": "SEASON5",
+        "tag": "SUMMER5",
         "pct": 5,
-        "coupon": "SEASON5",
-        "claim": "Ert center redo f&#246;r sommaren",
+        "coupon": "SUMMER5",
+        "claim": CLAIM,
         "discount": "5% med koden",
         "hyva_discount": "5% MED KODEN ",
         "mobile_word": "kod",
@@ -304,7 +307,7 @@ def standard_html(cfg: dict) -> str:
 <div class="extra-menu show-desktop" style="background-color:{BG};">
     <p style="margin:0; color:{BROWN}; font-size:16px;">
       <strong style="color:{GREEN};">{c['claim']}</strong> &#8211; {c['discount']}
-      <strong style="background-color:{GREEN}; color:#FFFFFF; padding:2px 8px; border-radius:4px; font-family:monospace;">{c['coupon']}</strong>
+      <strong style="background-color:{BADGE_BG}; color:{BADGE_TEXT}; padding:2px 8px; border-radius:4px; font-family:monospace;">{c['coupon']}</strong>
       &nbsp;&#8211;&nbsp;
       <a href="{{{{store direct_url="{c['url']}"}}}}" style="color:{GREEN}; font-weight:bold; text-decoration:underline;">
         {c['cta_d']}
@@ -316,7 +319,7 @@ def standard_html(cfg: dict) -> str:
   <div class="extra-menu show-mobile" style="background-color:{BG};">
     <p style="margin:0; font-size:12px; color:{BROWN};">
       <strong style="color:{GREEN};">{pct}%</strong> {c['mobile_word']} 
-      <strong style="background-color:{GREEN}; color:#FFFFFF; padding:1px 5px; border-radius:3px; font-family:monospace;">{c['coupon']}</strong>
+      <strong style="background-color:{BADGE_BG}; color:{BADGE_TEXT}; padding:1px 5px; border-radius:3px; font-family:monospace;">{c['coupon']}</strong>
       &nbsp;|&nbsp;
       <a href="{{{{store direct_url="{c['url']}"}}}}" style="text-decoration:underline; color:{GREEN}; font-weight:bold;">
         {c['cta_m']}
@@ -331,11 +334,11 @@ def hyva_html(cfg: dict) -> str:
     c = cfg
     pct = c["pct"]
     return f"""<div class="hidden md:block text-center p-1"  style="background-color:{BG};">
-    <p class="container" style="margin:0; color:{BROWN}; font-size:16px;"><b style="color:{GREEN};">{c['claim']}</b> <b style="color:{BROWN};">&#8211; {c['hyva_discount']}</b><strong style="background-color:{GREEN}; color:#FFFFFF; padding:2px 8px; border-radius:4px; font-family:monospace;">{c['coupon']}</strong><b style="color:{BROWN};"> | </b><span style="color:{BROWN};"> <a style="color:{GREEN};text-decoration:underline;" href="{{{{store direct_url="{c['url']}"}}}}"><span style="color:{GREEN}">{c['cta_d']}</span></a></span></p>
+    <p class="container" style="margin:0; color:{BROWN}; font-size:16px;"><b style="color:{GREEN};">{c['claim']}</b> <b style="color:{BROWN};">&#8211; {c['hyva_discount']}</b><strong style="background-color:{BADGE_BG}; color:{BADGE_TEXT}; padding:2px 8px; border-radius:4px; font-family:monospace;">{c['coupon']}</strong><b style="color:{BROWN};"> | </b><span style="color:{BROWN};"> <a style="color:{GREEN};text-decoration:underline;" href="{{{{store direct_url="{c['url']}"}}}}"><span style="color:{GREEN}">{c['cta_d']}</span></a></span></p>
     </div>
     
     <div class="block md:hidden text-center p-1" style="background-color:{BG};">
-    <p class="container"><a href="{{{{store direct_url="{c['url']}"}}}}"><span style="color:{BROWN};font-size:12px;">{pct}% {c['mobile_word']} </span><strong style="background-color:{GREEN}; color:#FFFFFF; padding:1px 5px; border-radius:3px; font-family:monospace;">{c['coupon']}</strong><span style="color:{BROWN};font-size:12px;"> | </span><span style="color:{BROWN};font-size:12px;">{c['cta_m']}</span></a></p>
+    <p class="container"><a href="{{{{store direct_url="{c['url']}"}}}}"><span style="color:{BROWN};font-size:12px;">{pct}% {c['mobile_word']} </span><strong style="background-color:{BADGE_BG}; color:{BADGE_TEXT}; padding:1px 5px; border-radius:3px; font-family:monospace;">{c['coupon']}</strong><span style="color:{BROWN};font-size:12px;"> | </span><span style="color:{BROWN};font-size:12px;">{c['cta_m']}</span></a></p>
     </div>
 """
 
@@ -350,7 +353,7 @@ def preview_section(tab_id: str, cfg: dict, hyva: bool = False) -> str:
         <div class="bar-hyva-desktop">
           <b style="color:{GREEN};">{c['claim']}</b>
           <b style="color:{BROWN};"> &ndash; {c['hyva_discount'].rstrip()} </b>
-          <strong style="background-color:{GREEN};color:#fff;padding:2px 8px;border-radius:4px;font-family:monospace;">{c['coupon']}</strong>
+          <strong style="background-color:{BADGE_BG};color:{BADGE_TEXT};padding:2px 8px;border-radius:4px;font-family:monospace;">{c['coupon']}</strong>
           <b style="color:{BROWN};"> | </b>
           <a href="#" style="color:{GREEN};text-decoration:underline;">{c['cta_d']}</a>
         </div>
@@ -359,7 +362,7 @@ def preview_section(tab_id: str, cfg: dict, hyva: bool = False) -> str:
         <div class="bar-hyva-mobile">
           <a href="#" style="color:{GREEN};text-decoration:none;">
             <span style="font-size:12px;color:{BROWN};">{pct}% {c['mobile_word']} </span>
-            <strong style="background-color:{GREEN};color:#fff;padding:1px 5px;border-radius:3px;font-family:monospace;">{c['coupon']}</strong>
+            <strong style="background-color:{BADGE_BG};color:{BADGE_TEXT};padding:1px 5px;border-radius:3px;font-family:monospace;">{c['coupon']}</strong>
             <span style="font-size:12px;color:{BROWN};"> | </span>
             <span style="color:{BROWN};font-size:12px;">{c['cta_m']}</span>
           </a>
@@ -424,36 +427,18 @@ PREVIEW_TAB_ORDER = [
 
 
 def update_preview_css(content: str) -> str:
-    replacements = [
-        ("#f4eae0", BG),
-        ("#695240", BROWN),
-    ]
-    for old, new in replacements:
-        content = content.replace(old, new)
-    # Green accents in bar styles (after brown base replace)
     content = content.replace(
-        ".bar-desktop strong.label { color: " + BROWN + "; }",
-        ".bar-desktop strong.label { color: " + GREEN + "; }",
+        "background: #8b927f; color: #fff;",
+        f"background: {BADGE_BG}; color: {BADGE_TEXT};",
     )
+    for old_bg in ("#f1ecdf", "#f4eae0"):
+        content = content.replace(old_bg, BG)
+    for old_text in ("#7a5b46", "#695240"):
+        content = content.replace(old_text, BROWN)
+    content = content.replace("#8b927f", GREEN)
     content = content.replace(
-        ".bar-desktop .code {\n      background: " + BROWN + ";",
-        ".bar-desktop .code {\n      background: " + GREEN + ";",
-    )
-    content = content.replace(
-        ".bar-desktop a { color: " + BROWN + ";",
-        ".bar-desktop a { color: " + GREEN + ";",
-    )
-    content = content.replace(
-        ".bar-mobile strong { color: " + BROWN + "; }",
-        ".bar-mobile strong { color: " + GREEN + "; }",
-    )
-    content = content.replace(
-        ".bar-mobile .code {\n      background: " + BROWN + ";",
-        ".bar-mobile .code {\n      background: " + GREEN + ";",
-    )
-    content = content.replace(
-        ".bar-mobile a { color: " + BROWN + ";",
-        ".bar-mobile a { color: " + GREEN + ";",
+        "SEASON7 ES/PT · SEASON5 resto",
+        "SUMMER7 ES/PT · SUMMER5 resto",
     )
     return content
 
