@@ -427,7 +427,7 @@ def hyva_html(cfg: dict, countdown: bool = False) -> str:
     </div>
 """
     return f"""<div class="hidden md:block text-center p-1"  style="background-color:{BG};">
-    <p class="container" style="margin:0; color:{BROWN}; font-size:16px;"><b style="color:{GREEN};">{c['claim']}</b> <b style="color:{BROWN};">&#8211; {c['hyva_discount']}</b><strong style="background-color:{BADGE_BG}; color:{BADGE_TEXT}; padding:2px 8px; border-radius:4px; font-family:monospace;">{c['coupon']}</strong><b style="color:{BROWN};"> | </b><span style="color:{BROWN};"> <a style="color:{GREEN};text-decoration:underline;" href="{{{{store direct_url="{c['url']}"}}}}"><span style="color:{GREEN}">{c['cta_d']}</span></a></span>{cd_desktop}</p>
+    <p class="container" style="margin:0; color:{BROWN}; font-size:16px;"><b style="color:{BROWN};">{c['claim']}</b> <b style="color:{BROWN};">&#8211; {c['hyva_discount']}</b><strong style="background-color:{BADGE_BG}; color:{BADGE_TEXT}; padding:2px 8px; border-radius:4px; font-family:monospace;">{c['coupon']}</strong><b style="color:{BROWN};"> | </b><span style="color:{BROWN};"> <a style="color:{BROWN};text-decoration:underline;" href="{{{{store direct_url="{c['url']}"}}}}"><span style="color:{BROWN}">{c['cta_d']}</span></a></span>{cd_desktop}</p>
     </div>
     
 {mobile_block}"""
@@ -454,16 +454,16 @@ def preview_section(tab_id: str, cfg: dict, hyva: bool = False, countdown: bool 
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <div class="bar-hyva-desktop">
-          <b style="color:{GREEN};">{c['claim']}</b>
+          <b style="color:{BROWN};">{c['claim']}</b>
           <b style="color:{BROWN};"> &ndash; {c['hyva_discount'].rstrip()} </b>
           <strong style="background-color:{BADGE_BG};color:{BADGE_TEXT};padding:2px 8px;border-radius:4px;font-family:monospace;">{c['coupon']}</strong>
           <b style="color:{BROWN};"> | </b>
-          <a href="#" style="color:{GREEN};text-decoration:underline;">{c['cta_d']}</a>{cd}
+          <a href="#" style="color:{BROWN};text-decoration:underline;">{c['cta_d']}</a>{cd}
         </div>
       </div>
       <div class="bar-mobile">
         <div class="bar-hyva-mobile">
-          <a href="#" style="color:{GREEN};text-decoration:none;">
+          <a href="#" style="color:{BROWN};text-decoration:none;">
             <span style="display:block;">
               <span style="font-size:12px;color:{BROWN};">{pct}% {c['mobile_word']} </span>
               <strong style="background-color:{BADGE_BG};color:{BADGE_TEXT};padding:1px 5px;border-radius:3px;font-family:monospace;">{c['coupon']}</strong>
