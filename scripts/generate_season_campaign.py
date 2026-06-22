@@ -370,10 +370,10 @@ def standard_html(cfg: dict, countdown: bool = False) -> str:
   <div class="extra-menu show-mobile" style="background-color:{BG};">
     <p style="margin:0; font-size:12px; color:{BROWN}; text-align:center; line-height:1.35;">
       <span style="display:block;">
-      <strong style="color:{GREEN};">{pct}%</strong> {c['mobile_word']} 
+      <strong style="color:{BROWN};">{pct}%</strong> {c['mobile_word']} 
       <strong style="background-color:{BADGE_BG}; color:{BADGE_TEXT}; padding:1px 5px; border-radius:3px; font-family:monospace;">{c['coupon']}</strong>
       &nbsp;|&nbsp;
-      <a href="{{{{store direct_url="{c['url']}"}}}}" style="text-decoration:underline; color:{GREEN}; font-weight:bold;">
+      <a href="{{{{store direct_url="{c['url']}"}}}}" style="text-decoration:underline; color:{BROWN}; font-weight:bold;">
         {c['cta_m']}
       </a>
     </span>
@@ -386,10 +386,10 @@ def standard_html(cfg: dict, countdown: bool = False) -> str:
         mobile_block = f"""  <!-- {c['comment']} - Mobile -->
   <div class="extra-menu show-mobile" style="background-color:{BG};">
     <p style="margin:0; font-size:12px; color:{BROWN};">
-      <strong style="color:{GREEN};">{pct}%</strong> {c['mobile_word']} 
+      <strong style="color:{BROWN};">{pct}%</strong> {c['mobile_word']} 
       <strong style="background-color:{BADGE_BG}; color:{BADGE_TEXT}; padding:1px 5px; border-radius:3px; font-family:monospace;">{c['coupon']}</strong>
       &nbsp;|&nbsp;
-      <a href="{{{{store direct_url="{c['url']}"}}}}" style="text-decoration:underline; color:{GREEN}; font-weight:bold;">
+      <a href="{{{{store direct_url="{c['url']}"}}}}" style="text-decoration:underline; color:{BROWN}; font-weight:bold;">
         {c['cta_m']}
       </a>
     </p>
@@ -399,10 +399,10 @@ def standard_html(cfg: dict, countdown: bool = False) -> str:
     return f"""<!-- {c['comment']} - {c['tag']}{' - Countdown' if countdown else ''} - Desktop -->
 <div class="extra-menu show-desktop" style="background-color:{BG};">
     <p style="margin:0; color:{BROWN}; font-size:16px;">
-      <strong style="color:{GREEN};">{c['claim']}</strong> &#8211; {c['discount']}
+      <strong style="color:{BROWN};">{c['claim']}</strong> &#8211; {c['discount']}
       <strong style="background-color:{BADGE_BG}; color:{BADGE_TEXT}; padding:2px 8px; border-radius:4px; font-family:monospace;">{c['coupon']}</strong>
       &nbsp;&#8211;&nbsp;
-      <a href="{{{{store direct_url="{c['url']}"}}}}" style="color:{GREEN}; font-weight:bold; text-decoration:underline;">
+      <a href="{{{{store direct_url="{c['url']}"}}}}" style="color:{BROWN}; font-weight:bold; text-decoration:underline;">
         {c['cta_d']}
       </a>{cd_desktop}
     </p>
@@ -427,7 +427,7 @@ def hyva_html(cfg: dict, countdown: bool = False) -> str:
     </div>
 """
     return f"""<div class="hidden md:block text-center p-1"  style="background-color:{BG};">
-    <p class="container" style="margin:0; color:{BROWN}; font-size:16px;"><b style="color:{BROWN};">{c['claim']}</b> <b style="color:{BROWN};">&#8211; {c['hyva_discount']}</b><strong style="background-color:{BADGE_BG}; color:{BADGE_TEXT}; padding:2px 8px; border-radius:4px; font-family:monospace;">{c['coupon']}</strong><b style="color:{BROWN};"> | </b><span style="color:{BROWN};"> <a style="color:{BROWN};text-decoration:underline;" href="{{{{store direct_url="{c['url']}"}}}}"><span style="color:{BROWN}">{c['cta_d']}</span></a></span>{cd_desktop}</p>
+    <p class="container" style="margin:0; color:{BROWN}; font-size:16px;"><b style="color:{BROWN} !important;">{c['claim']}</b> <b style="color:{BROWN};">&#8211; {c['hyva_discount']}</b><strong style="background-color:{BADGE_BG}; color:{BADGE_TEXT}; padding:2px 8px; border-radius:4px; font-family:monospace;">{c['coupon']}</strong><b style="color:{BROWN};"> | </b><span style="color:{BROWN};"> <a style="color:{BROWN} !important;text-decoration:underline;" href="{{{{store direct_url="{c['url']}"}}}}"><span style="color:{BROWN} !important;">{c['cta_d']}</span></a></span>{cd_desktop}</p>
     </div>
     
 {mobile_block}"""
@@ -454,11 +454,11 @@ def preview_section(tab_id: str, cfg: dict, hyva: bool = False, countdown: bool 
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <div class="bar-hyva-desktop">
-          <b style="color:{BROWN};">{c['claim']}</b>
+          <b style="color:{BROWN} !important;">{c['claim']}</b>
           <b style="color:{BROWN};"> &ndash; {c['hyva_discount'].rstrip()} </b>
           <strong style="background-color:{BADGE_BG};color:{BADGE_TEXT};padding:2px 8px;border-radius:4px;font-family:monospace;">{c['coupon']}</strong>
           <b style="color:{BROWN};"> | </b>
-          <a href="#" style="color:{BROWN};text-decoration:underline;">{c['cta_d']}</a>{cd}
+          <a href="#" style="color:{BROWN} !important;text-decoration:underline;">{c['cta_d']}</a>{cd}
         </div>
       </div>
       <div class="bar-mobile">
@@ -637,17 +637,23 @@ def update_preview_css(content: str) -> str:
         content = content.replace(old_bg, BG)
     for old_text in ("#7a5b46", "#695240"):
         content = content.replace(old_text, BROWN)
-    content = content.replace("#8b927f", GREEN)
+    content = content.replace("#8b927f", BROWN)
+    content = content.replace("#4f99f0", BROWN)
     for old_hint in (
         "SUMMER7 ES/PT · SUMMER5 resto · 3/6–16/6",
         "QDAYS8 ES/PT · QDAYS6 resto · 23/6–30/6",
     ):
         content = content.replace(old_hint, "QDAYS8 ES/PT · QDAYS6 resto · 23/6–30/6")
-    if ".countdown-line" not in content:
+    if ".bar-hyva-desktop a" not in content:
         content = content.replace(
-            "    .bar-hyva-mobile {",
+            "    .bar-hyva-desktop {",
+            "    .bar-hyva-desktop b,\n"
+            "    .bar-hyva-desktop a,\n"
+            "    .bar-hyva-desktop a span,\n"
+            "    .bar-hyva-mobile a,\n"
+            "    .bar-hyva-mobile span { color: #ffffff !important; }\n\n"
             "    .countdown-line { display: block; margin-top: 2px; }\n\n"
-            "    .bar-hyva-mobile {",
+            "    .bar-hyva-desktop {",
         )
     return content
 
