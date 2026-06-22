@@ -1,0 +1,27 @@
+<div class="hidden md:block text-center p-1"  style="background-color:#2d54bb;">
+    <p class="container" style="margin:0; color:#ffffff; font-size:16px;"><b style="color:#4f99f0;">Qdays!</b> <b style="color:#ffffff;">&#8211; 6% &#924;&#917; &#922;&#937;&#916;&#921;&#922;&#927; </b><strong style="background-color:#ffffff; color:#2d54bb; padding:2px 8px; border-radius:4px; font-family:monospace;">QDAYS6</strong><b style="color:#ffffff;"> | </b><span style="color:#ffffff;"> <a style="color:#4f99f0;text-decoration:underline;" href="{{store direct_url="prosfores/quirumed-prosfores"}}"><span style="color:#4f99f0">&#916;&#917;&#921;&#932;&#917; &#928;&#929;&#927;&#938;&#927;&#925;&#932;&#913;</span></a></span>&nbsp;|&nbsp; &#923;&#942;&#947;&#949;&#953; &#963;&#949;:&nbsp;<span class="qdays-cd-timer" style="font-variant-numeric:tabular-nums;"></span></p>
+    </div>
+    
+    <div class="block md:hidden text-center p-1" style="background-color:#2d54bb;">
+    <p class="container" style="margin:0; line-height:1.35;"><a href="{{store direct_url="prosfores/quirumed-prosfores"}}" style="text-decoration:none;"><span style="display:block;"><span style="color:#ffffff;font-size:12px;">6% &#954;&#969;&#948;. </span><strong style="background-color:#ffffff; color:#2d54bb; padding:1px 5px; border-radius:3px; font-family:monospace;">QDAYS6</strong><span style="color:#ffffff;font-size:12px;"> | </span><span style="color:#ffffff;font-size:12px;">&#928;&#929;&#927;&#938;&#927;&#925;&#932;&#913;</span></span><span style="display:block;color:#ffffff;font-size:12px;">&#923;&#942;&#947;&#949;&#953; &#963;&#949;:&nbsp;<span class="qdays-cd-timer" style="font-variant-numeric:tabular-nums;"></span></span></a></p>
+    </div>
+
+<script>
+(function() {
+  var end = new Date(2026, 5, 30, 23, 59, 59);
+  function tick() {
+    var diff = end - Date.now();
+    if (diff < 0) diff = 0;
+    var sec = Math.floor(diff / 1000);
+    var days = Math.floor(sec / 86400); sec %= 86400;
+    var hrs = Math.floor(sec / 3600); sec %= 3600;
+    var mins = Math.floor(sec / 60); sec %= 60;
+    var text = days + "d " + hrs + "h " + mins + "m " + sec + "s";
+    document.querySelectorAll(".qdays-cd-timer").forEach(function(el) {
+      el.textContent = text;
+    });
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>

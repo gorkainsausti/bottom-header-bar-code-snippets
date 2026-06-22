@@ -1,0 +1,27 @@
+<div class="hidden md:block text-center p-1"  style="background-color:#2d54bb;">
+    <p class="container" style="margin:0; color:#ffffff; font-size:16px;"><b style="color:#4f99f0;">Qdays!</b> <b style="color:#ffffff;">&#8211; 6% AVEC LE CODE </b><strong style="background-color:#ffffff; color:#2d54bb; padding:2px 8px; border-radius:4px; font-family:monospace;">QDAYS6</strong><b style="color:#ffffff;"> | </b><span style="color:#ffffff;"> <a style="color:#4f99f0;text-decoration:underline;" href="{{store direct_url="offres/quirumed-promotions"}}"><span style="color:#4f99f0">VOIR LES PRODUITS</span></a></span>&nbsp;|&nbsp; Se termine dans :&nbsp;<span class="qdays-cd-timer" style="font-variant-numeric:tabular-nums;"></span></p>
+    </div>
+    
+    <div class="block md:hidden text-center p-1" style="background-color:#2d54bb;">
+    <p class="container" style="margin:0; line-height:1.35;"><a href="{{store direct_url="offres/quirumed-promotions"}}" style="text-decoration:none;"><span style="display:block;"><span style="color:#ffffff;font-size:12px;">6% code </span><strong style="background-color:#ffffff; color:#2d54bb; padding:1px 5px; border-radius:3px; font-family:monospace;">QDAYS6</strong><span style="color:#ffffff;font-size:12px;"> | </span><span style="color:#ffffff;font-size:12px;">VOIR PRODUITS</span></span><span style="display:block;color:#ffffff;font-size:12px;">Se termine dans :&nbsp;<span class="qdays-cd-timer" style="font-variant-numeric:tabular-nums;"></span></span></a></p>
+    </div>
+
+<script>
+(function() {
+  var end = new Date(2026, 5, 30, 23, 59, 59);
+  function tick() {
+    var diff = end - Date.now();
+    if (diff < 0) diff = 0;
+    var sec = Math.floor(diff / 1000);
+    var days = Math.floor(sec / 86400); sec %= 86400;
+    var hrs = Math.floor(sec / 3600); sec %= 3600;
+    var mins = Math.floor(sec / 60); sec %= 60;
+    var text = days + "d " + hrs + "h " + mins + "m " + sec + "s";
+    document.querySelectorAll(".qdays-cd-timer").forEach(function(el) {
+      el.textContent = text;
+    });
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
