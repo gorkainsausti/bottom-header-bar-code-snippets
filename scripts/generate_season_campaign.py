@@ -376,12 +376,12 @@ def standard_html(cfg: dict, countdown: bool = False) -> str:
     if countdown:
         mobile_block = f"""  <!-- {c['comment']} - Mobile -->
   <div class="extra-menu show-mobile" style="background-color:{STD_BG};">
-    <p style="margin:0; font-size:12px; color:{BROWN}; text-align:center; line-height:1.35;">
+    <p style="margin:0; font-size:12px; color:{BROWN} !important; text-align:center; line-height:1.35;">
       <span style="display:block;">
-      <strong style="color:{BROWN};">{pct}%</strong> {c['mobile_word']} 
-      <strong style="background-color:{BADGE_BG}; color:{STD_BADGE_TEXT}; padding:1px 5px; border-radius:3px; font-family:monospace;">{c['coupon']}</strong>
+      <strong style="color:{BROWN} !important;">{pct}%</strong> <span style="color:{BROWN} !important;">{c['mobile_word']}</span> 
+      <strong style="background-color:{BADGE_BG}; color:{STD_BADGE_TEXT} !important; padding:1px 5px; border-radius:3px; font-family:monospace;">{c['coupon']}</strong>
       &nbsp;|&nbsp;
-      <a href="{{{{store direct_url="{c['url']}"}}}}" style="text-decoration:underline; color:{BROWN}; font-weight:bold;">
+      <a href="{{{{store direct_url="{c['url']}"}}}}" style="text-decoration:underline; color:{BROWN} !important; font-weight:bold;">
         {c['cta_m']}
       </a>
     </span>
@@ -393,11 +393,11 @@ def standard_html(cfg: dict, countdown: bool = False) -> str:
     else:
         mobile_block = f"""  <!-- {c['comment']} - Mobile -->
   <div class="extra-menu show-mobile" style="background-color:{STD_BG};">
-    <p style="margin:0; font-size:12px; color:{BROWN};">
-      <strong style="color:{BROWN};">{pct}%</strong> {c['mobile_word']} 
-      <strong style="background-color:{BADGE_BG}; color:{STD_BADGE_TEXT}; padding:1px 5px; border-radius:3px; font-family:monospace;">{c['coupon']}</strong>
+    <p style="margin:0; font-size:12px; color:{BROWN} !important;">
+      <strong style="color:{BROWN} !important;">{pct}%</strong> <span style="color:{BROWN} !important;">{c['mobile_word']}</span> 
+      <strong style="background-color:{BADGE_BG}; color:{STD_BADGE_TEXT} !important; padding:1px 5px; border-radius:3px; font-family:monospace;">{c['coupon']}</strong>
       &nbsp;|&nbsp;
-      <a href="{{{{store direct_url="{c['url']}"}}}}" style="text-decoration:underline; color:{BROWN}; font-weight:bold;">
+      <a href="{{{{store direct_url="{c['url']}"}}}}" style="text-decoration:underline; color:{BROWN} !important; font-weight:bold;">
         {c['cta_m']}
       </a>
     </p>
@@ -406,11 +406,11 @@ def standard_html(cfg: dict, countdown: bool = False) -> str:
 """
     return f"""<!-- {c['comment']} - {c['tag']}{' - Countdown' if countdown else ''} - Desktop -->
 <div class="extra-menu show-desktop" style="background-color:{STD_BG};">
-    <p style="margin:0; color:{BROWN}; font-size:16px;">
-      <strong style="color:{BROWN};">{c['claim']}</strong> &#8211; {c['discount']}
-      <strong style="background-color:{BADGE_BG}; color:{STD_BADGE_TEXT}; padding:2px 8px; border-radius:4px; font-family:monospace;">{c['coupon']}</strong>
+    <p style="margin:0; color:{BROWN} !important; font-size:16px;">
+      <strong style="color:{BROWN} !important;">{c['claim']}</strong> &#8211; <span style="color:{BROWN} !important;">{c['discount']}</span>
+      <strong style="background-color:{BADGE_BG}; color:{STD_BADGE_TEXT} !important; padding:2px 8px; border-radius:4px; font-family:monospace;">{c['coupon']}</strong>
       &nbsp;&#8211;&nbsp;
-      <a href="{{{{store direct_url="{c['url']}"}}}}" style="color:{BROWN}; font-weight:bold; text-decoration:underline;">
+      <a href="{{{{store direct_url="{c['url']}"}}}}" style="color:{BROWN} !important; font-weight:bold; text-decoration:underline;">
         {c['cta_d']}
       </a>{cd_desktop}
     </p>
@@ -426,16 +426,16 @@ def hyva_html(cfg: dict, countdown: bool = False) -> str:
     suffix = f"\n{COUNTDOWN_SCRIPT}" if countdown else ""
     if countdown:
         mobile_block = f"""    <div class="block md:hidden text-center p-1" style="background-color:{HYVA_BG};">
-    <p class="container" style="margin:0; line-height:1.35;"><a href="{{{{store direct_url="{c['url']}"}}}}" style="text-decoration:none;"><span style="display:block;"><span style="color:{BROWN};font-size:12px;">{c['hyva_discount']}</span><strong style="background-color:{BADGE_BG}; color:{HYVA_BADGE_TEXT}; padding:1px 5px; border-radius:3px; font-family:monospace;">{c['coupon']}</strong><span style="color:{BROWN};font-size:12px;"> | </span><span style="color:{BROWN};font-size:12px;text-decoration:underline;">{c['cta_d']}</span></span><span style="display:block;color:{BROWN};font-size:12px;">{c['ends_in']}&nbsp;<span class="{COUNTDOWN_CLASS}" style="color:{BROWN} !important;font-variant-numeric:tabular-nums;"></span></span></a></p>
+    <p class="container" style="margin:0; line-height:1.35;"><a href="{{{{store direct_url="{c['url']}"}}}}" style="text-decoration:none;"><span style="display:block;"><span style="color:{BROWN} !important;font-size:12px;">{c['hyva_discount']}</span><strong style="background-color:{BADGE_BG}; color:{HYVA_BADGE_TEXT} !important; padding:1px 5px; border-radius:3px; font-family:monospace;">{c['coupon']}</strong><span style="color:{BROWN} !important;font-size:12px;"> | </span><span style="color:{BROWN} !important;font-size:12px;text-decoration:underline;">{c['cta_d']}</span></span><span style="display:block;color:{BROWN} !important;font-size:12px;">{c['ends_in']}&nbsp;<span class="{COUNTDOWN_CLASS}" style="color:{BROWN} !important;font-variant-numeric:tabular-nums;"></span></span></a></p>
     </div>
 {suffix}"""
     else:
         mobile_block = f"""    <div class="block md:hidden text-center p-1" style="background-color:{HYVA_BG};">
-    <p class="container"><a href="{{{{store direct_url="{c['url']}"}}}}" style="text-decoration:none;"><span style="color:{BROWN};font-size:12px;">{c['hyva_discount']}</span><strong style="background-color:{BADGE_BG}; color:{HYVA_BADGE_TEXT}; padding:1px 5px; border-radius:3px; font-family:monospace;">{c['coupon']}</strong><span style="color:{BROWN};font-size:12px;"> | </span><span style="color:{BROWN};font-size:12px;text-decoration:underline;">{c['cta_d']}</span></a></p>
+    <p class="container"><a href="{{{{store direct_url="{c['url']}"}}}}" style="text-decoration:none;"><span style="color:{BROWN} !important;font-size:12px;">{c['hyva_discount']}</span><strong style="background-color:{BADGE_BG}; color:{HYVA_BADGE_TEXT} !important; padding:1px 5px; border-radius:3px; font-family:monospace;">{c['coupon']}</strong><span style="color:{BROWN} !important;font-size:12px;"> | </span><span style="color:{BROWN} !important;font-size:12px;text-decoration:underline;">{c['cta_d']}</span></a></p>
     </div>
 """
     return f"""<div class="hidden md:block text-center p-1"  style="background-color:{HYVA_BG};">
-    <p class="container" style="margin:0; color:{BROWN}; font-size:16px;"><b style="color:{BROWN} !important;">{c['claim']}</b> <b style="color:{BROWN};">&#8211; {c['hyva_discount']}</b><strong style="background-color:{BADGE_BG}; color:{HYVA_BADGE_TEXT}; padding:2px 8px; border-radius:4px; font-family:monospace;">{c['coupon']}</strong><b style="color:{BROWN};"> | </b><span style="color:{BROWN};"> <a style="color:{BROWN} !important;text-decoration:underline;" href="{{{{store direct_url="{c['url']}"}}}}"><span style="color:{BROWN} !important;">{c['cta_d']}</span></a></span>{cd_desktop}</p>
+    <p class="container" style="margin:0; color:{BROWN} !important; font-size:16px;"><b style="color:{BROWN} !important;">{c['claim']}</b> <b style="color:{BROWN} !important;">&#8211; {c['hyva_discount']}</b><strong style="background-color:{BADGE_BG}; color:{HYVA_BADGE_TEXT} !important; padding:2px 8px; border-radius:4px; font-family:monospace;">{c['coupon']}</strong><b style="color:{BROWN} !important;"> | </b><span style="color:{BROWN} !important;"> <a style="color:{BROWN} !important;text-decoration:underline;" href="{{{{store direct_url="{c['url']}"}}}}"><span style="color:{BROWN} !important;">{c['cta_d']}</span></a></span>{cd_desktop}</p>
     </div>
     
 {mobile_block}"""
