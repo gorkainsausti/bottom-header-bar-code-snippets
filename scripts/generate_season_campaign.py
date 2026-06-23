@@ -3,11 +3,17 @@
 
 from pathlib import Path
 
-BG = "#2d54bb"
+# Colores de campaña
+STD_BG = "#83bb24"            # Fondo de los bloques estándar (no Hyvä)
+HYVA_BG = "#2d54bb"           # Fondo de los bloques Hyvä
+BROWN = "#ffffff"            # Color del texto principal
+BADGE_BG = "#ffffff"         # Fondo del badge del cupón
+STD_BADGE_TEXT = "#83bb24"   # Color del código del cupón en bloques estándar
+HYVA_BADGE_TEXT = "#2d54bb"  # Color del código del cupón en bloques Hyvä
+# Aliases de compatibilidad para las utilidades del preview
+BG = STD_BG
 GREEN = "#4f99f0"
-BROWN = "#ffffff"
-BADGE_BG = "#ffffff"
-BADGE_TEXT = "#2d54bb"
+BADGE_TEXT = HYVA_BADGE_TEXT
 CLAIM = "Qdays!"
 
 # Campaign end: 30/06 inclusive (23:59:59 local time)
@@ -347,16 +353,18 @@ COUNTDOWN_SCRIPT = f"""<script>
 
 
 def countdown_inline(cfg: dict) -> str:
+    # color en cada nodo de texto para evitar conflictos de CSS de la web (el countdown salía en rojo)
     return (
-        f'&nbsp;|&nbsp; {cfg["ends_in"]}&nbsp;'
-        f'<span class="{COUNTDOWN_CLASS}" style="font-variant-numeric:tabular-nums;"></span>'
+        f'&nbsp;|&nbsp; <span style="color:{BROWN} !important;">{cfg["ends_in"]}</span>&nbsp;'
+        f'<span class="{COUNTDOWN_CLASS}" style="color:{BROWN} !important;font-variant-numeric:tabular-nums;"></span>'
     )
 
 
 def countdown_mobile_block(cfg: dict) -> str:
+    # color en cada nodo de texto para evitar conflictos de CSS de la web (el countdown salía en rojo)
     return (
-        f'<span style="display:block;">{cfg["ends_in"]}&nbsp;'
-        f'<span class="{COUNTDOWN_CLASS}" style="font-variant-numeric:tabular-nums;"></span></span>'
+        f'<span style="display:block;color:{BROWN} !important;">{cfg["ends_in"]}&nbsp;'
+        f'<span class="{COUNTDOWN_CLASS}" style="color:{BROWN} !important;font-variant-numeric:tabular-nums;"></span></span>'
     )
 
 
@@ -367,11 +375,11 @@ def standard_html(cfg: dict, countdown: bool = False) -> str:
     suffix = f"\n{COUNTDOWN_SCRIPT}" if countdown else ""
     if countdown:
         mobile_block = f"""  <!-- {c['comment']} - Mobile -->
-  <div class="extra-menu show-mobile" style="background-color:{BG};">
+  <div class="extra-menu show-mobile" style="background-color:{STD_BG};">
     <p style="margin:0; font-size:12px; color:{BROWN}; text-align:center; line-height:1.35;">
       <span style="display:block;">
       <strong style="color:{BROWN};">{pct}%</strong> {c['mobile_word']} 
-      <strong style="background-color:{BADGE_BG}; color:{BADGE_TEXT}; padding:1px 5px; border-radius:3px; font-family:monospace;">{c['coupon']}</strong>
+      <strong style="background-color:{BADGE_BG}; color:{STD_BADGE_TEXT}; padding:1px 5px; border-radius:3px; font-family:monospace;">{c['coupon']}</strong>
       &nbsp;|&nbsp;
       <a href="{{{{store direct_url="{c['url']}"}}}}" style="text-decoration:underline; color:{BROWN}; font-weight:bold;">
         {c['cta_m']}
@@ -384,10 +392,10 @@ def standard_html(cfg: dict, countdown: bool = False) -> str:
 """
     else:
         mobile_block = f"""  <!-- {c['comment']} - Mobile -->
-  <div class="extra-menu show-mobile" style="background-color:{BG};">
+  <div class="extra-menu show-mobile" style="background-color:{STD_BG};">
     <p style="margin:0; font-size:12px; color:{BROWN};">
       <strong style="color:{BROWN};">{pct}%</strong> {c['mobile_word']} 
-      <strong style="background-color:{BADGE_BG}; color:{BADGE_TEXT}; padding:1px 5px; border-radius:3px; font-family:monospace;">{c['coupon']}</strong>
+      <strong style="background-color:{BADGE_BG}; color:{STD_BADGE_TEXT}; padding:1px 5px; border-radius:3px; font-family:monospace;">{c['coupon']}</strong>
       &nbsp;|&nbsp;
       <a href="{{{{store direct_url="{c['url']}"}}}}" style="text-decoration:underline; color:{BROWN}; font-weight:bold;">
         {c['cta_m']}
@@ -397,10 +405,10 @@ def standard_html(cfg: dict, countdown: bool = False) -> str:
   
 """
     return f"""<!-- {c['comment']} - {c['tag']}{' - Countdown' if countdown else ''} - Desktop -->
-<div class="extra-menu show-desktop" style="background-color:{BG};">
+<div class="extra-menu show-desktop" style="background-color:{STD_BG};">
     <p style="margin:0; color:{BROWN}; font-size:16px;">
       <strong style="color:{BROWN};">{c['claim']}</strong> &#8211; {c['discount']}
-      <strong style="background-color:{BADGE_BG}; color:{BADGE_TEXT}; padding:2px 8px; border-radius:4px; font-family:monospace;">{c['coupon']}</strong>
+      <strong style="background-color:{BADGE_BG}; color:{STD_BADGE_TEXT}; padding:2px 8px; border-radius:4px; font-family:monospace;">{c['coupon']}</strong>
       &nbsp;&#8211;&nbsp;
       <a href="{{{{store direct_url="{c['url']}"}}}}" style="color:{BROWN}; font-weight:bold; text-decoration:underline;">
         {c['cta_d']}
@@ -417,17 +425,17 @@ def hyva_html(cfg: dict, countdown: bool = False) -> str:
     cd_desktop = countdown_inline(c) if countdown else ""
     suffix = f"\n{COUNTDOWN_SCRIPT}" if countdown else ""
     if countdown:
-        mobile_block = f"""    <div class="block md:hidden text-center p-1" style="background-color:{BG};">
-    <p class="container" style="margin:0; line-height:1.35;"><a href="{{{{store direct_url="{c['url']}"}}}}" style="text-decoration:none;"><span style="display:block;"><span style="color:{BROWN};font-size:12px;">{pct}% {c['mobile_word']} </span><strong style="background-color:{BADGE_BG}; color:{BADGE_TEXT}; padding:1px 5px; border-radius:3px; font-family:monospace;">{c['coupon']}</strong><span style="color:{BROWN};font-size:12px;"> | </span><span style="color:{BROWN};font-size:12px;">{c['cta_m']}</span></span><span style="display:block;color:{BROWN};font-size:12px;">{c['ends_in']}&nbsp;<span class="{COUNTDOWN_CLASS}" style="font-variant-numeric:tabular-nums;"></span></span></a></p>
+        mobile_block = f"""    <div class="block md:hidden text-center p-1" style="background-color:{HYVA_BG};">
+    <p class="container" style="margin:0; line-height:1.35;"><a href="{{{{store direct_url="{c['url']}"}}}}" style="text-decoration:none;"><span style="display:block;"><span style="color:{BROWN};font-size:12px;">{c['hyva_discount']}</span><strong style="background-color:{BADGE_BG}; color:{HYVA_BADGE_TEXT}; padding:1px 5px; border-radius:3px; font-family:monospace;">{c['coupon']}</strong><span style="color:{BROWN};font-size:12px;"> | </span><span style="color:{BROWN};font-size:12px;text-decoration:underline;">{c['cta_d']}</span></span><span style="display:block;color:{BROWN};font-size:12px;">{c['ends_in']}&nbsp;<span class="{COUNTDOWN_CLASS}" style="color:{BROWN} !important;font-variant-numeric:tabular-nums;"></span></span></a></p>
     </div>
 {suffix}"""
     else:
-        mobile_block = f"""    <div class="block md:hidden text-center p-1" style="background-color:{BG};">
-    <p class="container"><a href="{{{{store direct_url="{c['url']}"}}}}"><span style="color:{BROWN};font-size:12px;">{pct}% {c['mobile_word']} </span><strong style="background-color:{BADGE_BG}; color:{BADGE_TEXT}; padding:1px 5px; border-radius:3px; font-family:monospace;">{c['coupon']}</strong><span style="color:{BROWN};font-size:12px;"> | </span><span style="color:{BROWN};font-size:12px;">{c['cta_m']}</span></a></p>
+        mobile_block = f"""    <div class="block md:hidden text-center p-1" style="background-color:{HYVA_BG};">
+    <p class="container"><a href="{{{{store direct_url="{c['url']}"}}}}" style="text-decoration:none;"><span style="color:{BROWN};font-size:12px;">{c['hyva_discount']}</span><strong style="background-color:{BADGE_BG}; color:{HYVA_BADGE_TEXT}; padding:1px 5px; border-radius:3px; font-family:monospace;">{c['coupon']}</strong><span style="color:{BROWN};font-size:12px;"> | </span><span style="color:{BROWN};font-size:12px;text-decoration:underline;">{c['cta_d']}</span></a></p>
     </div>
 """
-    return f"""<div class="hidden md:block text-center p-1"  style="background-color:{BG};">
-    <p class="container" style="margin:0; color:{BROWN}; font-size:16px;"><b style="color:{BROWN} !important;">{c['claim']}</b> <b style="color:{BROWN};">&#8211; {c['hyva_discount']}</b><strong style="background-color:{BADGE_BG}; color:{BADGE_TEXT}; padding:2px 8px; border-radius:4px; font-family:monospace;">{c['coupon']}</strong><b style="color:{BROWN};"> | </b><span style="color:{BROWN};"> <a style="color:{BROWN} !important;text-decoration:underline;" href="{{{{store direct_url="{c['url']}"}}}}"><span style="color:{BROWN} !important;">{c['cta_d']}</span></a></span>{cd_desktop}</p>
+    return f"""<div class="hidden md:block text-center p-1"  style="background-color:{HYVA_BG};">
+    <p class="container" style="margin:0; color:{BROWN}; font-size:16px;"><b style="color:{BROWN} !important;">{c['claim']}</b> <b style="color:{BROWN};">&#8211; {c['hyva_discount']}</b><strong style="background-color:{BADGE_BG}; color:{HYVA_BADGE_TEXT}; padding:2px 8px; border-radius:4px; font-family:monospace;">{c['coupon']}</strong><b style="color:{BROWN};"> | </b><span style="color:{BROWN};"> <a style="color:{BROWN} !important;text-decoration:underline;" href="{{{{store direct_url="{c['url']}"}}}}"><span style="color:{BROWN} !important;">{c['cta_d']}</span></a></span>{cd_desktop}</p>
     </div>
     
 {mobile_block}"""
@@ -456,7 +464,7 @@ def preview_section(tab_id: str, cfg: dict, hyva: bool = False, countdown: bool 
         <div class="bar-hyva-desktop">
           <b style="color:{BROWN} !important;">{c['claim']}</b>
           <b style="color:{BROWN};"> &ndash; {c['hyva_discount'].rstrip()} </b>
-          <strong style="background-color:{BADGE_BG};color:{BADGE_TEXT};padding:2px 8px;border-radius:4px;font-family:monospace;">{c['coupon']}</strong>
+          <strong style="background-color:{BADGE_BG};color:{HYVA_BADGE_TEXT};padding:2px 8px;border-radius:4px;font-family:monospace;">{c['coupon']}</strong>
           <b style="color:{BROWN};"> | </b>
           <a href="#" style="color:{BROWN} !important;text-decoration:underline;">{c['cta_d']}</a>{cd}
         </div>
@@ -465,10 +473,10 @@ def preview_section(tab_id: str, cfg: dict, hyva: bool = False, countdown: bool 
         <div class="bar-hyva-mobile">
           <a href="#" style="color:{BROWN};text-decoration:none;">
             <span style="display:block;">
-              <span style="font-size:12px;color:{BROWN};">{pct}% {c['mobile_word']} </span>
-              <strong style="background-color:{BADGE_BG};color:{BADGE_TEXT};padding:1px 5px;border-radius:3px;font-family:monospace;">{c['coupon']}</strong>
+              <span style="font-size:12px;color:{BROWN};">{c['hyva_discount']}</span>
+              <strong style="background-color:{BADGE_BG};color:{HYVA_BADGE_TEXT};padding:1px 5px;border-radius:3px;font-family:monospace;">{c['coupon']}</strong>
               <span style="font-size:12px;color:{BROWN};"> | </span>
-              <span style="color:{BROWN};font-size:12px;">{c['cta_m']}</span>
+              <span style="color:{BROWN};font-size:12px;text-decoration:underline;">{c['cta_d']}</span>
             </span>
             {cd_mobile}
           </a>
