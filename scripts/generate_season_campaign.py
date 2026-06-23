@@ -355,7 +355,7 @@ COUNTDOWN_SCRIPT = f"""<script>
 def countdown_inline(cfg: dict) -> str:
     # color en cada nodo de texto para evitar conflictos de CSS de la web (el countdown salía en rojo)
     return (
-        f'&nbsp;|&nbsp; <span style="color:{BROWN} !important;">{cfg["ends_in"]}</span>&nbsp;'
+        f'<span style="color:{BROWN} !important;">&nbsp;|&nbsp;</span> <span style="color:{BROWN} !important;">{cfg["ends_in"]}</span>&nbsp;'
         f'<span class="{COUNTDOWN_CLASS}" style="color:{BROWN} !important;font-variant-numeric:tabular-nums;"></span>'
     )
 
@@ -377,10 +377,10 @@ def standard_html(cfg: dict, countdown: bool = False) -> str:
         mobile_block = f"""  <!-- {c['comment']} - Mobile -->
   <div class="extra-menu show-mobile" style="background-color:{STD_BG};">
     <p style="margin:0; font-size:12px; color:{BROWN} !important; text-align:center; line-height:1.35;">
-      <span style="display:block;">
+      <span style="display:block;color:{BROWN} !important;">
       <strong style="color:{BROWN} !important;">{pct}%</strong> <span style="color:{BROWN} !important;">{c['mobile_word']}</span> 
       <strong style="background-color:{BADGE_BG}; color:{STD_BADGE_TEXT} !important; padding:1px 5px; border-radius:3px; font-family:monospace;">{c['coupon']}</strong>
-      &nbsp;|&nbsp;
+      <span style="color:{BROWN} !important;">&nbsp;|&nbsp;</span>
       <a href="{{{{store direct_url="{c['url']}"}}}}" style="text-decoration:underline; color:{BROWN} !important; font-weight:bold;">
         {c['cta_m']}
       </a>
@@ -396,7 +396,7 @@ def standard_html(cfg: dict, countdown: bool = False) -> str:
     <p style="margin:0; font-size:12px; color:{BROWN} !important;">
       <strong style="color:{BROWN} !important;">{pct}%</strong> <span style="color:{BROWN} !important;">{c['mobile_word']}</span> 
       <strong style="background-color:{BADGE_BG}; color:{STD_BADGE_TEXT} !important; padding:1px 5px; border-radius:3px; font-family:monospace;">{c['coupon']}</strong>
-      &nbsp;|&nbsp;
+      <span style="color:{BROWN} !important;">&nbsp;|&nbsp;</span>
       <a href="{{{{store direct_url="{c['url']}"}}}}" style="text-decoration:underline; color:{BROWN} !important; font-weight:bold;">
         {c['cta_m']}
       </a>
@@ -407,9 +407,9 @@ def standard_html(cfg: dict, countdown: bool = False) -> str:
     return f"""<!-- {c['comment']} - {c['tag']}{' - Countdown' if countdown else ''} - Desktop -->
 <div class="extra-menu show-desktop" style="background-color:{STD_BG};">
     <p style="margin:0; color:{BROWN} !important; font-size:16px;">
-      <strong style="color:{BROWN} !important;">{c['claim']}</strong> &#8211; <span style="color:{BROWN} !important;">{c['discount']}</span>
+      <strong style="color:{BROWN} !important;">{c['claim']}</strong> <span style="color:{BROWN} !important;">&#8211; {c['discount']}</span>
       <strong style="background-color:{BADGE_BG}; color:{STD_BADGE_TEXT} !important; padding:2px 8px; border-radius:4px; font-family:monospace;">{c['coupon']}</strong>
-      &nbsp;&#8211;&nbsp;
+      <span style="color:{BROWN} !important;">&nbsp;&#8211;&nbsp;</span>
       <a href="{{{{store direct_url="{c['url']}"}}}}" style="color:{BROWN} !important; font-weight:bold; text-decoration:underline;">
         {c['cta_d']}
       </a>{cd_desktop}
