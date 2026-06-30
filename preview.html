@@ -111,7 +111,7 @@
     .show-mobile .bar-mobile { display: block; }
 
     .bar-desktop {
-      background: #83bb24;
+      background: #FF464A;
       text-align: center;
       padding: 10px 16px;
       font-size: 16px;
@@ -119,14 +119,14 @@
     }
     .bar-desktop strong.label { color: #ffffff; }
     .bar-desktop .code {
-      background: #ffffff; color: #83bb24;
+      background: #ffffff; color: #FF464A;
       padding: 2px 8px; border-radius: 4px;
       font-family: ui-monospace, monospace; font-size: 15px;
     }
     .bar-desktop a { color: #ffffff; font-weight: 600; text-decoration: underline; }
 
     .bar-mobile {
-      background: #83bb24;
+      background: #FF464A;
       text-align: center;
       padding: 6px 10px;
       font-size: 12px;
@@ -134,7 +134,7 @@
     }
     .bar-mobile strong { color: #ffffff; }
     .bar-mobile .code {
-      background: #ffffff; color: #83bb24;
+      background: #ffffff; color: #FF464A;
       padding: 1px 5px; border-radius: 3px;
       font-family: ui-monospace, monospace; font-size: 12px;
     }
@@ -142,7 +142,7 @@
 
     /* Los bloques Hyvä mantienen el azul: el contenedor no debe asomar en verde */
     .bar-desktop:has(.bar-hyva-desktop),
-    .bar-mobile:has(.bar-hyva-mobile) { background: #2d54bb; padding: 0; }
+    .bar-mobile:has(.bar-hyva-mobile) { background: #FF464A; padding: 0; }
 
     .bar-hyva-desktop b,
     .bar-hyva-desktop a,
@@ -153,7 +153,7 @@
     .countdown-line { display: block; margin-top: 2px; }
 
     .bar-hyva-desktop {
-      background: #2d54bb;
+      background: #FF464A;
       text-align: center;
       padding: 4px 10px;
       font-size: 14px;
@@ -162,7 +162,7 @@
     .countdown-line { display: block; margin-top: 2px; }
 
     .bar-hyva-mobile {
-      background: #2d54bb;
+      background: #FF464A;
       text-align: center;
       padding: 4px 10px;
       font-size: 12px;
@@ -174,7 +174,7 @@
 
 <aside class="sidebar">
   <h1>Preview</h1>
-  <p class="hint">QDAYS8 ES/PT · QDAYS6 resto · 23/6–30/6</p>
+  <p class="hint">SALE7 ES/PT · SALE5 resto · 1/7–14/7</p>
   <div class="seg" role="group" aria-label="Vista">
     <button type="button" class="active" data-device="desktop">Desktop</button>
     <button type="button" data-device="mobile">Mobile</button>
@@ -182,74 +182,106 @@
   <nav class="locales" aria-label="Locales">
     <button type="button" class="active" data-tab="es">ES</button>
     <button type="button" data-tab="es_countdown">ES CD</button>
+    <button type="button" data-tab="es_hyva">ES Hyva</button>
+    <button type="button" data-tab="es_hyva_countdown">ES Hyva CD</button>
     <button type="button" data-tab="pt">PT</button>
     <button type="button" data-tab="pt_countdown">PT CD</button>
+    <button type="button" data-tab="pt_hyva">PT Hyva</button>
+    <button type="button" data-tab="pt_hyva_countdown">PT Hyva CD</button>
     <button type="button" data-tab="de">DE</button>
     <button type="button" data-tab="de_countdown">DE CD</button>
+    <button type="button" data-tab="de_hyva">DE Hyva</button>
+    <button type="button" data-tab="de_hyva_countdown">DE Hyva CD</button>
     <button type="button" data-tab="at">AT</button>
+    <button type="button" data-tab="at_countdown">AT CD</button>
     <button type="button" data-tab="at_hyva">AT Hyva</button>
     <button type="button" data-tab="at_hyva_countdown">AT Hyva CD</button>
     <button type="button" data-tab="fr">FR</button>
     <button type="button" data-tab="fr_countdown">FR CD</button>
+    <button type="button" data-tab="fr_hyva">FR Hyva</button>
+    <button type="button" data-tab="fr_hyva_countdown">FR Hyva CD</button>
     <button type="button" data-tab="be_fr">BE-FR</button>
+    <button type="button" data-tab="be_fr_countdown">BE-FR CD</button>
     <button type="button" data-tab="be_fr_hyva">BE-FR Hyva</button>
     <button type="button" data-tab="be_fr_hyva_countdown">BE-FR Hyva CD</button>
     <button type="button" data-tab="be_nl">BE-NL</button>
+    <button type="button" data-tab="be_nl_countdown">BE-NL CD</button>
     <button type="button" data-tab="be_nl_hyva">BE-NL Hyva</button>
     <button type="button" data-tab="be_nl_hyva_countdown">BE-NL Hyva CD</button>
     <button type="button" data-tab="nl">NL</button>
+    <button type="button" data-tab="nl_countdown">NL CD</button>
     <button type="button" data-tab="nl_hyva">NL Hyva</button>
     <button type="button" data-tab="nl_hyva_countdown">NL Hyva CD</button>
     <button type="button" data-tab="it">IT</button>
     <button type="button" data-tab="it_countdown">IT CD</button>
+    <button type="button" data-tab="it_hyva">IT Hyva</button>
+    <button type="button" data-tab="it_hyva_countdown">IT Hyva CD</button>
     <button type="button" data-tab="ch_de">CH-DE</button>
     <button type="button" data-tab="ch_de_countdown">CH-DE CD</button>
+    <button type="button" data-tab="ch_de_hyva">CH-DE Hyva</button>
+    <button type="button" data-tab="ch_de_hyva_countdown">CH-DE Hyva CD</button>
     <button type="button" data-tab="ch_fr">CH-FR</button>
     <button type="button" data-tab="ch_fr_countdown">CH-FR CD</button>
+    <button type="button" data-tab="ch_fr_hyva">CH-FR Hyva</button>
+    <button type="button" data-tab="ch_fr_hyva_countdown">CH-FR Hyva CD</button>
     <button type="button" data-tab="ch_it">CH-IT</button>
     <button type="button" data-tab="ch_it_countdown">CH-IT CD</button>
+    <button type="button" data-tab="ch_it_hyva">CH-IT Hyva</button>
+    <button type="button" data-tab="ch_it_hyva_countdown">CH-IT Hyva CD</button>
     <button type="button" data-tab="uk">UK</button>
+    <button type="button" data-tab="uk_countdown">UK CD</button>
     <button type="button" data-tab="uk_hyva">UK Hyva</button>
     <button type="button" data-tab="uk_hyva_countdown">UK Hyva CD</button>
     <button type="button" data-tab="ie">IE</button>
+    <button type="button" data-tab="ie_countdown">IE CD</button>
     <button type="button" data-tab="ie_hyva">IE Hyva</button>
     <button type="button" data-tab="ie_hyva_countdown">IE Hyva CD</button>
     <button type="button" data-tab="int_en">INT</button>
+    <button type="button" data-tab="int_en_countdown">INT CD</button>
     <button type="button" data-tab="int_en_hyva">INT Hyva</button>
     <button type="button" data-tab="int_en_hyva_countdown">INT Hyva CD</button>
     <button type="button" data-tab="gr">GR</button>
+    <button type="button" data-tab="gr_countdown">GR CD</button>
     <button type="button" data-tab="gr_hyva">GR Hyva</button>
     <button type="button" data-tab="gr_hyva_countdown">GR Hyva CD</button>
     <button type="button" data-tab="ro">RO</button>
+    <button type="button" data-tab="ro_countdown">RO CD</button>
     <button type="button" data-tab="ro_hyva">RO Hyva</button>
     <button type="button" data-tab="ro_hyva_countdown">RO Hyva CD</button>
     <button type="button" data-tab="pl">PL</button>
     <button type="button" data-tab="pl_countdown">PL CD</button>
+    <button type="button" data-tab="pl_hyva">PL Hyva</button>
+    <button type="button" data-tab="pl_hyva_countdown">PL Hyva CD</button>
     <button type="button" data-tab="cz">CZ</button>
     <button type="button" data-tab="cz_countdown">CZ CD</button>
+    <button type="button" data-tab="cz_hyva">CZ Hyva</button>
+    <button type="button" data-tab="cz_hyva_countdown">CZ Hyva CD</button>
     <button type="button" data-tab="fi">FI</button>
+    <button type="button" data-tab="fi_countdown">FI CD</button>
     <button type="button" data-tab="fi_hyva">FI Hyva</button>
     <button type="button" data-tab="fi_hyva_countdown">FI Hyva CD</button>
     <button type="button" data-tab="se">SE</button>
     <button type="button" data-tab="se_countdown">SE CD</button>
+    <button type="button" data-tab="se_hyva">SE Hyva</button>
+    <button type="button" data-tab="se_hyva_countdown">SE Hyva CD</button>
   </nav>
 </aside>
 
 <main class="stage">
 <div id="wrap" class="show-desktop">
 
-                        <div id="tab-es" class="section active">
+                          <div id="tab-es" class="section active">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 8% con el c&#243;digo
-        <span class="code">QDAYS8</span>
+        <strong class="label">REBAJAS DE VERANO</strong> &ndash; 7% con el c&#243;digo
+        <span class="code">SALE7</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">VER PRODUCTOS</a>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>8%</strong> cup&#243;n
-          <span class="code">QDAYS8</span>
+          <strong>7%</strong> cup&#243;n
+          <span class="code">SALE7</span>
           &nbsp;|&nbsp;
           <a href="#">VER PRODUCTOS</a>
         </span>
@@ -261,15 +293,15 @@
   <div id="tab-es_countdown" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 8% con el c&#243;digo
-        <span class="code">QDAYS8</span>
+        <strong class="label">REBAJAS DE VERANO</strong> &ndash; 7% con el c&#243;digo
+        <span class="code">SALE7</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">VER PRODUCTOS</a> &nbsp;|&nbsp; Finaliza en:&nbsp;<span id="preview-cd-es_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>8%</strong> cup&#243;n
-          <span class="code">QDAYS8</span>
+          <strong>7%</strong> cup&#243;n
+          <span class="code">SALE7</span>
           &nbsp;|&nbsp;
           <a href="#">VER PRODUCTOS</a>
         </span>
@@ -278,18 +310,72 @@
     </div>
   </div>
 
+  <div id="tab-es_hyva" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <div class="bar-hyva-desktop">
+          <b style="color:#ffffff !important;">REBAJAS DE VERANO</b>
+          <b style="color:#ffffff;"> &ndash; 7% CON EL C&#211;DIGO </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE7</strong>
+          <b style="color:#ffffff;"> | </b>
+          <a href="#" style="color:#ffffff !important;text-decoration:underline;">VER PRODUCTOS</a>
+        </div>
+      </div>
+      <div class="bar-mobile">
+        <div class="bar-hyva-mobile">
+          <a href="#" style="color:#ffffff;text-decoration:none;">
+            <span style="display:block;">
+              <span style="font-size:12px;color:#ffffff;">7% CON EL C&#211;DIGO </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE7</strong>
+              <span style="font-size:12px;color:#ffffff;"> | </span>
+              <span style="color:#ffffff;font-size:12px;text-decoration:underline;">VER PRODUCTOS</span>
+            </span>
+            
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-es_hyva_countdown" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <div class="bar-hyva-desktop">
+          <b style="color:#ffffff !important;">REBAJAS DE VERANO</b>
+          <b style="color:#ffffff;"> &ndash; 7% CON EL C&#211;DIGO </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE7</strong>
+          <b style="color:#ffffff;"> | </b>
+          <a href="#" style="color:#ffffff !important;text-decoration:underline;">VER PRODUCTOS</a> &nbsp;|&nbsp; Finaliza en:&nbsp;<span id="preview-cd-es_hyva_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
+        </div>
+      </div>
+      <div class="bar-mobile">
+        <div class="bar-hyva-mobile">
+          <a href="#" style="color:#ffffff;text-decoration:none;">
+            <span style="display:block;">
+              <span style="font-size:12px;color:#ffffff;">7% CON EL C&#211;DIGO </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE7</strong>
+              <span style="font-size:12px;color:#ffffff;"> | </span>
+              <span style="color:#ffffff;font-size:12px;text-decoration:underline;">VER PRODUCTOS</span>
+            </span>
+            <span class="countdown-line">Finaliza en:&nbsp;<span id="preview-cd-es_hyva_countdown-m" class="countdown" style="font-variant-numeric:tabular-nums;"></span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="tab-pt" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 8% com o c&#243;digo
-        <span class="code">QDAYS8</span>
+        <strong class="label">SALDOS DE VER&#195;O</strong> &ndash; 7% com o c&#243;digo
+        <span class="code">SALE7</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">VER PRODUTOS</a>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>8%</strong> cup&#227;o
-          <span class="code">QDAYS8</span>
+          <strong>7%</strong> cup&#227;o
+          <span class="code">SALE7</span>
           &nbsp;|&nbsp;
           <a href="#">VER PRODUTOS</a>
         </span>
@@ -301,15 +387,15 @@
   <div id="tab-pt_countdown" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 8% com o c&#243;digo
-        <span class="code">QDAYS8</span>
+        <strong class="label">SALDOS DE VER&#195;O</strong> &ndash; 7% com o c&#243;digo
+        <span class="code">SALE7</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">VER PRODUTOS</a> &nbsp;|&nbsp; Termina em:&nbsp;<span id="preview-cd-pt_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>8%</strong> cup&#227;o
-          <span class="code">QDAYS8</span>
+          <strong>7%</strong> cup&#227;o
+          <span class="code">SALE7</span>
           &nbsp;|&nbsp;
           <a href="#">VER PRODUTOS</a>
         </span>
@@ -318,18 +404,72 @@
     </div>
   </div>
 
+  <div id="tab-pt_hyva" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <div class="bar-hyva-desktop">
+          <b style="color:#ffffff !important;">SALDOS DE VER&#195;O</b>
+          <b style="color:#ffffff;"> &ndash; 7% COM O C&#211;DIGO </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE7</strong>
+          <b style="color:#ffffff;"> | </b>
+          <a href="#" style="color:#ffffff !important;text-decoration:underline;">VER PRODUTOS</a>
+        </div>
+      </div>
+      <div class="bar-mobile">
+        <div class="bar-hyva-mobile">
+          <a href="#" style="color:#ffffff;text-decoration:none;">
+            <span style="display:block;">
+              <span style="font-size:12px;color:#ffffff;">7% COM O C&#211;DIGO </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE7</strong>
+              <span style="font-size:12px;color:#ffffff;"> | </span>
+              <span style="color:#ffffff;font-size:12px;text-decoration:underline;">VER PRODUTOS</span>
+            </span>
+            
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-pt_hyva_countdown" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <div class="bar-hyva-desktop">
+          <b style="color:#ffffff !important;">SALDOS DE VER&#195;O</b>
+          <b style="color:#ffffff;"> &ndash; 7% COM O C&#211;DIGO </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE7</strong>
+          <b style="color:#ffffff;"> | </b>
+          <a href="#" style="color:#ffffff !important;text-decoration:underline;">VER PRODUTOS</a> &nbsp;|&nbsp; Termina em:&nbsp;<span id="preview-cd-pt_hyva_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
+        </div>
+      </div>
+      <div class="bar-mobile">
+        <div class="bar-hyva-mobile">
+          <a href="#" style="color:#ffffff;text-decoration:none;">
+            <span style="display:block;">
+              <span style="font-size:12px;color:#ffffff;">7% COM O C&#211;DIGO </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE7</strong>
+              <span style="font-size:12px;color:#ffffff;"> | </span>
+              <span style="color:#ffffff;font-size:12px;text-decoration:underline;">VER PRODUTOS</span>
+            </span>
+            <span class="countdown-line">Termina em:&nbsp;<span id="preview-cd-pt_hyva_countdown-m" class="countdown" style="font-variant-numeric:tabular-nums;"></span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="tab-de" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 6% mit Code
-        <span class="code">QDAYS6</span>
+        <strong class="label">SOMMER SALE</strong> &ndash; 5% mit Code
+        <span class="code">SALE5</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">PRODUKTE ANSEHEN</a>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>6%</strong> Code
-          <span class="code">QDAYS6</span>
+          <strong>5%</strong> Code
+          <span class="code">SALE5</span>
           &nbsp;|&nbsp;
           <a href="#">PRODUKTE</a>
         </span>
@@ -341,15 +481,15 @@
   <div id="tab-de_countdown" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 6% mit Code
-        <span class="code">QDAYS6</span>
+        <strong class="label">SOMMER SALE</strong> &ndash; 5% mit Code
+        <span class="code">SALE5</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">PRODUKTE ANSEHEN</a> &nbsp;|&nbsp; Endet in:&nbsp;<span id="preview-cd-de_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>6%</strong> Code
-          <span class="code">QDAYS6</span>
+          <strong>5%</strong> Code
+          <span class="code">SALE5</span>
           &nbsp;|&nbsp;
           <a href="#">PRODUKTE</a>
         </span>
@@ -358,33 +498,13 @@
     </div>
   </div>
 
-  <div id="tab-at" class="section">
-    <div class="bar-wrapper">
-      <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 6% mit Code
-        <span class="code">QDAYS6</span>
-        &nbsp;&ndash;&nbsp;
-        <a href="#">PRODUKTE ANSEHEN</a>
-      </div>
-      <div class="bar-mobile">
-        <span style="display:block;">
-          <strong>6%</strong> Code
-          <span class="code">QDAYS6</span>
-          &nbsp;|&nbsp;
-          <a href="#">PRODUKTE</a>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-
-  <div id="tab-at_hyva" class="section">
+  <div id="tab-de_hyva" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <div class="bar-hyva-desktop">
-          <b style="color:#ffffff !important;">Qdays!</b>
-          <b style="color:#ffffff;"> &ndash; 6% MIT CODE </b>
-          <strong style="background-color:#ffffff;color:#2d54bb;padding:2px 8px;border-radius:4px;font-family:monospace;">QDAYS6</strong>
+          <b style="color:#ffffff !important;">SOMMER SALE</b>
+          <b style="color:#ffffff;"> &ndash; 5% MIT CODE </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
           <b style="color:#ffffff;"> | </b>
           <a href="#" style="color:#ffffff !important;text-decoration:underline;">PRODUKTE ANSEHEN</a>
         </div>
@@ -393,8 +513,102 @@
         <div class="bar-hyva-mobile">
           <a href="#" style="color:#ffffff;text-decoration:none;">
             <span style="display:block;">
-              <span style="font-size:12px;color:#ffffff;">6% MIT CODE </span>
-              <strong style="background-color:#ffffff;color:#2d54bb;padding:1px 5px;border-radius:3px;font-family:monospace;">QDAYS6</strong>
+              <span style="font-size:12px;color:#ffffff;">5% MIT CODE </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
+              <span style="font-size:12px;color:#ffffff;"> | </span>
+              <span style="color:#ffffff;font-size:12px;text-decoration:underline;">PRODUKTE ANSEHEN</span>
+            </span>
+            
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-de_hyva_countdown" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <div class="bar-hyva-desktop">
+          <b style="color:#ffffff !important;">SOMMER SALE</b>
+          <b style="color:#ffffff;"> &ndash; 5% MIT CODE </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
+          <b style="color:#ffffff;"> | </b>
+          <a href="#" style="color:#ffffff !important;text-decoration:underline;">PRODUKTE ANSEHEN</a> &nbsp;|&nbsp; Endet in:&nbsp;<span id="preview-cd-de_hyva_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
+        </div>
+      </div>
+      <div class="bar-mobile">
+        <div class="bar-hyva-mobile">
+          <a href="#" style="color:#ffffff;text-decoration:none;">
+            <span style="display:block;">
+              <span style="font-size:12px;color:#ffffff;">5% MIT CODE </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
+              <span style="font-size:12px;color:#ffffff;"> | </span>
+              <span style="color:#ffffff;font-size:12px;text-decoration:underline;">PRODUKTE ANSEHEN</span>
+            </span>
+            <span class="countdown-line">Endet in:&nbsp;<span id="preview-cd-de_hyva_countdown-m" class="countdown" style="font-variant-numeric:tabular-nums;"></span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-at" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <strong class="label">SOMMER SALE</strong> &ndash; 5% mit Code
+        <span class="code">SALE5</span>
+        &nbsp;&ndash;&nbsp;
+        <a href="#">PRODUKTE ANSEHEN</a>
+      </div>
+      <div class="bar-mobile">
+        <span style="display:block;">
+          <strong>5%</strong> Code
+          <span class="code">SALE5</span>
+          &nbsp;|&nbsp;
+          <a href="#">PRODUKTE</a>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-at_countdown" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <strong class="label">SOMMER SALE</strong> &ndash; 5% mit Code
+        <span class="code">SALE5</span>
+        &nbsp;&ndash;&nbsp;
+        <a href="#">PRODUKTE ANSEHEN</a> &nbsp;|&nbsp; Endet in:&nbsp;<span id="preview-cd-at_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
+      </div>
+      <div class="bar-mobile">
+        <span style="display:block;">
+          <strong>5%</strong> Code
+          <span class="code">SALE5</span>
+          &nbsp;|&nbsp;
+          <a href="#">PRODUKTE</a>
+        </span>
+        <span class="countdown-line">Endet in:&nbsp;<span id="preview-cd-at_countdown-m" class="countdown" style="font-variant-numeric:tabular-nums;"></span></span>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-at_hyva" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <div class="bar-hyva-desktop">
+          <b style="color:#ffffff !important;">SOMMER SALE</b>
+          <b style="color:#ffffff;"> &ndash; 5% MIT CODE </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
+          <b style="color:#ffffff;"> | </b>
+          <a href="#" style="color:#ffffff !important;text-decoration:underline;">PRODUKTE ANSEHEN</a>
+        </div>
+      </div>
+      <div class="bar-mobile">
+        <div class="bar-hyva-mobile">
+          <a href="#" style="color:#ffffff;text-decoration:none;">
+            <span style="display:block;">
+              <span style="font-size:12px;color:#ffffff;">5% MIT CODE </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
               <span style="font-size:12px;color:#ffffff;"> | </span>
               <span style="color:#ffffff;font-size:12px;text-decoration:underline;">PRODUKTE ANSEHEN</span>
             </span>
@@ -409,9 +623,9 @@
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <div class="bar-hyva-desktop">
-          <b style="color:#ffffff !important;">Qdays!</b>
-          <b style="color:#ffffff;"> &ndash; 6% MIT CODE </b>
-          <strong style="background-color:#ffffff;color:#2d54bb;padding:2px 8px;border-radius:4px;font-family:monospace;">QDAYS6</strong>
+          <b style="color:#ffffff !important;">SOMMER SALE</b>
+          <b style="color:#ffffff;"> &ndash; 5% MIT CODE </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
           <b style="color:#ffffff;"> | </b>
           <a href="#" style="color:#ffffff !important;text-decoration:underline;">PRODUKTE ANSEHEN</a> &nbsp;|&nbsp; Endet in:&nbsp;<span id="preview-cd-at_hyva_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
         </div>
@@ -420,8 +634,8 @@
         <div class="bar-hyva-mobile">
           <a href="#" style="color:#ffffff;text-decoration:none;">
             <span style="display:block;">
-              <span style="font-size:12px;color:#ffffff;">6% MIT CODE </span>
-              <strong style="background-color:#ffffff;color:#2d54bb;padding:1px 5px;border-radius:3px;font-family:monospace;">QDAYS6</strong>
+              <span style="font-size:12px;color:#ffffff;">5% MIT CODE </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
               <span style="font-size:12px;color:#ffffff;"> | </span>
               <span style="color:#ffffff;font-size:12px;text-decoration:underline;">PRODUKTE ANSEHEN</span>
             </span>
@@ -435,15 +649,15 @@
   <div id="tab-fr" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 6% avec le code
-        <span class="code">QDAYS6</span>
+        <strong class="label">SOLDES D&#8217;&#201;T&#201;</strong> &ndash; 5% avec le code
+        <span class="code">SALE5</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">VOIR LES PRODUITS</a>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>6%</strong> code
-          <span class="code">QDAYS6</span>
+          <strong>5%</strong> code
+          <span class="code">SALE5</span>
           &nbsp;|&nbsp;
           <a href="#">VOIR PRODUITS</a>
         </span>
@@ -455,15 +669,15 @@
   <div id="tab-fr_countdown" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 6% avec le code
-        <span class="code">QDAYS6</span>
+        <strong class="label">SOLDES D&#8217;&#201;T&#201;</strong> &ndash; 5% avec le code
+        <span class="code">SALE5</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">VOIR LES PRODUITS</a> &nbsp;|&nbsp; Se termine dans :&nbsp;<span id="preview-cd-fr_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>6%</strong> code
-          <span class="code">QDAYS6</span>
+          <strong>5%</strong> code
+          <span class="code">SALE5</span>
           &nbsp;|&nbsp;
           <a href="#">VOIR PRODUITS</a>
         </span>
@@ -472,33 +686,13 @@
     </div>
   </div>
 
-  <div id="tab-be_fr" class="section">
-    <div class="bar-wrapper">
-      <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 6% avec le code
-        <span class="code">QDAYS6</span>
-        &nbsp;&ndash;&nbsp;
-        <a href="#">VOIR LES PRODUITS</a>
-      </div>
-      <div class="bar-mobile">
-        <span style="display:block;">
-          <strong>6%</strong> code
-          <span class="code">QDAYS6</span>
-          &nbsp;|&nbsp;
-          <a href="#">VOIR PRODUITS</a>
-        </span>
-        
-      </div>
-    </div>
-  </div>
-
-  <div id="tab-be_fr_hyva" class="section">
+  <div id="tab-fr_hyva" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <div class="bar-hyva-desktop">
-          <b style="color:#ffffff !important;">Qdays!</b>
-          <b style="color:#ffffff;"> &ndash; 6% AVEC LE CODE </b>
-          <strong style="background-color:#ffffff;color:#2d54bb;padding:2px 8px;border-radius:4px;font-family:monospace;">QDAYS6</strong>
+          <b style="color:#ffffff !important;">SOLDES D&#8217;&#201;T&#201;</b>
+          <b style="color:#ffffff;"> &ndash; 5% AVEC LE CODE </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
           <b style="color:#ffffff;"> | </b>
           <a href="#" style="color:#ffffff !important;text-decoration:underline;">VOIR LES PRODUITS</a>
         </div>
@@ -507,8 +701,102 @@
         <div class="bar-hyva-mobile">
           <a href="#" style="color:#ffffff;text-decoration:none;">
             <span style="display:block;">
-              <span style="font-size:12px;color:#ffffff;">6% AVEC LE CODE </span>
-              <strong style="background-color:#ffffff;color:#2d54bb;padding:1px 5px;border-radius:3px;font-family:monospace;">QDAYS6</strong>
+              <span style="font-size:12px;color:#ffffff;">5% AVEC LE CODE </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
+              <span style="font-size:12px;color:#ffffff;"> | </span>
+              <span style="color:#ffffff;font-size:12px;text-decoration:underline;">VOIR LES PRODUITS</span>
+            </span>
+            
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-fr_hyva_countdown" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <div class="bar-hyva-desktop">
+          <b style="color:#ffffff !important;">SOLDES D&#8217;&#201;T&#201;</b>
+          <b style="color:#ffffff;"> &ndash; 5% AVEC LE CODE </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
+          <b style="color:#ffffff;"> | </b>
+          <a href="#" style="color:#ffffff !important;text-decoration:underline;">VOIR LES PRODUITS</a> &nbsp;|&nbsp; Se termine dans :&nbsp;<span id="preview-cd-fr_hyva_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
+        </div>
+      </div>
+      <div class="bar-mobile">
+        <div class="bar-hyva-mobile">
+          <a href="#" style="color:#ffffff;text-decoration:none;">
+            <span style="display:block;">
+              <span style="font-size:12px;color:#ffffff;">5% AVEC LE CODE </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
+              <span style="font-size:12px;color:#ffffff;"> | </span>
+              <span style="color:#ffffff;font-size:12px;text-decoration:underline;">VOIR LES PRODUITS</span>
+            </span>
+            <span class="countdown-line">Se termine dans :&nbsp;<span id="preview-cd-fr_hyva_countdown-m" class="countdown" style="font-variant-numeric:tabular-nums;"></span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-be_fr" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <strong class="label">SOLDES D&#8217;&#201;T&#201;</strong> &ndash; 5% avec le code
+        <span class="code">SALE5</span>
+        &nbsp;&ndash;&nbsp;
+        <a href="#">VOIR LES PRODUITS</a>
+      </div>
+      <div class="bar-mobile">
+        <span style="display:block;">
+          <strong>5%</strong> code
+          <span class="code">SALE5</span>
+          &nbsp;|&nbsp;
+          <a href="#">VOIR PRODUITS</a>
+        </span>
+        
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-be_fr_countdown" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <strong class="label">SOLDES D&#8217;&#201;T&#201;</strong> &ndash; 5% avec le code
+        <span class="code">SALE5</span>
+        &nbsp;&ndash;&nbsp;
+        <a href="#">VOIR LES PRODUITS</a> &nbsp;|&nbsp; Se termine dans :&nbsp;<span id="preview-cd-be_fr_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
+      </div>
+      <div class="bar-mobile">
+        <span style="display:block;">
+          <strong>5%</strong> code
+          <span class="code">SALE5</span>
+          &nbsp;|&nbsp;
+          <a href="#">VOIR PRODUITS</a>
+        </span>
+        <span class="countdown-line">Se termine dans :&nbsp;<span id="preview-cd-be_fr_countdown-m" class="countdown" style="font-variant-numeric:tabular-nums;"></span></span>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-be_fr_hyva" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <div class="bar-hyva-desktop">
+          <b style="color:#ffffff !important;">SOLDES D&#8217;&#201;T&#201;</b>
+          <b style="color:#ffffff;"> &ndash; 5% AVEC LE CODE </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
+          <b style="color:#ffffff;"> | </b>
+          <a href="#" style="color:#ffffff !important;text-decoration:underline;">VOIR LES PRODUITS</a>
+        </div>
+      </div>
+      <div class="bar-mobile">
+        <div class="bar-hyva-mobile">
+          <a href="#" style="color:#ffffff;text-decoration:none;">
+            <span style="display:block;">
+              <span style="font-size:12px;color:#ffffff;">5% AVEC LE CODE </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
               <span style="font-size:12px;color:#ffffff;"> | </span>
               <span style="color:#ffffff;font-size:12px;text-decoration:underline;">VOIR LES PRODUITS</span>
             </span>
@@ -523,9 +811,9 @@
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <div class="bar-hyva-desktop">
-          <b style="color:#ffffff !important;">Qdays!</b>
-          <b style="color:#ffffff;"> &ndash; 6% AVEC LE CODE </b>
-          <strong style="background-color:#ffffff;color:#2d54bb;padding:2px 8px;border-radius:4px;font-family:monospace;">QDAYS6</strong>
+          <b style="color:#ffffff !important;">SOLDES D&#8217;&#201;T&#201;</b>
+          <b style="color:#ffffff;"> &ndash; 5% AVEC LE CODE </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
           <b style="color:#ffffff;"> | </b>
           <a href="#" style="color:#ffffff !important;text-decoration:underline;">VOIR LES PRODUITS</a> &nbsp;|&nbsp; Se termine dans :&nbsp;<span id="preview-cd-be_fr_hyva_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
         </div>
@@ -534,8 +822,8 @@
         <div class="bar-hyva-mobile">
           <a href="#" style="color:#ffffff;text-decoration:none;">
             <span style="display:block;">
-              <span style="font-size:12px;color:#ffffff;">6% AVEC LE CODE </span>
-              <strong style="background-color:#ffffff;color:#2d54bb;padding:1px 5px;border-radius:3px;font-family:monospace;">QDAYS6</strong>
+              <span style="font-size:12px;color:#ffffff;">5% AVEC LE CODE </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
               <span style="font-size:12px;color:#ffffff;"> | </span>
               <span style="color:#ffffff;font-size:12px;text-decoration:underline;">VOIR LES PRODUITS</span>
             </span>
@@ -549,15 +837,15 @@
   <div id="tab-be_nl" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 6% met code
-        <span class="code">QDAYS6</span>
+        <strong class="label">ZOMERUITVERKOOP</strong> &ndash; 5% met code
+        <span class="code">SALE5</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">BEKIJK PRODUCTEN</a>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>6%</strong> code
-          <span class="code">QDAYS6</span>
+          <strong>5%</strong> code
+          <span class="code">SALE5</span>
           &nbsp;|&nbsp;
           <a href="#">PRODUCTEN</a>
         </span>
@@ -566,13 +854,33 @@
     </div>
   </div>
 
+  <div id="tab-be_nl_countdown" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <strong class="label">ZOMERUITVERKOOP</strong> &ndash; 5% met code
+        <span class="code">SALE5</span>
+        &nbsp;&ndash;&nbsp;
+        <a href="#">BEKIJK PRODUCTEN</a> &nbsp;|&nbsp; Eindigt over:&nbsp;<span id="preview-cd-be_nl_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
+      </div>
+      <div class="bar-mobile">
+        <span style="display:block;">
+          <strong>5%</strong> code
+          <span class="code">SALE5</span>
+          &nbsp;|&nbsp;
+          <a href="#">PRODUCTEN</a>
+        </span>
+        <span class="countdown-line">Eindigt over:&nbsp;<span id="preview-cd-be_nl_countdown-m" class="countdown" style="font-variant-numeric:tabular-nums;"></span></span>
+      </div>
+    </div>
+  </div>
+
   <div id="tab-be_nl_hyva" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <div class="bar-hyva-desktop">
-          <b style="color:#ffffff !important;">Qdays!</b>
-          <b style="color:#ffffff;"> &ndash; 6% MET CODE </b>
-          <strong style="background-color:#ffffff;color:#2d54bb;padding:2px 8px;border-radius:4px;font-family:monospace;">QDAYS6</strong>
+          <b style="color:#ffffff !important;">ZOMERUITVERKOOP</b>
+          <b style="color:#ffffff;"> &ndash; 5% MET CODE </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
           <b style="color:#ffffff;"> | </b>
           <a href="#" style="color:#ffffff !important;text-decoration:underline;">BEKIJK PRODUCTEN</a>
         </div>
@@ -581,8 +889,8 @@
         <div class="bar-hyva-mobile">
           <a href="#" style="color:#ffffff;text-decoration:none;">
             <span style="display:block;">
-              <span style="font-size:12px;color:#ffffff;">6% MET CODE </span>
-              <strong style="background-color:#ffffff;color:#2d54bb;padding:1px 5px;border-radius:3px;font-family:monospace;">QDAYS6</strong>
+              <span style="font-size:12px;color:#ffffff;">5% MET CODE </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
               <span style="font-size:12px;color:#ffffff;"> | </span>
               <span style="color:#ffffff;font-size:12px;text-decoration:underline;">BEKIJK PRODUCTEN</span>
             </span>
@@ -597,9 +905,9 @@
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <div class="bar-hyva-desktop">
-          <b style="color:#ffffff !important;">Qdays!</b>
-          <b style="color:#ffffff;"> &ndash; 6% MET CODE </b>
-          <strong style="background-color:#ffffff;color:#2d54bb;padding:2px 8px;border-radius:4px;font-family:monospace;">QDAYS6</strong>
+          <b style="color:#ffffff !important;">ZOMERUITVERKOOP</b>
+          <b style="color:#ffffff;"> &ndash; 5% MET CODE </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
           <b style="color:#ffffff;"> | </b>
           <a href="#" style="color:#ffffff !important;text-decoration:underline;">BEKIJK PRODUCTEN</a> &nbsp;|&nbsp; Eindigt over:&nbsp;<span id="preview-cd-be_nl_hyva_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
         </div>
@@ -608,8 +916,8 @@
         <div class="bar-hyva-mobile">
           <a href="#" style="color:#ffffff;text-decoration:none;">
             <span style="display:block;">
-              <span style="font-size:12px;color:#ffffff;">6% MET CODE </span>
-              <strong style="background-color:#ffffff;color:#2d54bb;padding:1px 5px;border-radius:3px;font-family:monospace;">QDAYS6</strong>
+              <span style="font-size:12px;color:#ffffff;">5% MET CODE </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
               <span style="font-size:12px;color:#ffffff;"> | </span>
               <span style="color:#ffffff;font-size:12px;text-decoration:underline;">BEKIJK PRODUCTEN</span>
             </span>
@@ -623,15 +931,15 @@
   <div id="tab-nl" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 6% met code
-        <span class="code">QDAYS6</span>
+        <strong class="label">ZOMERUITVERKOOP</strong> &ndash; 5% met code
+        <span class="code">SALE5</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">BEKIJK PRODUCTEN</a>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>6%</strong> code
-          <span class="code">QDAYS6</span>
+          <strong>5%</strong> code
+          <span class="code">SALE5</span>
           &nbsp;|&nbsp;
           <a href="#">PRODUCTEN</a>
         </span>
@@ -640,13 +948,33 @@
     </div>
   </div>
 
+  <div id="tab-nl_countdown" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <strong class="label">ZOMERUITVERKOOP</strong> &ndash; 5% met code
+        <span class="code">SALE5</span>
+        &nbsp;&ndash;&nbsp;
+        <a href="#">BEKIJK PRODUCTEN</a> &nbsp;|&nbsp; Eindigt over:&nbsp;<span id="preview-cd-nl_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
+      </div>
+      <div class="bar-mobile">
+        <span style="display:block;">
+          <strong>5%</strong> code
+          <span class="code">SALE5</span>
+          &nbsp;|&nbsp;
+          <a href="#">PRODUCTEN</a>
+        </span>
+        <span class="countdown-line">Eindigt over:&nbsp;<span id="preview-cd-nl_countdown-m" class="countdown" style="font-variant-numeric:tabular-nums;"></span></span>
+      </div>
+    </div>
+  </div>
+
   <div id="tab-nl_hyva" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <div class="bar-hyva-desktop">
-          <b style="color:#ffffff !important;">Qdays!</b>
-          <b style="color:#ffffff;"> &ndash; 6% MET CODE </b>
-          <strong style="background-color:#ffffff;color:#2d54bb;padding:2px 8px;border-radius:4px;font-family:monospace;">QDAYS6</strong>
+          <b style="color:#ffffff !important;">ZOMERUITVERKOOP</b>
+          <b style="color:#ffffff;"> &ndash; 5% MET CODE </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
           <b style="color:#ffffff;"> | </b>
           <a href="#" style="color:#ffffff !important;text-decoration:underline;">BEKIJK PRODUCTEN</a>
         </div>
@@ -655,8 +983,8 @@
         <div class="bar-hyva-mobile">
           <a href="#" style="color:#ffffff;text-decoration:none;">
             <span style="display:block;">
-              <span style="font-size:12px;color:#ffffff;">6% MET CODE </span>
-              <strong style="background-color:#ffffff;color:#2d54bb;padding:1px 5px;border-radius:3px;font-family:monospace;">QDAYS6</strong>
+              <span style="font-size:12px;color:#ffffff;">5% MET CODE </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
               <span style="font-size:12px;color:#ffffff;"> | </span>
               <span style="color:#ffffff;font-size:12px;text-decoration:underline;">BEKIJK PRODUCTEN</span>
             </span>
@@ -671,9 +999,9 @@
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <div class="bar-hyva-desktop">
-          <b style="color:#ffffff !important;">Qdays!</b>
-          <b style="color:#ffffff;"> &ndash; 6% MET CODE </b>
-          <strong style="background-color:#ffffff;color:#2d54bb;padding:2px 8px;border-radius:4px;font-family:monospace;">QDAYS6</strong>
+          <b style="color:#ffffff !important;">ZOMERUITVERKOOP</b>
+          <b style="color:#ffffff;"> &ndash; 5% MET CODE </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
           <b style="color:#ffffff;"> | </b>
           <a href="#" style="color:#ffffff !important;text-decoration:underline;">BEKIJK PRODUCTEN</a> &nbsp;|&nbsp; Eindigt over:&nbsp;<span id="preview-cd-nl_hyva_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
         </div>
@@ -682,8 +1010,8 @@
         <div class="bar-hyva-mobile">
           <a href="#" style="color:#ffffff;text-decoration:none;">
             <span style="display:block;">
-              <span style="font-size:12px;color:#ffffff;">6% MET CODE </span>
-              <strong style="background-color:#ffffff;color:#2d54bb;padding:1px 5px;border-radius:3px;font-family:monospace;">QDAYS6</strong>
+              <span style="font-size:12px;color:#ffffff;">5% MET CODE </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
               <span style="font-size:12px;color:#ffffff;"> | </span>
               <span style="color:#ffffff;font-size:12px;text-decoration:underline;">BEKIJK PRODUCTEN</span>
             </span>
@@ -697,15 +1025,15 @@
   <div id="tab-it" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 6% con codice
-        <span class="code">QDAYS6</span>
+        <strong class="label">SALDI ESTIVI</strong> &ndash; 5% con codice
+        <span class="code">SALE5</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">VEDI PRODOTTI</a>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>6%</strong> codice
-          <span class="code">QDAYS6</span>
+          <strong>5%</strong> codice
+          <span class="code">SALE5</span>
           &nbsp;|&nbsp;
           <a href="#">VEDI PRODOTTI</a>
         </span>
@@ -717,15 +1045,15 @@
   <div id="tab-it_countdown" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 6% con codice
-        <span class="code">QDAYS6</span>
+        <strong class="label">SALDI ESTIVI</strong> &ndash; 5% con codice
+        <span class="code">SALE5</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">VEDI PRODOTTI</a> &nbsp;|&nbsp; Termina tra:&nbsp;<span id="preview-cd-it_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>6%</strong> codice
-          <span class="code">QDAYS6</span>
+          <strong>5%</strong> codice
+          <span class="code">SALE5</span>
           &nbsp;|&nbsp;
           <a href="#">VEDI PRODOTTI</a>
         </span>
@@ -734,18 +1062,72 @@
     </div>
   </div>
 
+  <div id="tab-it_hyva" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <div class="bar-hyva-desktop">
+          <b style="color:#ffffff !important;">SALDI ESTIVI</b>
+          <b style="color:#ffffff;"> &ndash; 5% CON CODICE </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
+          <b style="color:#ffffff;"> | </b>
+          <a href="#" style="color:#ffffff !important;text-decoration:underline;">VEDI PRODOTTI</a>
+        </div>
+      </div>
+      <div class="bar-mobile">
+        <div class="bar-hyva-mobile">
+          <a href="#" style="color:#ffffff;text-decoration:none;">
+            <span style="display:block;">
+              <span style="font-size:12px;color:#ffffff;">5% CON CODICE </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
+              <span style="font-size:12px;color:#ffffff;"> | </span>
+              <span style="color:#ffffff;font-size:12px;text-decoration:underline;">VEDI PRODOTTI</span>
+            </span>
+            
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-it_hyva_countdown" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <div class="bar-hyva-desktop">
+          <b style="color:#ffffff !important;">SALDI ESTIVI</b>
+          <b style="color:#ffffff;"> &ndash; 5% CON CODICE </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
+          <b style="color:#ffffff;"> | </b>
+          <a href="#" style="color:#ffffff !important;text-decoration:underline;">VEDI PRODOTTI</a> &nbsp;|&nbsp; Termina tra:&nbsp;<span id="preview-cd-it_hyva_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
+        </div>
+      </div>
+      <div class="bar-mobile">
+        <div class="bar-hyva-mobile">
+          <a href="#" style="color:#ffffff;text-decoration:none;">
+            <span style="display:block;">
+              <span style="font-size:12px;color:#ffffff;">5% CON CODICE </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
+              <span style="font-size:12px;color:#ffffff;"> | </span>
+              <span style="color:#ffffff;font-size:12px;text-decoration:underline;">VEDI PRODOTTI</span>
+            </span>
+            <span class="countdown-line">Termina tra:&nbsp;<span id="preview-cd-it_hyva_countdown-m" class="countdown" style="font-variant-numeric:tabular-nums;"></span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="tab-ch_de" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 6% mit Code
-        <span class="code">QDAYS6</span>
+        <strong class="label">SOMMER SALE</strong> &ndash; 5% mit Code
+        <span class="code">SALE5</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">PRODUKTE ANSEHEN</a>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>6%</strong> Code
-          <span class="code">QDAYS6</span>
+          <strong>5%</strong> Code
+          <span class="code">SALE5</span>
           &nbsp;|&nbsp;
           <a href="#">PRODUKTE</a>
         </span>
@@ -757,15 +1139,15 @@
   <div id="tab-ch_de_countdown" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 6% mit Code
-        <span class="code">QDAYS6</span>
+        <strong class="label">SOMMER SALE</strong> &ndash; 5% mit Code
+        <span class="code">SALE5</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">PRODUKTE ANSEHEN</a> &nbsp;|&nbsp; Endet in:&nbsp;<span id="preview-cd-ch_de_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>6%</strong> Code
-          <span class="code">QDAYS6</span>
+          <strong>5%</strong> Code
+          <span class="code">SALE5</span>
           &nbsp;|&nbsp;
           <a href="#">PRODUKTE</a>
         </span>
@@ -774,18 +1156,72 @@
     </div>
   </div>
 
+  <div id="tab-ch_de_hyva" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <div class="bar-hyva-desktop">
+          <b style="color:#ffffff !important;">SOMMER SALE</b>
+          <b style="color:#ffffff;"> &ndash; 5% MIT CODE </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
+          <b style="color:#ffffff;"> | </b>
+          <a href="#" style="color:#ffffff !important;text-decoration:underline;">PRODUKTE ANSEHEN</a>
+        </div>
+      </div>
+      <div class="bar-mobile">
+        <div class="bar-hyva-mobile">
+          <a href="#" style="color:#ffffff;text-decoration:none;">
+            <span style="display:block;">
+              <span style="font-size:12px;color:#ffffff;">5% MIT CODE </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
+              <span style="font-size:12px;color:#ffffff;"> | </span>
+              <span style="color:#ffffff;font-size:12px;text-decoration:underline;">PRODUKTE ANSEHEN</span>
+            </span>
+            
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-ch_de_hyva_countdown" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <div class="bar-hyva-desktop">
+          <b style="color:#ffffff !important;">SOMMER SALE</b>
+          <b style="color:#ffffff;"> &ndash; 5% MIT CODE </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
+          <b style="color:#ffffff;"> | </b>
+          <a href="#" style="color:#ffffff !important;text-decoration:underline;">PRODUKTE ANSEHEN</a> &nbsp;|&nbsp; Endet in:&nbsp;<span id="preview-cd-ch_de_hyva_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
+        </div>
+      </div>
+      <div class="bar-mobile">
+        <div class="bar-hyva-mobile">
+          <a href="#" style="color:#ffffff;text-decoration:none;">
+            <span style="display:block;">
+              <span style="font-size:12px;color:#ffffff;">5% MIT CODE </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
+              <span style="font-size:12px;color:#ffffff;"> | </span>
+              <span style="color:#ffffff;font-size:12px;text-decoration:underline;">PRODUKTE ANSEHEN</span>
+            </span>
+            <span class="countdown-line">Endet in:&nbsp;<span id="preview-cd-ch_de_hyva_countdown-m" class="countdown" style="font-variant-numeric:tabular-nums;"></span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="tab-ch_fr" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 6% avec le code
-        <span class="code">QDAYS6</span>
+        <strong class="label">SOLDES D&#8217;&#201;T&#201;</strong> &ndash; 5% avec le code
+        <span class="code">SALE5</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">VOIR LES PRODUITS</a>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>6%</strong> code
-          <span class="code">QDAYS6</span>
+          <strong>5%</strong> code
+          <span class="code">SALE5</span>
           &nbsp;|&nbsp;
           <a href="#">VOIR PRODUITS</a>
         </span>
@@ -797,15 +1233,15 @@
   <div id="tab-ch_fr_countdown" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 6% avec le code
-        <span class="code">QDAYS6</span>
+        <strong class="label">SOLDES D&#8217;&#201;T&#201;</strong> &ndash; 5% avec le code
+        <span class="code">SALE5</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">VOIR LES PRODUITS</a> &nbsp;|&nbsp; Se termine dans :&nbsp;<span id="preview-cd-ch_fr_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>6%</strong> code
-          <span class="code">QDAYS6</span>
+          <strong>5%</strong> code
+          <span class="code">SALE5</span>
           &nbsp;|&nbsp;
           <a href="#">VOIR PRODUITS</a>
         </span>
@@ -814,18 +1250,72 @@
     </div>
   </div>
 
+  <div id="tab-ch_fr_hyva" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <div class="bar-hyva-desktop">
+          <b style="color:#ffffff !important;">SOLDES D&#8217;&#201;T&#201;</b>
+          <b style="color:#ffffff;"> &ndash; 5% AVEC LE CODE </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
+          <b style="color:#ffffff;"> | </b>
+          <a href="#" style="color:#ffffff !important;text-decoration:underline;">VOIR LES PRODUITS</a>
+        </div>
+      </div>
+      <div class="bar-mobile">
+        <div class="bar-hyva-mobile">
+          <a href="#" style="color:#ffffff;text-decoration:none;">
+            <span style="display:block;">
+              <span style="font-size:12px;color:#ffffff;">5% AVEC LE CODE </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
+              <span style="font-size:12px;color:#ffffff;"> | </span>
+              <span style="color:#ffffff;font-size:12px;text-decoration:underline;">VOIR LES PRODUITS</span>
+            </span>
+            
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-ch_fr_hyva_countdown" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <div class="bar-hyva-desktop">
+          <b style="color:#ffffff !important;">SOLDES D&#8217;&#201;T&#201;</b>
+          <b style="color:#ffffff;"> &ndash; 5% AVEC LE CODE </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
+          <b style="color:#ffffff;"> | </b>
+          <a href="#" style="color:#ffffff !important;text-decoration:underline;">VOIR LES PRODUITS</a> &nbsp;|&nbsp; Se termine dans :&nbsp;<span id="preview-cd-ch_fr_hyva_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
+        </div>
+      </div>
+      <div class="bar-mobile">
+        <div class="bar-hyva-mobile">
+          <a href="#" style="color:#ffffff;text-decoration:none;">
+            <span style="display:block;">
+              <span style="font-size:12px;color:#ffffff;">5% AVEC LE CODE </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
+              <span style="font-size:12px;color:#ffffff;"> | </span>
+              <span style="color:#ffffff;font-size:12px;text-decoration:underline;">VOIR LES PRODUITS</span>
+            </span>
+            <span class="countdown-line">Se termine dans :&nbsp;<span id="preview-cd-ch_fr_hyva_countdown-m" class="countdown" style="font-variant-numeric:tabular-nums;"></span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="tab-ch_it" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 6% con codice
-        <span class="code">QDAYS6</span>
+        <strong class="label">SALDI ESTIVI</strong> &ndash; 5% con codice
+        <span class="code">SALE5</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">VEDI PRODOTTI</a>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>6%</strong> codice
-          <span class="code">QDAYS6</span>
+          <strong>5%</strong> codice
+          <span class="code">SALE5</span>
           &nbsp;|&nbsp;
           <a href="#">VEDI PRODOTTI</a>
         </span>
@@ -837,15 +1327,15 @@
   <div id="tab-ch_it_countdown" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 6% con codice
-        <span class="code">QDAYS6</span>
+        <strong class="label">SALDI ESTIVI</strong> &ndash; 5% con codice
+        <span class="code">SALE5</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">VEDI PRODOTTI</a> &nbsp;|&nbsp; Termina tra:&nbsp;<span id="preview-cd-ch_it_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>6%</strong> codice
-          <span class="code">QDAYS6</span>
+          <strong>5%</strong> codice
+          <span class="code">SALE5</span>
           &nbsp;|&nbsp;
           <a href="#">VEDI PRODOTTI</a>
         </span>
@@ -854,18 +1344,72 @@
     </div>
   </div>
 
+  <div id="tab-ch_it_hyva" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <div class="bar-hyva-desktop">
+          <b style="color:#ffffff !important;">SALDI ESTIVI</b>
+          <b style="color:#ffffff;"> &ndash; 5% CON CODICE </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
+          <b style="color:#ffffff;"> | </b>
+          <a href="#" style="color:#ffffff !important;text-decoration:underline;">VEDI PRODOTTI</a>
+        </div>
+      </div>
+      <div class="bar-mobile">
+        <div class="bar-hyva-mobile">
+          <a href="#" style="color:#ffffff;text-decoration:none;">
+            <span style="display:block;">
+              <span style="font-size:12px;color:#ffffff;">5% CON CODICE </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
+              <span style="font-size:12px;color:#ffffff;"> | </span>
+              <span style="color:#ffffff;font-size:12px;text-decoration:underline;">VEDI PRODOTTI</span>
+            </span>
+            
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-ch_it_hyva_countdown" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <div class="bar-hyva-desktop">
+          <b style="color:#ffffff !important;">SALDI ESTIVI</b>
+          <b style="color:#ffffff;"> &ndash; 5% CON CODICE </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
+          <b style="color:#ffffff;"> | </b>
+          <a href="#" style="color:#ffffff !important;text-decoration:underline;">VEDI PRODOTTI</a> &nbsp;|&nbsp; Termina tra:&nbsp;<span id="preview-cd-ch_it_hyva_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
+        </div>
+      </div>
+      <div class="bar-mobile">
+        <div class="bar-hyva-mobile">
+          <a href="#" style="color:#ffffff;text-decoration:none;">
+            <span style="display:block;">
+              <span style="font-size:12px;color:#ffffff;">5% CON CODICE </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
+              <span style="font-size:12px;color:#ffffff;"> | </span>
+              <span style="color:#ffffff;font-size:12px;text-decoration:underline;">VEDI PRODOTTI</span>
+            </span>
+            <span class="countdown-line">Termina tra:&nbsp;<span id="preview-cd-ch_it_hyva_countdown-m" class="countdown" style="font-variant-numeric:tabular-nums;"></span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="tab-uk" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 6% with code
-        <span class="code">QDAYS6</span>
+        <strong class="label">SUMMER SALE</strong> &ndash; 5% with code
+        <span class="code">SALE5</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">VIEW PRODUCTS</a>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>6%</strong> code
-          <span class="code">QDAYS6</span>
+          <strong>5%</strong> code
+          <span class="code">SALE5</span>
           &nbsp;|&nbsp;
           <a href="#">PRODUCTS</a>
         </span>
@@ -874,13 +1418,33 @@
     </div>
   </div>
 
+  <div id="tab-uk_countdown" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <strong class="label">SUMMER SALE</strong> &ndash; 5% with code
+        <span class="code">SALE5</span>
+        &nbsp;&ndash;&nbsp;
+        <a href="#">VIEW PRODUCTS</a> &nbsp;|&nbsp; Ends in:&nbsp;<span id="preview-cd-uk_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
+      </div>
+      <div class="bar-mobile">
+        <span style="display:block;">
+          <strong>5%</strong> code
+          <span class="code">SALE5</span>
+          &nbsp;|&nbsp;
+          <a href="#">PRODUCTS</a>
+        </span>
+        <span class="countdown-line">Ends in:&nbsp;<span id="preview-cd-uk_countdown-m" class="countdown" style="font-variant-numeric:tabular-nums;"></span></span>
+      </div>
+    </div>
+  </div>
+
   <div id="tab-uk_hyva" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <div class="bar-hyva-desktop">
-          <b style="color:#ffffff !important;">Qdays!</b>
-          <b style="color:#ffffff;"> &ndash; 6% DISCOUNT CODE </b>
-          <strong style="background-color:#ffffff;color:#2d54bb;padding:2px 8px;border-radius:4px;font-family:monospace;">QDAYS6</strong>
+          <b style="color:#ffffff !important;">SUMMER SALE</b>
+          <b style="color:#ffffff;"> &ndash; 5% DISCOUNT CODE </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
           <b style="color:#ffffff;"> | </b>
           <a href="#" style="color:#ffffff !important;text-decoration:underline;">VIEW PRODUCTS</a>
         </div>
@@ -889,8 +1453,8 @@
         <div class="bar-hyva-mobile">
           <a href="#" style="color:#ffffff;text-decoration:none;">
             <span style="display:block;">
-              <span style="font-size:12px;color:#ffffff;">6% DISCOUNT CODE </span>
-              <strong style="background-color:#ffffff;color:#2d54bb;padding:1px 5px;border-radius:3px;font-family:monospace;">QDAYS6</strong>
+              <span style="font-size:12px;color:#ffffff;">5% DISCOUNT CODE </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
               <span style="font-size:12px;color:#ffffff;"> | </span>
               <span style="color:#ffffff;font-size:12px;text-decoration:underline;">VIEW PRODUCTS</span>
             </span>
@@ -905,9 +1469,9 @@
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <div class="bar-hyva-desktop">
-          <b style="color:#ffffff !important;">Qdays!</b>
-          <b style="color:#ffffff;"> &ndash; 6% DISCOUNT CODE </b>
-          <strong style="background-color:#ffffff;color:#2d54bb;padding:2px 8px;border-radius:4px;font-family:monospace;">QDAYS6</strong>
+          <b style="color:#ffffff !important;">SUMMER SALE</b>
+          <b style="color:#ffffff;"> &ndash; 5% DISCOUNT CODE </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
           <b style="color:#ffffff;"> | </b>
           <a href="#" style="color:#ffffff !important;text-decoration:underline;">VIEW PRODUCTS</a> &nbsp;|&nbsp; Ends in:&nbsp;<span id="preview-cd-uk_hyva_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
         </div>
@@ -916,8 +1480,8 @@
         <div class="bar-hyva-mobile">
           <a href="#" style="color:#ffffff;text-decoration:none;">
             <span style="display:block;">
-              <span style="font-size:12px;color:#ffffff;">6% DISCOUNT CODE </span>
-              <strong style="background-color:#ffffff;color:#2d54bb;padding:1px 5px;border-radius:3px;font-family:monospace;">QDAYS6</strong>
+              <span style="font-size:12px;color:#ffffff;">5% DISCOUNT CODE </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
               <span style="font-size:12px;color:#ffffff;"> | </span>
               <span style="color:#ffffff;font-size:12px;text-decoration:underline;">VIEW PRODUCTS</span>
             </span>
@@ -931,15 +1495,15 @@
   <div id="tab-ie" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 6% with code
-        <span class="code">QDAYS6</span>
+        <strong class="label">SUMMER SALE</strong> &ndash; 5% with code
+        <span class="code">SALE5</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">VIEW PRODUCTS</a>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>6%</strong> code
-          <span class="code">QDAYS6</span>
+          <strong>5%</strong> code
+          <span class="code">SALE5</span>
           &nbsp;|&nbsp;
           <a href="#">PRODUCTS</a>
         </span>
@@ -948,13 +1512,33 @@
     </div>
   </div>
 
+  <div id="tab-ie_countdown" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <strong class="label">SUMMER SALE</strong> &ndash; 5% with code
+        <span class="code">SALE5</span>
+        &nbsp;&ndash;&nbsp;
+        <a href="#">VIEW PRODUCTS</a> &nbsp;|&nbsp; Ends in:&nbsp;<span id="preview-cd-ie_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
+      </div>
+      <div class="bar-mobile">
+        <span style="display:block;">
+          <strong>5%</strong> code
+          <span class="code">SALE5</span>
+          &nbsp;|&nbsp;
+          <a href="#">PRODUCTS</a>
+        </span>
+        <span class="countdown-line">Ends in:&nbsp;<span id="preview-cd-ie_countdown-m" class="countdown" style="font-variant-numeric:tabular-nums;"></span></span>
+      </div>
+    </div>
+  </div>
+
   <div id="tab-ie_hyva" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <div class="bar-hyva-desktop">
-          <b style="color:#ffffff !important;">Qdays!</b>
-          <b style="color:#ffffff;"> &ndash; 6% DISCOUNT CODE </b>
-          <strong style="background-color:#ffffff;color:#2d54bb;padding:2px 8px;border-radius:4px;font-family:monospace;">QDAYS6</strong>
+          <b style="color:#ffffff !important;">SUMMER SALE</b>
+          <b style="color:#ffffff;"> &ndash; 5% DISCOUNT CODE </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
           <b style="color:#ffffff;"> | </b>
           <a href="#" style="color:#ffffff !important;text-decoration:underline;">VIEW PRODUCTS</a>
         </div>
@@ -963,8 +1547,8 @@
         <div class="bar-hyva-mobile">
           <a href="#" style="color:#ffffff;text-decoration:none;">
             <span style="display:block;">
-              <span style="font-size:12px;color:#ffffff;">6% DISCOUNT CODE </span>
-              <strong style="background-color:#ffffff;color:#2d54bb;padding:1px 5px;border-radius:3px;font-family:monospace;">QDAYS6</strong>
+              <span style="font-size:12px;color:#ffffff;">5% DISCOUNT CODE </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
               <span style="font-size:12px;color:#ffffff;"> | </span>
               <span style="color:#ffffff;font-size:12px;text-decoration:underline;">VIEW PRODUCTS</span>
             </span>
@@ -979,9 +1563,9 @@
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <div class="bar-hyva-desktop">
-          <b style="color:#ffffff !important;">Qdays!</b>
-          <b style="color:#ffffff;"> &ndash; 6% DISCOUNT CODE </b>
-          <strong style="background-color:#ffffff;color:#2d54bb;padding:2px 8px;border-radius:4px;font-family:monospace;">QDAYS6</strong>
+          <b style="color:#ffffff !important;">SUMMER SALE</b>
+          <b style="color:#ffffff;"> &ndash; 5% DISCOUNT CODE </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
           <b style="color:#ffffff;"> | </b>
           <a href="#" style="color:#ffffff !important;text-decoration:underline;">VIEW PRODUCTS</a> &nbsp;|&nbsp; Ends in:&nbsp;<span id="preview-cd-ie_hyva_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
         </div>
@@ -990,8 +1574,8 @@
         <div class="bar-hyva-mobile">
           <a href="#" style="color:#ffffff;text-decoration:none;">
             <span style="display:block;">
-              <span style="font-size:12px;color:#ffffff;">6% DISCOUNT CODE </span>
-              <strong style="background-color:#ffffff;color:#2d54bb;padding:1px 5px;border-radius:3px;font-family:monospace;">QDAYS6</strong>
+              <span style="font-size:12px;color:#ffffff;">5% DISCOUNT CODE </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
               <span style="font-size:12px;color:#ffffff;"> | </span>
               <span style="color:#ffffff;font-size:12px;text-decoration:underline;">VIEW PRODUCTS</span>
             </span>
@@ -1005,15 +1589,15 @@
   <div id="tab-int_en" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 6% with code
-        <span class="code">QDAYS6</span>
+        <strong class="label">SUMMER SALE</strong> &ndash; 5% with code
+        <span class="code">SALE5</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">VIEW PRODUCTS</a>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>6%</strong> code
-          <span class="code">QDAYS6</span>
+          <strong>5%</strong> code
+          <span class="code">SALE5</span>
           &nbsp;|&nbsp;
           <a href="#">PRODUCTS</a>
         </span>
@@ -1022,13 +1606,33 @@
     </div>
   </div>
 
+  <div id="tab-int_en_countdown" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <strong class="label">SUMMER SALE</strong> &ndash; 5% with code
+        <span class="code">SALE5</span>
+        &nbsp;&ndash;&nbsp;
+        <a href="#">VIEW PRODUCTS</a> &nbsp;|&nbsp; Ends in:&nbsp;<span id="preview-cd-int_en_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
+      </div>
+      <div class="bar-mobile">
+        <span style="display:block;">
+          <strong>5%</strong> code
+          <span class="code">SALE5</span>
+          &nbsp;|&nbsp;
+          <a href="#">PRODUCTS</a>
+        </span>
+        <span class="countdown-line">Ends in:&nbsp;<span id="preview-cd-int_en_countdown-m" class="countdown" style="font-variant-numeric:tabular-nums;"></span></span>
+      </div>
+    </div>
+  </div>
+
   <div id="tab-int_en_hyva" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <div class="bar-hyva-desktop">
-          <b style="color:#ffffff !important;">Qdays!</b>
-          <b style="color:#ffffff;"> &ndash; 6% DISCOUNT CODE </b>
-          <strong style="background-color:#ffffff;color:#2d54bb;padding:2px 8px;border-radius:4px;font-family:monospace;">QDAYS6</strong>
+          <b style="color:#ffffff !important;">SUMMER SALE</b>
+          <b style="color:#ffffff;"> &ndash; 5% DISCOUNT CODE </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
           <b style="color:#ffffff;"> | </b>
           <a href="#" style="color:#ffffff !important;text-decoration:underline;">VIEW PRODUCTS</a>
         </div>
@@ -1037,8 +1641,8 @@
         <div class="bar-hyva-mobile">
           <a href="#" style="color:#ffffff;text-decoration:none;">
             <span style="display:block;">
-              <span style="font-size:12px;color:#ffffff;">6% DISCOUNT CODE </span>
-              <strong style="background-color:#ffffff;color:#2d54bb;padding:1px 5px;border-radius:3px;font-family:monospace;">QDAYS6</strong>
+              <span style="font-size:12px;color:#ffffff;">5% DISCOUNT CODE </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
               <span style="font-size:12px;color:#ffffff;"> | </span>
               <span style="color:#ffffff;font-size:12px;text-decoration:underline;">VIEW PRODUCTS</span>
             </span>
@@ -1053,9 +1657,9 @@
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <div class="bar-hyva-desktop">
-          <b style="color:#ffffff !important;">Qdays!</b>
-          <b style="color:#ffffff;"> &ndash; 6% DISCOUNT CODE </b>
-          <strong style="background-color:#ffffff;color:#2d54bb;padding:2px 8px;border-radius:4px;font-family:monospace;">QDAYS6</strong>
+          <b style="color:#ffffff !important;">SUMMER SALE</b>
+          <b style="color:#ffffff;"> &ndash; 5% DISCOUNT CODE </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
           <b style="color:#ffffff;"> | </b>
           <a href="#" style="color:#ffffff !important;text-decoration:underline;">VIEW PRODUCTS</a> &nbsp;|&nbsp; Ends in:&nbsp;<span id="preview-cd-int_en_hyva_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
         </div>
@@ -1064,8 +1668,8 @@
         <div class="bar-hyva-mobile">
           <a href="#" style="color:#ffffff;text-decoration:none;">
             <span style="display:block;">
-              <span style="font-size:12px;color:#ffffff;">6% DISCOUNT CODE </span>
-              <strong style="background-color:#ffffff;color:#2d54bb;padding:1px 5px;border-radius:3px;font-family:monospace;">QDAYS6</strong>
+              <span style="font-size:12px;color:#ffffff;">5% DISCOUNT CODE </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
               <span style="font-size:12px;color:#ffffff;"> | </span>
               <span style="color:#ffffff;font-size:12px;text-decoration:underline;">VIEW PRODUCTS</span>
             </span>
@@ -1079,15 +1683,15 @@
   <div id="tab-gr" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 6% &#956;&#949; &#954;&#969;&#948;&#953;&#954;&#972;
-        <span class="code">QDAYS6</span>
+        <strong class="label">&#922;&#913;&#923;&#927;&#922;&#913;&#921;&#929;&#921;&#925;&#917;&#931; &#917;&#922;&#928;&#932;&#937;&#931;&#917;&#921;&#931;</strong> &ndash; 5% &#956;&#949; &#954;&#969;&#948;&#953;&#954;&#972;
+        <span class="code">SALE5</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">&#916;&#917;&#921;&#932;&#917; &#928;&#929;&#927;&#938;&#927;&#925;&#932;&#913;</a>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>6%</strong> &#954;&#969;&#948;.
-          <span class="code">QDAYS6</span>
+          <strong>5%</strong> &#954;&#969;&#948;.
+          <span class="code">SALE5</span>
           &nbsp;|&nbsp;
           <a href="#">&#928;&#929;&#927;&#938;&#927;&#925;&#932;&#913;</a>
         </span>
@@ -1096,13 +1700,33 @@
     </div>
   </div>
 
+  <div id="tab-gr_countdown" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <strong class="label">&#922;&#913;&#923;&#927;&#922;&#913;&#921;&#929;&#921;&#925;&#917;&#931; &#917;&#922;&#928;&#932;&#937;&#931;&#917;&#921;&#931;</strong> &ndash; 5% &#956;&#949; &#954;&#969;&#948;&#953;&#954;&#972;
+        <span class="code">SALE5</span>
+        &nbsp;&ndash;&nbsp;
+        <a href="#">&#916;&#917;&#921;&#932;&#917; &#928;&#929;&#927;&#938;&#927;&#925;&#932;&#913;</a> &nbsp;|&nbsp; &#923;&#942;&#947;&#949;&#953; &#963;&#949;:&nbsp;<span id="preview-cd-gr_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
+      </div>
+      <div class="bar-mobile">
+        <span style="display:block;">
+          <strong>5%</strong> &#954;&#969;&#948;.
+          <span class="code">SALE5</span>
+          &nbsp;|&nbsp;
+          <a href="#">&#928;&#929;&#927;&#938;&#927;&#925;&#932;&#913;</a>
+        </span>
+        <span class="countdown-line">&#923;&#942;&#947;&#949;&#953; &#963;&#949;:&nbsp;<span id="preview-cd-gr_countdown-m" class="countdown" style="font-variant-numeric:tabular-nums;"></span></span>
+      </div>
+    </div>
+  </div>
+
   <div id="tab-gr_hyva" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <div class="bar-hyva-desktop">
-          <b style="color:#ffffff !important;">Qdays!</b>
-          <b style="color:#ffffff;"> &ndash; 6% &#924;&#917; &#922;&#937;&#916;&#921;&#922;&#927; </b>
-          <strong style="background-color:#ffffff;color:#2d54bb;padding:2px 8px;border-radius:4px;font-family:monospace;">QDAYS6</strong>
+          <b style="color:#ffffff !important;">&#922;&#913;&#923;&#927;&#922;&#913;&#921;&#929;&#921;&#925;&#917;&#931; &#917;&#922;&#928;&#932;&#937;&#931;&#917;&#921;&#931;</b>
+          <b style="color:#ffffff;"> &ndash; 5% &#924;&#917; &#922;&#937;&#916;&#921;&#922;&#927; </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
           <b style="color:#ffffff;"> | </b>
           <a href="#" style="color:#ffffff !important;text-decoration:underline;">&#916;&#917;&#921;&#932;&#917; &#928;&#929;&#927;&#938;&#927;&#925;&#932;&#913;</a>
         </div>
@@ -1111,8 +1735,8 @@
         <div class="bar-hyva-mobile">
           <a href="#" style="color:#ffffff;text-decoration:none;">
             <span style="display:block;">
-              <span style="font-size:12px;color:#ffffff;">6% &#924;&#917; &#922;&#937;&#916;&#921;&#922;&#927; </span>
-              <strong style="background-color:#ffffff;color:#2d54bb;padding:1px 5px;border-radius:3px;font-family:monospace;">QDAYS6</strong>
+              <span style="font-size:12px;color:#ffffff;">5% &#924;&#917; &#922;&#937;&#916;&#921;&#922;&#927; </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
               <span style="font-size:12px;color:#ffffff;"> | </span>
               <span style="color:#ffffff;font-size:12px;text-decoration:underline;">&#916;&#917;&#921;&#932;&#917; &#928;&#929;&#927;&#938;&#927;&#925;&#932;&#913;</span>
             </span>
@@ -1127,9 +1751,9 @@
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <div class="bar-hyva-desktop">
-          <b style="color:#ffffff !important;">Qdays!</b>
-          <b style="color:#ffffff;"> &ndash; 6% &#924;&#917; &#922;&#937;&#916;&#921;&#922;&#927; </b>
-          <strong style="background-color:#ffffff;color:#2d54bb;padding:2px 8px;border-radius:4px;font-family:monospace;">QDAYS6</strong>
+          <b style="color:#ffffff !important;">&#922;&#913;&#923;&#927;&#922;&#913;&#921;&#929;&#921;&#925;&#917;&#931; &#917;&#922;&#928;&#932;&#937;&#931;&#917;&#921;&#931;</b>
+          <b style="color:#ffffff;"> &ndash; 5% &#924;&#917; &#922;&#937;&#916;&#921;&#922;&#927; </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
           <b style="color:#ffffff;"> | </b>
           <a href="#" style="color:#ffffff !important;text-decoration:underline;">&#916;&#917;&#921;&#932;&#917; &#928;&#929;&#927;&#938;&#927;&#925;&#932;&#913;</a> &nbsp;|&nbsp; &#923;&#942;&#947;&#949;&#953; &#963;&#949;:&nbsp;<span id="preview-cd-gr_hyva_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
         </div>
@@ -1138,8 +1762,8 @@
         <div class="bar-hyva-mobile">
           <a href="#" style="color:#ffffff;text-decoration:none;">
             <span style="display:block;">
-              <span style="font-size:12px;color:#ffffff;">6% &#924;&#917; &#922;&#937;&#916;&#921;&#922;&#927; </span>
-              <strong style="background-color:#ffffff;color:#2d54bb;padding:1px 5px;border-radius:3px;font-family:monospace;">QDAYS6</strong>
+              <span style="font-size:12px;color:#ffffff;">5% &#924;&#917; &#922;&#937;&#916;&#921;&#922;&#927; </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
               <span style="font-size:12px;color:#ffffff;"> | </span>
               <span style="color:#ffffff;font-size:12px;text-decoration:underline;">&#916;&#917;&#921;&#932;&#917; &#928;&#929;&#927;&#938;&#927;&#925;&#932;&#913;</span>
             </span>
@@ -1153,15 +1777,15 @@
   <div id="tab-ro" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 6% cu codul
-        <span class="code">QDAYS6</span>
+        <strong class="label">REDUCERI DE VAR&#258;</strong> &ndash; 5% cu codul
+        <span class="code">SALE5</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">VEZI PRODUSE</a>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>6%</strong> cod
-          <span class="code">QDAYS6</span>
+          <strong>5%</strong> cod
+          <span class="code">SALE5</span>
           &nbsp;|&nbsp;
           <a href="#">VEZI PRODUSE</a>
         </span>
@@ -1170,13 +1794,33 @@
     </div>
   </div>
 
+  <div id="tab-ro_countdown" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <strong class="label">REDUCERI DE VAR&#258;</strong> &ndash; 5% cu codul
+        <span class="code">SALE5</span>
+        &nbsp;&ndash;&nbsp;
+        <a href="#">VEZI PRODUSE</a> &nbsp;|&nbsp; Se termin&#259; &#238;n:&nbsp;<span id="preview-cd-ro_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
+      </div>
+      <div class="bar-mobile">
+        <span style="display:block;">
+          <strong>5%</strong> cod
+          <span class="code">SALE5</span>
+          &nbsp;|&nbsp;
+          <a href="#">VEZI PRODUSE</a>
+        </span>
+        <span class="countdown-line">Se termin&#259; &#238;n:&nbsp;<span id="preview-cd-ro_countdown-m" class="countdown" style="font-variant-numeric:tabular-nums;"></span></span>
+      </div>
+    </div>
+  </div>
+
   <div id="tab-ro_hyva" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <div class="bar-hyva-desktop">
-          <b style="color:#ffffff !important;">Qdays!</b>
-          <b style="color:#ffffff;"> &ndash; 6% CU CODUL </b>
-          <strong style="background-color:#ffffff;color:#2d54bb;padding:2px 8px;border-radius:4px;font-family:monospace;">QDAYS6</strong>
+          <b style="color:#ffffff !important;">REDUCERI DE VAR&#258;</b>
+          <b style="color:#ffffff;"> &ndash; 5% CU CODUL </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
           <b style="color:#ffffff;"> | </b>
           <a href="#" style="color:#ffffff !important;text-decoration:underline;">VEZI PRODUSE</a>
         </div>
@@ -1185,8 +1829,8 @@
         <div class="bar-hyva-mobile">
           <a href="#" style="color:#ffffff;text-decoration:none;">
             <span style="display:block;">
-              <span style="font-size:12px;color:#ffffff;">6% CU CODUL </span>
-              <strong style="background-color:#ffffff;color:#2d54bb;padding:1px 5px;border-radius:3px;font-family:monospace;">QDAYS6</strong>
+              <span style="font-size:12px;color:#ffffff;">5% CU CODUL </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
               <span style="font-size:12px;color:#ffffff;"> | </span>
               <span style="color:#ffffff;font-size:12px;text-decoration:underline;">VEZI PRODUSE</span>
             </span>
@@ -1201,9 +1845,9 @@
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <div class="bar-hyva-desktop">
-          <b style="color:#ffffff !important;">Qdays!</b>
-          <b style="color:#ffffff;"> &ndash; 6% CU CODUL </b>
-          <strong style="background-color:#ffffff;color:#2d54bb;padding:2px 8px;border-radius:4px;font-family:monospace;">QDAYS6</strong>
+          <b style="color:#ffffff !important;">REDUCERI DE VAR&#258;</b>
+          <b style="color:#ffffff;"> &ndash; 5% CU CODUL </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
           <b style="color:#ffffff;"> | </b>
           <a href="#" style="color:#ffffff !important;text-decoration:underline;">VEZI PRODUSE</a> &nbsp;|&nbsp; Se termin&#259; &#238;n:&nbsp;<span id="preview-cd-ro_hyva_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
         </div>
@@ -1212,8 +1856,8 @@
         <div class="bar-hyva-mobile">
           <a href="#" style="color:#ffffff;text-decoration:none;">
             <span style="display:block;">
-              <span style="font-size:12px;color:#ffffff;">6% CU CODUL </span>
-              <strong style="background-color:#ffffff;color:#2d54bb;padding:1px 5px;border-radius:3px;font-family:monospace;">QDAYS6</strong>
+              <span style="font-size:12px;color:#ffffff;">5% CU CODUL </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
               <span style="font-size:12px;color:#ffffff;"> | </span>
               <span style="color:#ffffff;font-size:12px;text-decoration:underline;">VEZI PRODUSE</span>
             </span>
@@ -1227,15 +1871,15 @@
   <div id="tab-pl" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 6% z kodem
-        <span class="code">QDAYS6</span>
+        <strong class="label">WYPRZEDA&#379; LETNIA</strong> &ndash; 5% z kodem
+        <span class="code">SALE5</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">ZOBACZ PRODUKTY</a>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>6%</strong> kod
-          <span class="code">QDAYS6</span>
+          <strong>5%</strong> kod
+          <span class="code">SALE5</span>
           &nbsp;|&nbsp;
           <a href="#">PRODUKTY</a>
         </span>
@@ -1247,15 +1891,15 @@
   <div id="tab-pl_countdown" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 6% z kodem
-        <span class="code">QDAYS6</span>
+        <strong class="label">WYPRZEDA&#379; LETNIA</strong> &ndash; 5% z kodem
+        <span class="code">SALE5</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">ZOBACZ PRODUKTY</a> &nbsp;|&nbsp; Ko&#324;czy si&#281; za:&nbsp;<span id="preview-cd-pl_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>6%</strong> kod
-          <span class="code">QDAYS6</span>
+          <strong>5%</strong> kod
+          <span class="code">SALE5</span>
           &nbsp;|&nbsp;
           <a href="#">PRODUKTY</a>
         </span>
@@ -1264,18 +1908,72 @@
     </div>
   </div>
 
+  <div id="tab-pl_hyva" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <div class="bar-hyva-desktop">
+          <b style="color:#ffffff !important;">WYPRZEDA&#379; LETNIA</b>
+          <b style="color:#ffffff;"> &ndash; 5% Z KODEM </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
+          <b style="color:#ffffff;"> | </b>
+          <a href="#" style="color:#ffffff !important;text-decoration:underline;">ZOBACZ PRODUKTY</a>
+        </div>
+      </div>
+      <div class="bar-mobile">
+        <div class="bar-hyva-mobile">
+          <a href="#" style="color:#ffffff;text-decoration:none;">
+            <span style="display:block;">
+              <span style="font-size:12px;color:#ffffff;">5% Z KODEM </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
+              <span style="font-size:12px;color:#ffffff;"> | </span>
+              <span style="color:#ffffff;font-size:12px;text-decoration:underline;">ZOBACZ PRODUKTY</span>
+            </span>
+            
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-pl_hyva_countdown" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <div class="bar-hyva-desktop">
+          <b style="color:#ffffff !important;">WYPRZEDA&#379; LETNIA</b>
+          <b style="color:#ffffff;"> &ndash; 5% Z KODEM </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
+          <b style="color:#ffffff;"> | </b>
+          <a href="#" style="color:#ffffff !important;text-decoration:underline;">ZOBACZ PRODUKTY</a> &nbsp;|&nbsp; Ko&#324;czy si&#281; za:&nbsp;<span id="preview-cd-pl_hyva_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
+        </div>
+      </div>
+      <div class="bar-mobile">
+        <div class="bar-hyva-mobile">
+          <a href="#" style="color:#ffffff;text-decoration:none;">
+            <span style="display:block;">
+              <span style="font-size:12px;color:#ffffff;">5% Z KODEM </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
+              <span style="font-size:12px;color:#ffffff;"> | </span>
+              <span style="color:#ffffff;font-size:12px;text-decoration:underline;">ZOBACZ PRODUKTY</span>
+            </span>
+            <span class="countdown-line">Ko&#324;czy si&#281; za:&nbsp;<span id="preview-cd-pl_hyva_countdown-m" class="countdown" style="font-variant-numeric:tabular-nums;"></span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="tab-cz" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 6% s k&#243;dem
-        <span class="code">QDAYS6</span>
+        <strong class="label">LETN&#205; V&#221;PRODEJ</strong> &ndash; 5% s k&#243;dem
+        <span class="code">SALE5</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">ZOBRAZIT PRODUKTY</a>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>6%</strong> k&#243;d
-          <span class="code">QDAYS6</span>
+          <strong>5%</strong> k&#243;d
+          <span class="code">SALE5</span>
           &nbsp;|&nbsp;
           <a href="#">PRODUKTY</a>
         </span>
@@ -1287,15 +1985,15 @@
   <div id="tab-cz_countdown" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 6% s k&#243;dem
-        <span class="code">QDAYS6</span>
+        <strong class="label">LETN&#205; V&#221;PRODEJ</strong> &ndash; 5% s k&#243;dem
+        <span class="code">SALE5</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">ZOBRAZIT PRODUKTY</a> &nbsp;|&nbsp; Kon&#269;&#237; za:&nbsp;<span id="preview-cd-cz_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>6%</strong> k&#243;d
-          <span class="code">QDAYS6</span>
+          <strong>5%</strong> k&#243;d
+          <span class="code">SALE5</span>
           &nbsp;|&nbsp;
           <a href="#">PRODUKTY</a>
         </span>
@@ -1304,18 +2002,72 @@
     </div>
   </div>
 
+  <div id="tab-cz_hyva" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <div class="bar-hyva-desktop">
+          <b style="color:#ffffff !important;">LETN&#205; V&#221;PRODEJ</b>
+          <b style="color:#ffffff;"> &ndash; 5% S K&#211;DEM </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
+          <b style="color:#ffffff;"> | </b>
+          <a href="#" style="color:#ffffff !important;text-decoration:underline;">ZOBRAZIT PRODUKTY</a>
+        </div>
+      </div>
+      <div class="bar-mobile">
+        <div class="bar-hyva-mobile">
+          <a href="#" style="color:#ffffff;text-decoration:none;">
+            <span style="display:block;">
+              <span style="font-size:12px;color:#ffffff;">5% S K&#211;DEM </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
+              <span style="font-size:12px;color:#ffffff;"> | </span>
+              <span style="color:#ffffff;font-size:12px;text-decoration:underline;">ZOBRAZIT PRODUKTY</span>
+            </span>
+            
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-cz_hyva_countdown" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <div class="bar-hyva-desktop">
+          <b style="color:#ffffff !important;">LETN&#205; V&#221;PRODEJ</b>
+          <b style="color:#ffffff;"> &ndash; 5% S K&#211;DEM </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
+          <b style="color:#ffffff;"> | </b>
+          <a href="#" style="color:#ffffff !important;text-decoration:underline;">ZOBRAZIT PRODUKTY</a> &nbsp;|&nbsp; Kon&#269;&#237; za:&nbsp;<span id="preview-cd-cz_hyva_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
+        </div>
+      </div>
+      <div class="bar-mobile">
+        <div class="bar-hyva-mobile">
+          <a href="#" style="color:#ffffff;text-decoration:none;">
+            <span style="display:block;">
+              <span style="font-size:12px;color:#ffffff;">5% S K&#211;DEM </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
+              <span style="font-size:12px;color:#ffffff;"> | </span>
+              <span style="color:#ffffff;font-size:12px;text-decoration:underline;">ZOBRAZIT PRODUKTY</span>
+            </span>
+            <span class="countdown-line">Kon&#269;&#237; za:&nbsp;<span id="preview-cd-cz_hyva_countdown-m" class="countdown" style="font-variant-numeric:tabular-nums;"></span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="tab-fi" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 6% koodilla
-        <span class="code">QDAYS6</span>
+        <strong class="label">KES&#196;ALE</strong> &ndash; 5% koodilla
+        <span class="code">SALE5</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">KATSO TUOTTEET</a>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>6%</strong> koodi
-          <span class="code">QDAYS6</span>
+          <strong>5%</strong> koodi
+          <span class="code">SALE5</span>
           &nbsp;|&nbsp;
           <a href="#">TUOTTEET</a>
         </span>
@@ -1324,13 +2076,33 @@
     </div>
   </div>
 
+  <div id="tab-fi_countdown" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <strong class="label">KES&#196;ALE</strong> &ndash; 5% koodilla
+        <span class="code">SALE5</span>
+        &nbsp;&ndash;&nbsp;
+        <a href="#">KATSO TUOTTEET</a> &nbsp;|&nbsp; P&#228;&#228;ttyy:&nbsp;<span id="preview-cd-fi_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
+      </div>
+      <div class="bar-mobile">
+        <span style="display:block;">
+          <strong>5%</strong> koodi
+          <span class="code">SALE5</span>
+          &nbsp;|&nbsp;
+          <a href="#">TUOTTEET</a>
+        </span>
+        <span class="countdown-line">P&#228;&#228;ttyy:&nbsp;<span id="preview-cd-fi_countdown-m" class="countdown" style="font-variant-numeric:tabular-nums;"></span></span>
+      </div>
+    </div>
+  </div>
+
   <div id="tab-fi_hyva" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <div class="bar-hyva-desktop">
-          <b style="color:#ffffff !important;">Qdays!</b>
-          <b style="color:#ffffff;"> &ndash; 6% KOODILLA </b>
-          <strong style="background-color:#ffffff;color:#2d54bb;padding:2px 8px;border-radius:4px;font-family:monospace;">QDAYS6</strong>
+          <b style="color:#ffffff !important;">KES&#196;ALE</b>
+          <b style="color:#ffffff;"> &ndash; 5% KOODILLA </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
           <b style="color:#ffffff;"> | </b>
           <a href="#" style="color:#ffffff !important;text-decoration:underline;">KATSO TUOTTEET</a>
         </div>
@@ -1339,8 +2111,8 @@
         <div class="bar-hyva-mobile">
           <a href="#" style="color:#ffffff;text-decoration:none;">
             <span style="display:block;">
-              <span style="font-size:12px;color:#ffffff;">6% KOODILLA </span>
-              <strong style="background-color:#ffffff;color:#2d54bb;padding:1px 5px;border-radius:3px;font-family:monospace;">QDAYS6</strong>
+              <span style="font-size:12px;color:#ffffff;">5% KOODILLA </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
               <span style="font-size:12px;color:#ffffff;"> | </span>
               <span style="color:#ffffff;font-size:12px;text-decoration:underline;">KATSO TUOTTEET</span>
             </span>
@@ -1355,9 +2127,9 @@
     <div class="bar-wrapper">
       <div class="bar-desktop">
         <div class="bar-hyva-desktop">
-          <b style="color:#ffffff !important;">Qdays!</b>
-          <b style="color:#ffffff;"> &ndash; 6% KOODILLA </b>
-          <strong style="background-color:#ffffff;color:#2d54bb;padding:2px 8px;border-radius:4px;font-family:monospace;">QDAYS6</strong>
+          <b style="color:#ffffff !important;">KES&#196;ALE</b>
+          <b style="color:#ffffff;"> &ndash; 5% KOODILLA </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
           <b style="color:#ffffff;"> | </b>
           <a href="#" style="color:#ffffff !important;text-decoration:underline;">KATSO TUOTTEET</a> &nbsp;|&nbsp; P&#228;&#228;ttyy:&nbsp;<span id="preview-cd-fi_hyva_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
         </div>
@@ -1366,8 +2138,8 @@
         <div class="bar-hyva-mobile">
           <a href="#" style="color:#ffffff;text-decoration:none;">
             <span style="display:block;">
-              <span style="font-size:12px;color:#ffffff;">6% KOODILLA </span>
-              <strong style="background-color:#ffffff;color:#2d54bb;padding:1px 5px;border-radius:3px;font-family:monospace;">QDAYS6</strong>
+              <span style="font-size:12px;color:#ffffff;">5% KOODILLA </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
               <span style="font-size:12px;color:#ffffff;"> | </span>
               <span style="color:#ffffff;font-size:12px;text-decoration:underline;">KATSO TUOTTEET</span>
             </span>
@@ -1381,15 +2153,15 @@
   <div id="tab-se" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 6% med koden
-        <span class="code">QDAYS6</span>
+        <strong class="label">SOMMREA</strong> &ndash; 5% med koden
+        <span class="code">SALE5</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">VISA PRODUKTER</a>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>6%</strong> kod
-          <span class="code">QDAYS6</span>
+          <strong>5%</strong> kod
+          <span class="code">SALE5</span>
           &nbsp;|&nbsp;
           <a href="#">PRODUKTER</a>
         </span>
@@ -1401,19 +2173,73 @@
   <div id="tab-se_countdown" class="section">
     <div class="bar-wrapper">
       <div class="bar-desktop">
-        <strong class="label">Qdays!</strong> &ndash; 6% med koden
-        <span class="code">QDAYS6</span>
+        <strong class="label">SOMMREA</strong> &ndash; 5% med koden
+        <span class="code">SALE5</span>
         &nbsp;&ndash;&nbsp;
         <a href="#">VISA PRODUKTER</a> &nbsp;|&nbsp; Slutar om:&nbsp;<span id="preview-cd-se_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
       </div>
       <div class="bar-mobile">
         <span style="display:block;">
-          <strong>6%</strong> kod
-          <span class="code">QDAYS6</span>
+          <strong>5%</strong> kod
+          <span class="code">SALE5</span>
           &nbsp;|&nbsp;
           <a href="#">PRODUKTER</a>
         </span>
         <span class="countdown-line">Slutar om:&nbsp;<span id="preview-cd-se_countdown-m" class="countdown" style="font-variant-numeric:tabular-nums;"></span></span>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-se_hyva" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <div class="bar-hyva-desktop">
+          <b style="color:#ffffff !important;">SOMMREA</b>
+          <b style="color:#ffffff;"> &ndash; 5% MED KODEN </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
+          <b style="color:#ffffff;"> | </b>
+          <a href="#" style="color:#ffffff !important;text-decoration:underline;">VISA PRODUKTER</a>
+        </div>
+      </div>
+      <div class="bar-mobile">
+        <div class="bar-hyva-mobile">
+          <a href="#" style="color:#ffffff;text-decoration:none;">
+            <span style="display:block;">
+              <span style="font-size:12px;color:#ffffff;">5% MED KODEN </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
+              <span style="font-size:12px;color:#ffffff;"> | </span>
+              <span style="color:#ffffff;font-size:12px;text-decoration:underline;">VISA PRODUKTER</span>
+            </span>
+            
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-se_hyva_countdown" class="section">
+    <div class="bar-wrapper">
+      <div class="bar-desktop">
+        <div class="bar-hyva-desktop">
+          <b style="color:#ffffff !important;">SOMMREA</b>
+          <b style="color:#ffffff;"> &ndash; 5% MED KODEN </b>
+          <strong style="background-color:#ffffff;color:#FF464A;padding:2px 8px;border-radius:4px;font-family:monospace;">SALE5</strong>
+          <b style="color:#ffffff;"> | </b>
+          <a href="#" style="color:#ffffff !important;text-decoration:underline;">VISA PRODUKTER</a> &nbsp;|&nbsp; Slutar om:&nbsp;<span id="preview-cd-se_hyva_countdown" class="countdown" style="font-variant-numeric:tabular-nums;"></span>
+        </div>
+      </div>
+      <div class="bar-mobile">
+        <div class="bar-hyva-mobile">
+          <a href="#" style="color:#ffffff;text-decoration:none;">
+            <span style="display:block;">
+              <span style="font-size:12px;color:#ffffff;">5% MED KODEN </span>
+              <strong style="background-color:#ffffff;color:#FF464A;padding:1px 5px;border-radius:3px;font-family:monospace;">SALE5</strong>
+              <span style="font-size:12px;color:#ffffff;"> | </span>
+              <span style="color:#ffffff;font-size:12px;text-decoration:underline;">VISA PRODUKTER</span>
+            </span>
+            <span class="countdown-line">Slutar om:&nbsp;<span id="preview-cd-se_hyva_countdown-m" class="countdown" style="font-variant-numeric:tabular-nums;"></span></span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -1447,7 +2273,7 @@
   });
 
   (function () {
-    var end = new Date(2026, 5, 30, 23, 59, 59);
+    var end = new Date(2026, 6, 14, 23, 59, 59);
     function fmt(diff) {
       if (diff < 0) diff = 0;
       var s = Math.floor(diff / 1000);

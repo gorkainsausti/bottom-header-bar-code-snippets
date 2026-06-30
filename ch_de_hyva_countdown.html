@@ -1,0 +1,27 @@
+<div class="hidden md:block text-center p-1"  style="background-color:#FF464A;">
+    <p class="container" style="margin:0; color:#ffffff !important; font-size:16px;"><b style="color:#ffffff !important;">SOMMER SALE</b> <b style="color:#ffffff !important;">&#8211; 5% MIT CODE </b><strong style="background-color:#ffffff; color:#FF464A !important; padding:2px 8px; border-radius:4px; font-family:monospace;">SALE5</strong><b style="color:#ffffff !important;"> | </b><span style="color:#ffffff !important;"> <a style="color:#ffffff !important;text-decoration:underline;" href="{{store direct_url="angebote/quirumed-sonderangebote"}}"><span style="color:#ffffff !important;">PRODUKTE ANSEHEN</span></a></span><span style="color:#ffffff !important;">&nbsp;|&nbsp;</span> <span style="color:#ffffff !important;">Endet in:</span>&nbsp;<span class="sale-cd-timer" style="color:#ffffff !important;font-variant-numeric:tabular-nums;"></span></p>
+    </div>
+    
+    <div class="block md:hidden text-center p-1" style="background-color:#FF464A;">
+    <p class="container" style="margin:0; line-height:1.35;"><a href="{{store direct_url="angebote/quirumed-sonderangebote"}}" style="text-decoration:none;"><span style="display:block;"><span style="color:#ffffff !important;font-size:12px;">5% MIT CODE </span><strong style="background-color:#ffffff; color:#FF464A !important; padding:1px 5px; border-radius:3px; font-family:monospace;">SALE5</strong><span style="color:#ffffff !important;font-size:12px;"> | </span><span style="color:#ffffff !important;font-size:12px;text-decoration:underline;">PRODUKTE ANSEHEN</span></span><span style="display:block;color:#ffffff !important;font-size:12px;">Endet in:&nbsp;<span class="sale-cd-timer" style="color:#ffffff !important;font-variant-numeric:tabular-nums;"></span></span></a></p>
+    </div>
+
+<script>
+(function() {
+  var end = new Date(2026, 6, 14, 23, 59, 59);
+  function tick() {
+    var diff = end - Date.now();
+    if (diff < 0) diff = 0;
+    var sec = Math.floor(diff / 1000);
+    var days = Math.floor(sec / 86400); sec %= 86400;
+    var hrs = Math.floor(sec / 3600); sec %= 3600;
+    var mins = Math.floor(sec / 60); sec %= 60;
+    var text = days + "d " + hrs + "h " + mins + "m " + sec + "s";
+    document.querySelectorAll(".sale-cd-timer").forEach(function(el) {
+      el.textContent = text;
+    });
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>

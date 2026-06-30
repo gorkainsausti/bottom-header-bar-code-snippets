@@ -1,33 +1,32 @@
 #!/usr/bin/env python3
-"""Generate QDAYS campaign bar snippets for all locales."""
+"""Generate REBAJAS DE VERANO campaign bar snippets for all locales."""
 
 from pathlib import Path
 
 # Colores de campaña
-STD_BG = "#83bb24"            # Fondo de los bloques estándar (no Hyvä)
-HYVA_BG = "#2d54bb"           # Fondo de los bloques Hyvä
+STD_BG = "#FF464A"            # Fondo de los bloques estándar (no Hyvä)
+HYVA_BG = "#FF464A"           # Fondo de los bloques Hyvä
 BROWN = "#ffffff"            # Color del texto principal
 BADGE_BG = "#ffffff"         # Fondo del badge del cupón
-STD_BADGE_TEXT = "#83bb24"   # Color del código del cupón en bloques estándar
-HYVA_BADGE_TEXT = "#2d54bb"  # Color del código del cupón en bloques Hyvä
+STD_BADGE_TEXT = "#FF464A"   # Color del código del cupón en bloques estándar
+HYVA_BADGE_TEXT = "#FF464A"  # Color del código del cupón en bloques Hyvä
 # Aliases de compatibilidad para las utilidades del preview
 BG = STD_BG
-GREEN = "#4f99f0"
+GREEN = "#ffffff"
 BADGE_TEXT = HYVA_BADGE_TEXT
-CLAIM = "Qdays!"
 
-# Campaign end: 30/06 inclusive (23:59:59 local time)
-COUNTDOWN_END = (2026, 5, 30, 23, 59, 59)  # month 0-indexed
+# Campaign end: 14/07 inclusive (23:59:59 local time)
+COUNTDOWN_END = (2026, 6, 14, 23, 59, 59)  # month 0-indexed
 
 LOCALES = {
     "es": {
         "comment": "ESPA&#209;A",
-        "tag": "QDAYS8",
-        "pct": 8,
-        "coupon": "QDAYS8",
-        "claim": CLAIM,
-        "discount": "8% con el c&#243;digo",
-        "hyva_discount": "8% CON EL C&#211;DIGO ",
+        "tag": "SALE7",
+        "pct": 7,
+        "coupon": "SALE7",
+        "claim": "REBAJAS DE VERANO",
+        "discount": "7% con el c&#243;digo",
+        "hyva_discount": "7% CON EL C&#211;DIGO ",
         "mobile_word": "cup&#243;n",
         "ends_in": "Finaliza en:",
         "cta_d": "VER PRODUCTOS",
@@ -36,12 +35,12 @@ LOCALES = {
     },
     "pt": {
         "comment": "PORTUGAL",
-        "tag": "QDAYS8",
-        "pct": 8,
-        "coupon": "QDAYS8",
-        "claim": CLAIM,
-        "discount": "8% com o c&#243;digo",
-        "hyva_discount": "8% COM O C&#211;DIGO ",
+        "tag": "SALE7",
+        "pct": 7,
+        "coupon": "SALE7",
+        "claim": "SALDOS DE VER&#195;O",
+        "discount": "7% com o c&#243;digo",
+        "hyva_discount": "7% COM O C&#211;DIGO ",
         "mobile_word": "cup&#227;o",
         "ends_in": "Termina em:",
         "cta_d": "VER PRODUTOS",
@@ -50,12 +49,12 @@ LOCALES = {
     },
     "de": {
         "comment": "ALEMANIA",
-        "tag": "QDAYS6",
-        "pct": 6,
-        "coupon": "QDAYS6",
-        "claim": CLAIM,
-        "discount": "6% mit Code",
-        "hyva_discount": "6% MIT CODE ",
+        "tag": "SALE5",
+        "pct": 5,
+        "coupon": "SALE5",
+        "claim": "SOMMER SALE",
+        "discount": "5% mit Code",
+        "hyva_discount": "5% MIT CODE ",
         "mobile_word": "Code",
         "ends_in": "Endet in:",
         "cta_d": "PRODUKTE ANSEHEN",
@@ -64,12 +63,12 @@ LOCALES = {
     },
     "at": {
         "comment": "AUSTRIA",
-        "tag": "QDAYS6",
-        "pct": 6,
-        "coupon": "QDAYS6",
-        "claim": CLAIM,
-        "discount": "6% mit Code",
-        "hyva_discount": "6% MIT CODE ",
+        "tag": "SALE5",
+        "pct": 5,
+        "coupon": "SALE5",
+        "claim": "SOMMER SALE",
+        "discount": "5% mit Code",
+        "hyva_discount": "5% MIT CODE ",
         "mobile_word": "Code",
         "ends_in": "Endet in:",
         "cta_d": "PRODUKTE ANSEHEN",
@@ -78,12 +77,12 @@ LOCALES = {
     },
     "fr": {
         "comment": "FRANCIA",
-        "tag": "QDAYS6",
-        "pct": 6,
-        "coupon": "QDAYS6",
-        "claim": CLAIM,
-        "discount": "6% avec le code",
-        "hyva_discount": "6% AVEC LE CODE ",
+        "tag": "SALE5",
+        "pct": 5,
+        "coupon": "SALE5",
+        "claim": "SOLDES D&#8217;&#201;T&#201;",
+        "discount": "5% avec le code",
+        "hyva_discount": "5% AVEC LE CODE ",
         "mobile_word": "code",
         "ends_in": "Se termine dans :",
         "cta_d": "VOIR LES PRODUITS",
@@ -92,12 +91,12 @@ LOCALES = {
     },
     "be_fr": {
         "comment": "B&#201;LGICA FR",
-        "tag": "QDAYS6",
-        "pct": 6,
-        "coupon": "QDAYS6",
-        "claim": CLAIM,
-        "discount": "6% avec le code",
-        "hyva_discount": "6% AVEC LE CODE ",
+        "tag": "SALE5",
+        "pct": 5,
+        "coupon": "SALE5",
+        "claim": "SOLDES D&#8217;&#201;T&#201;",
+        "discount": "5% avec le code",
+        "hyva_discount": "5% AVEC LE CODE ",
         "mobile_word": "code",
         "ends_in": "Se termine dans :",
         "cta_d": "VOIR LES PRODUITS",
@@ -106,12 +105,12 @@ LOCALES = {
     },
     "be_nl": {
         "comment": "B&#201;LGICA NL",
-        "tag": "QDAYS6",
-        "pct": 6,
-        "coupon": "QDAYS6",
-        "claim": CLAIM,
-        "discount": "6% met code",
-        "hyva_discount": "6% MET CODE ",
+        "tag": "SALE5",
+        "pct": 5,
+        "coupon": "SALE5",
+        "claim": "ZOMERUITVERKOOP",
+        "discount": "5% met code",
+        "hyva_discount": "5% MET CODE ",
         "mobile_word": "code",
         "ends_in": "Eindigt over:",
         "cta_d": "BEKIJK PRODUCTEN",
@@ -120,12 +119,12 @@ LOCALES = {
     },
     "nl": {
         "comment": "HOLANDA",
-        "tag": "QDAYS6",
-        "pct": 6,
-        "coupon": "QDAYS6",
-        "claim": CLAIM,
-        "discount": "6% met code",
-        "hyva_discount": "6% MET CODE ",
+        "tag": "SALE5",
+        "pct": 5,
+        "coupon": "SALE5",
+        "claim": "ZOMERUITVERKOOP",
+        "discount": "5% met code",
+        "hyva_discount": "5% MET CODE ",
         "mobile_word": "code",
         "ends_in": "Eindigt over:",
         "cta_d": "BEKIJK PRODUCTEN",
@@ -134,12 +133,12 @@ LOCALES = {
     },
     "it": {
         "comment": "ITALIA",
-        "tag": "QDAYS6",
-        "pct": 6,
-        "coupon": "QDAYS6",
-        "claim": CLAIM,
-        "discount": "6% con codice",
-        "hyva_discount": "6% CON CODICE ",
+        "tag": "SALE5",
+        "pct": 5,
+        "coupon": "SALE5",
+        "claim": "SALDI ESTIVI",
+        "discount": "5% con codice",
+        "hyva_discount": "5% CON CODICE ",
         "mobile_word": "codice",
         "ends_in": "Termina tra:",
         "cta_d": "VEDI PRODOTTI",
@@ -148,12 +147,12 @@ LOCALES = {
     },
     "ch_de": {
         "comment": "SUIZA ALEM&#193;N",
-        "tag": "QDAYS6",
-        "pct": 6,
-        "coupon": "QDAYS6",
-        "claim": CLAIM,
-        "discount": "6% mit Code",
-        "hyva_discount": "6% MIT CODE ",
+        "tag": "SALE5",
+        "pct": 5,
+        "coupon": "SALE5",
+        "claim": "SOMMER SALE",
+        "discount": "5% mit Code",
+        "hyva_discount": "5% MIT CODE ",
         "mobile_word": "Code",
         "ends_in": "Endet in:",
         "cta_d": "PRODUKTE ANSEHEN",
@@ -162,12 +161,12 @@ LOCALES = {
     },
     "ch_fr": {
         "comment": "SUIZA FR",
-        "tag": "QDAYS6",
-        "pct": 6,
-        "coupon": "QDAYS6",
-        "claim": CLAIM,
-        "discount": "6% avec le code",
-        "hyva_discount": "6% AVEC LE CODE ",
+        "tag": "SALE5",
+        "pct": 5,
+        "coupon": "SALE5",
+        "claim": "SOLDES D&#8217;&#201;T&#201;",
+        "discount": "5% avec le code",
+        "hyva_discount": "5% AVEC LE CODE ",
         "mobile_word": "code",
         "ends_in": "Se termine dans :",
         "cta_d": "VOIR LES PRODUITS",
@@ -176,12 +175,12 @@ LOCALES = {
     },
     "ch_it": {
         "comment": "SUIZA IT",
-        "tag": "QDAYS6",
-        "pct": 6,
-        "coupon": "QDAYS6",
-        "claim": CLAIM,
-        "discount": "6% con codice",
-        "hyva_discount": "6% CON CODICE ",
+        "tag": "SALE5",
+        "pct": 5,
+        "coupon": "SALE5",
+        "claim": "SALDI ESTIVI",
+        "discount": "5% con codice",
+        "hyva_discount": "5% CON CODICE ",
         "mobile_word": "codice",
         "ends_in": "Termina tra:",
         "cta_d": "VEDI PRODOTTI",
@@ -190,12 +189,12 @@ LOCALES = {
     },
     "uk": {
         "comment": "REINO UNIDO",
-        "tag": "QDAYS6",
-        "pct": 6,
-        "coupon": "QDAYS6",
-        "claim": CLAIM,
-        "discount": "6% with code",
-        "hyva_discount": "6% DISCOUNT CODE ",
+        "tag": "SALE5",
+        "pct": 5,
+        "coupon": "SALE5",
+        "claim": "SUMMER SALE",
+        "discount": "5% with code",
+        "hyva_discount": "5% DISCOUNT CODE ",
         "mobile_word": "code",
         "ends_in": "Ends in:",
         "cta_d": "VIEW PRODUCTS",
@@ -204,12 +203,12 @@ LOCALES = {
     },
     "ie": {
         "comment": "IRLANDA",
-        "tag": "QDAYS6",
-        "pct": 6,
-        "coupon": "QDAYS6",
-        "claim": CLAIM,
-        "discount": "6% with code",
-        "hyva_discount": "6% DISCOUNT CODE ",
+        "tag": "SALE5",
+        "pct": 5,
+        "coupon": "SALE5",
+        "claim": "SUMMER SALE",
+        "discount": "5% with code",
+        "hyva_discount": "5% DISCOUNT CODE ",
         "mobile_word": "code",
         "ends_in": "Ends in:",
         "cta_d": "VIEW PRODUCTS",
@@ -218,12 +217,12 @@ LOCALES = {
     },
     "int_en": {
         "comment": "INTERNACIONAL",
-        "tag": "QDAYS6",
-        "pct": 6,
-        "coupon": "QDAYS6",
-        "claim": CLAIM,
-        "discount": "6% with code",
-        "hyva_discount": "6% DISCOUNT CODE ",
+        "tag": "SALE5",
+        "pct": 5,
+        "coupon": "SALE5",
+        "claim": "SUMMER SALE",
+        "discount": "5% with code",
+        "hyva_discount": "5% DISCOUNT CODE ",
         "mobile_word": "code",
         "ends_in": "Ends in:",
         "cta_d": "VIEW PRODUCTS",
@@ -232,12 +231,12 @@ LOCALES = {
     },
     "gr": {
         "comment": "GRECIA",
-        "tag": "QDAYS6",
-        "pct": 6,
-        "coupon": "QDAYS6",
-        "claim": CLAIM,
-        "discount": "6% &#956;&#949; &#954;&#969;&#948;&#953;&#954;&#972;",
-        "hyva_discount": "6% &#924;&#917; &#922;&#937;&#916;&#921;&#922;&#927; ",
+        "tag": "SALE5",
+        "pct": 5,
+        "coupon": "SALE5",
+        "claim": "&#922;&#913;&#923;&#927;&#922;&#913;&#921;&#929;&#921;&#925;&#917;&#931; &#917;&#922;&#928;&#932;&#937;&#931;&#917;&#921;&#931;",
+        "discount": "5% &#956;&#949; &#954;&#969;&#948;&#953;&#954;&#972;",
+        "hyva_discount": "5% &#924;&#917; &#922;&#937;&#916;&#921;&#922;&#927; ",
         "mobile_word": "&#954;&#969;&#948;.",
         "ends_in": "&#923;&#942;&#947;&#949;&#953; &#963;&#949;:",
         "cta_d": "&#916;&#917;&#921;&#932;&#917; &#928;&#929;&#927;&#938;&#927;&#925;&#932;&#913;",
@@ -246,12 +245,12 @@ LOCALES = {
     },
     "ro": {
         "comment": "RUMAN&#205;A",
-        "tag": "QDAYS6",
-        "pct": 6,
-        "coupon": "QDAYS6",
-        "claim": CLAIM,
-        "discount": "6% cu codul",
-        "hyva_discount": "6% CU CODUL ",
+        "tag": "SALE5",
+        "pct": 5,
+        "coupon": "SALE5",
+        "claim": "REDUCERI DE VAR&#258;",
+        "discount": "5% cu codul",
+        "hyva_discount": "5% CU CODUL ",
         "mobile_word": "cod",
         "ends_in": "Se termin&#259; &#238;n:",
         "cta_d": "VEZI PRODUSE",
@@ -260,12 +259,12 @@ LOCALES = {
     },
     "pl": {
         "comment": "POLONIA",
-        "tag": "QDAYS6",
-        "pct": 6,
-        "coupon": "QDAYS6",
-        "claim": CLAIM,
-        "discount": "6% z kodem",
-        "hyva_discount": "6% Z KODEM ",
+        "tag": "SALE5",
+        "pct": 5,
+        "coupon": "SALE5",
+        "claim": "WYPRZEDA&#379; LETNIA",
+        "discount": "5% z kodem",
+        "hyva_discount": "5% Z KODEM ",
         "mobile_word": "kod",
         "ends_in": "Ko&#324;czy si&#281; za:",
         "cta_d": "ZOBACZ PRODUKTY",
@@ -274,12 +273,12 @@ LOCALES = {
     },
     "cz": {
         "comment": "REP&#218;BLICA CHECA",
-        "tag": "QDAYS6",
-        "pct": 6,
-        "coupon": "QDAYS6",
-        "claim": CLAIM,
-        "discount": "6% s k&#243;dem",
-        "hyva_discount": "6% S K&#211;DEM ",
+        "tag": "SALE5",
+        "pct": 5,
+        "coupon": "SALE5",
+        "claim": "LETN&#205; V&#221;PRODEJ",
+        "discount": "5% s k&#243;dem",
+        "hyva_discount": "5% S K&#211;DEM ",
         "mobile_word": "k&#243;d",
         "ends_in": "Kon&#269;&#237; za:",
         "cta_d": "ZOBRAZIT PRODUKTY",
@@ -288,12 +287,12 @@ LOCALES = {
     },
     "fi": {
         "comment": "FINLANDIA",
-        "tag": "QDAYS6",
-        "pct": 6,
-        "coupon": "QDAYS6",
-        "claim": CLAIM,
-        "discount": "6% koodilla",
-        "hyva_discount": "6% KOODILLA ",
+        "tag": "SALE5",
+        "pct": 5,
+        "coupon": "SALE5",
+        "claim": "KES&#196;ALE",
+        "discount": "5% koodilla",
+        "hyva_discount": "5% KOODILLA ",
         "mobile_word": "koodi",
         "ends_in": "P&#228;&#228;ttyy:",
         "cta_d": "KATSO TUOTTEET",
@@ -302,12 +301,12 @@ LOCALES = {
     },
     "se": {
         "comment": "SUECIA",
-        "tag": "QDAYS6",
-        "pct": 6,
-        "coupon": "QDAYS6",
-        "claim": CLAIM,
-        "discount": "6% med koden",
-        "hyva_discount": "6% MED KODEN ",
+        "tag": "SALE5",
+        "pct": 5,
+        "coupon": "SALE5",
+        "claim": "SOMMREA",
+        "discount": "5% med koden",
+        "hyva_discount": "5% MED KODEN ",
         "mobile_word": "kod",
         "ends_in": "Slutar om:",
         "cta_d": "VISA PRODUKTER",
@@ -316,20 +315,39 @@ LOCALES = {
     },
 }
 
-HYVA_LOCALES = [
+LOCALE_ORDER = [
+    "es",
+    "pt",
+    "de",
+    "at",
+    "fr",
+    "be_fr",
+    "be_nl",
     "nl",
-    "gr",
-    "ro",
+    "it",
+    "ch_de",
+    "ch_fr",
+    "ch_it",
     "uk",
     "ie",
     "int_en",
-    "at",
+    "gr",
+    "ro",
+    "pl",
+    "cz",
     "fi",
-    "be_nl",
-    "be_fr",
+    "se",
 ]
 
-COUNTDOWN_CLASS = "qdays-cd-timer"
+HYVA_LOCALES = LOCALE_ORDER
+
+PREVIEW_TAB_ORDER = []
+for locale in LOCALE_ORDER:
+    PREVIEW_TAB_ORDER.extend(
+        [locale, f"{locale}_countdown", f"{locale}_hyva", f"{locale}_hyva_countdown"]
+    )
+
+COUNTDOWN_CLASS = "sale-cd-timer"
 COUNTDOWN_SCRIPT = f"""<script>
 (function() {{
   var end = new Date({COUNTDOWN_END[0]}, {COUNTDOWN_END[1]}, {COUNTDOWN_END[2]}, {COUNTDOWN_END[3]}, {COUNTDOWN_END[4]}, {COUNTDOWN_END[5]});
@@ -508,64 +526,9 @@ def preview_section(tab_id: str, cfg: dict, hyva: bool = False, countdown: bool 
 """
 
 
-PREVIEW_TAB_ORDER = [
-    "es",
-    "es_countdown",
-    "pt",
-    "pt_countdown",
-    "de",
-    "de_countdown",
-    "at",
-    "at_hyva",
-    "at_hyva_countdown",
-    "fr",
-    "fr_countdown",
-    "be_fr",
-    "be_fr_hyva",
-    "be_fr_hyva_countdown",
-    "be_nl",
-    "be_nl_hyva",
-    "be_nl_hyva_countdown",
-    "nl",
-    "nl_hyva",
-    "nl_hyva_countdown",
-    "it",
-    "it_countdown",
-    "ch_de",
-    "ch_de_countdown",
-    "ch_fr",
-    "ch_fr_countdown",
-    "ch_it",
-    "ch_it_countdown",
-    "uk",
-    "uk_hyva",
-    "uk_hyva_countdown",
-    "ie",
-    "ie_hyva",
-    "ie_hyva_countdown",
-    "int_en",
-    "int_en_hyva",
-    "int_en_hyva_countdown",
-    "gr",
-    "gr_hyva",
-    "gr_hyva_countdown",
-    "ro",
-    "ro_hyva",
-    "ro_hyva_countdown",
-    "pl",
-    "pl_countdown",
-    "cz",
-    "cz_countdown",
-    "fi",
-    "fi_hyva",
-    "fi_hyva_countdown",
-    "se",
-    "se_countdown",
-]
-
 PREVIEW_COUNTDOWN_SCRIPT = """
   (function () {
-    var end = new Date(2026, 5, 30, 23, 59, 59);
+    var end = new Date(2026, 6, 14, 23, 59, 59);
     function fmt(diff) {
       if (diff < 0) diff = 0;
       var s = Math.floor(diff / 1000);
@@ -641,7 +604,7 @@ def update_preview_css(content: str) -> str:
         "background: #ffffff; color: #81a4c9;",
         f"background: {BADGE_BG}; color: {BADGE_TEXT};",
     )
-    for old_bg in ("#81a4c9", "#f1ecdf", "#f4eae0"):
+    for old_bg in ("#81a4c9", "#f1ecdf", "#f4eae0", "#83bb24", "#2d54bb"):
         content = content.replace(old_bg, BG)
     for old_text in ("#7a5b46", "#695240"):
         content = content.replace(old_text, BROWN)
@@ -651,7 +614,13 @@ def update_preview_css(content: str) -> str:
         "SUMMER7 ES/PT · SUMMER5 resto · 3/6–16/6",
         "QDAYS8 ES/PT · QDAYS6 resto · 23/6–30/6",
     ):
-        content = content.replace(old_hint, "QDAYS8 ES/PT · QDAYS6 resto · 23/6–30/6")
+        content = content.replace(old_hint, "SALE7 ES/PT · SALE5 resto · 1/7–14/7")
+    if "SALE7 ES/PT" not in content:
+        content = content.replace(
+            '<p class="hint">',
+            '<p class="hint">SALE7 ES/PT · SALE5 resto · 1/7–14/7 · ',
+            1,
+        )
     if ".bar-hyva-desktop a" not in content:
         content = content.replace(
             "    .bar-hyva-desktop {",
@@ -680,8 +649,14 @@ def rebuild_preview_nav(content: str) -> str:
 
 def inject_preview_countdown(content: str) -> str:
     marker = "</script>\n</body>"
-    if PREVIEW_COUNTDOWN_SCRIPT.strip() in content:
-        return content
+    # Replace existing preview countdown if present
+    import re
+
+    content = re.sub(
+        r"\n  \(function \(\) \{\n    var end = new Date\([^)]+\);[\s\S]*?\}\)\(\);\n",
+        "",
+        content,
+    )
     return content.replace(marker, PREVIEW_COUNTDOWN_SCRIPT + marker)
 
 
