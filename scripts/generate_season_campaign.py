@@ -1,30 +1,30 @@
 #!/usr/bin/env python3
-"""Generate REBAJAS DE VERANO campaign bar snippets for all locales."""
+"""Generate SEGUNDAS REBAJAS campaign bar snippets for all locales."""
 
 from pathlib import Path
 
 # Colores de campaña
-STD_BG = "#FF464A"            # Fondo de los bloques estándar (no Hyvä)
-HYVA_BG = "#FF464A"           # Fondo de los bloques Hyvä
+STD_BG = "#FF5143"            # Fondo de los bloques estándar (no Hyvä)
+HYVA_BG = "#FF5143"           # Fondo de los bloques Hyvä
 BROWN = "#ffffff"            # Color del texto principal
 BADGE_BG = "#ffffff"         # Fondo del badge del cupón
-STD_BADGE_TEXT = "#FF464A"   # Color del código del cupón en bloques estándar
-HYVA_BADGE_TEXT = "#FF464A"  # Color del código del cupón en bloques Hyvä
+STD_BADGE_TEXT = "#FF5143"   # Color del código del cupón en bloques estándar
+HYVA_BADGE_TEXT = "#FF5143"  # Color del código del cupón en bloques Hyvä
 # Aliases de compatibilidad para las utilidades del preview
 BG = STD_BG
 GREEN = "#ffffff"
 BADGE_TEXT = HYVA_BADGE_TEXT
 
-# Campaign end: 14/07 inclusive (23:59:59 local time)
-COUNTDOWN_END = (2026, 6, 14, 23, 59, 59)  # month 0-indexed
+# Campaign end: 28/07 inclusive (23:59:59 local time)
+COUNTDOWN_END = (2026, 6, 28, 23, 59, 59)  # month 0-indexed
 
 LOCALES = {
     "es": {
         "comment": "ESPA&#209;A",
-        "tag": "SALE7",
+        "tag": "EXTRA7",
         "pct": 7,
-        "coupon": "SALE7",
-        "claim": "REBAJAS DE VERANO",
+        "coupon": "EXTRA7",
+        "claim": "SEGUNDAS REBAJAS",
         "discount": "7% con el c&#243;digo",
         "hyva_discount": "7% CON EL C&#211;DIGO ",
         "mobile_word": "cup&#243;n",
@@ -35,10 +35,10 @@ LOCALES = {
     },
     "pt": {
         "comment": "PORTUGAL",
-        "tag": "SALE7",
+        "tag": "EXTRA7",
         "pct": 7,
-        "coupon": "SALE7",
-        "claim": "SALDOS DE VER&#195;O",
+        "coupon": "EXTRA7",
+        "claim": "SEGUNDOS SALDOS",
         "discount": "7% com o c&#243;digo",
         "hyva_discount": "7% COM O C&#211;DIGO ",
         "mobile_word": "cup&#227;o",
@@ -49,10 +49,10 @@ LOCALES = {
     },
     "de": {
         "comment": "ALEMANIA",
-        "tag": "SALE5",
+        "tag": "EXTRA5",
         "pct": 5,
-        "coupon": "SALE5",
-        "claim": "SOMMER SALE",
+        "coupon": "EXTRA5",
+        "claim": "ZWEITER SOMMERSALE",
         "discount": "5% mit Code",
         "hyva_discount": "5% MIT CODE ",
         "mobile_word": "Code",
@@ -63,10 +63,10 @@ LOCALES = {
     },
     "at": {
         "comment": "AUSTRIA",
-        "tag": "SALE5",
+        "tag": "EXTRA5",
         "pct": 5,
-        "coupon": "SALE5",
-        "claim": "SOMMER SALE",
+        "coupon": "EXTRA5",
+        "claim": "ZWEITER SOMMERSALE",
         "discount": "5% mit Code",
         "hyva_discount": "5% MIT CODE ",
         "mobile_word": "Code",
@@ -77,10 +77,10 @@ LOCALES = {
     },
     "fr": {
         "comment": "FRANCIA",
-        "tag": "SALE5",
+        "tag": "EXTRA5",
         "pct": 5,
-        "coupon": "SALE5",
-        "claim": "SOLDES D&#8217;&#201;T&#201;",
+        "coupon": "EXTRA5",
+        "claim": "DEUXI&#200;MES SOLDES",
         "discount": "5% avec le code",
         "hyva_discount": "5% AVEC LE CODE ",
         "mobile_word": "code",
@@ -91,10 +91,10 @@ LOCALES = {
     },
     "be_fr": {
         "comment": "B&#201;LGICA FR",
-        "tag": "SALE5",
+        "tag": "EXTRA5",
         "pct": 5,
-        "coupon": "SALE5",
-        "claim": "SOLDES D&#8217;&#201;T&#201;",
+        "coupon": "EXTRA5",
+        "claim": "DEUXI&#200;MES SOLDES",
         "discount": "5% avec le code",
         "hyva_discount": "5% AVEC LE CODE ",
         "mobile_word": "code",
@@ -105,10 +105,10 @@ LOCALES = {
     },
     "be_nl": {
         "comment": "B&#201;LGICA NL",
-        "tag": "SALE5",
+        "tag": "EXTRA5",
         "pct": 5,
-        "coupon": "SALE5",
-        "claim": "ZOMERUITVERKOOP",
+        "coupon": "EXTRA5",
+        "claim": "TWEEDE UITVERKOOP",
         "discount": "5% met code",
         "hyva_discount": "5% MET CODE ",
         "mobile_word": "code",
@@ -119,10 +119,10 @@ LOCALES = {
     },
     "nl": {
         "comment": "HOLANDA",
-        "tag": "SALE5",
+        "tag": "EXTRA5",
         "pct": 5,
-        "coupon": "SALE5",
-        "claim": "ZOMERUITVERKOOP",
+        "coupon": "EXTRA5",
+        "claim": "TWEEDE UITVERKOOP",
         "discount": "5% met code",
         "hyva_discount": "5% MET CODE ",
         "mobile_word": "code",
@@ -133,10 +133,10 @@ LOCALES = {
     },
     "it": {
         "comment": "ITALIA",
-        "tag": "SALE5",
+        "tag": "EXTRA5",
         "pct": 5,
-        "coupon": "SALE5",
-        "claim": "SALDI ESTIVI",
+        "coupon": "EXTRA5",
+        "claim": "SECONDI SALDI",
         "discount": "5% con codice",
         "hyva_discount": "5% CON CODICE ",
         "mobile_word": "codice",
@@ -147,10 +147,10 @@ LOCALES = {
     },
     "ch_de": {
         "comment": "SUIZA ALEM&#193;N",
-        "tag": "SALE5",
+        "tag": "EXTRA5",
         "pct": 5,
-        "coupon": "SALE5",
-        "claim": "SOMMER SALE",
+        "coupon": "EXTRA5",
+        "claim": "ZWEITER SOMMERSALE",
         "discount": "5% mit Code",
         "hyva_discount": "5% MIT CODE ",
         "mobile_word": "Code",
@@ -161,10 +161,10 @@ LOCALES = {
     },
     "ch_fr": {
         "comment": "SUIZA FR",
-        "tag": "SALE5",
+        "tag": "EXTRA5",
         "pct": 5,
-        "coupon": "SALE5",
-        "claim": "SOLDES D&#8217;&#201;T&#201;",
+        "coupon": "EXTRA5",
+        "claim": "DEUXI&#200;MES SOLDES",
         "discount": "5% avec le code",
         "hyva_discount": "5% AVEC LE CODE ",
         "mobile_word": "code",
@@ -175,10 +175,10 @@ LOCALES = {
     },
     "ch_it": {
         "comment": "SUIZA IT",
-        "tag": "SALE5",
+        "tag": "EXTRA5",
         "pct": 5,
-        "coupon": "SALE5",
-        "claim": "SALDI ESTIVI",
+        "coupon": "EXTRA5",
+        "claim": "SECONDI SALDI",
         "discount": "5% con codice",
         "hyva_discount": "5% CON CODICE ",
         "mobile_word": "codice",
@@ -189,10 +189,10 @@ LOCALES = {
     },
     "uk": {
         "comment": "REINO UNIDO",
-        "tag": "SALE5",
+        "tag": "EXTRA5",
         "pct": 5,
-        "coupon": "SALE5",
-        "claim": "SUMMER SALE",
+        "coupon": "EXTRA5",
+        "claim": "SECOND SUMMER SALE",
         "discount": "5% with code",
         "hyva_discount": "5% DISCOUNT CODE ",
         "mobile_word": "code",
@@ -203,10 +203,10 @@ LOCALES = {
     },
     "ie": {
         "comment": "IRLANDA",
-        "tag": "SALE5",
+        "tag": "EXTRA5",
         "pct": 5,
-        "coupon": "SALE5",
-        "claim": "SUMMER SALE",
+        "coupon": "EXTRA5",
+        "claim": "SECOND SUMMER SALE",
         "discount": "5% with code",
         "hyva_discount": "5% DISCOUNT CODE ",
         "mobile_word": "code",
@@ -217,10 +217,10 @@ LOCALES = {
     },
     "int_en": {
         "comment": "INTERNACIONAL",
-        "tag": "SALE5",
+        "tag": "EXTRA5",
         "pct": 5,
-        "coupon": "SALE5",
-        "claim": "SUMMER SALE",
+        "coupon": "EXTRA5",
+        "claim": "SECOND SUMMER SALE",
         "discount": "5% with code",
         "hyva_discount": "5% DISCOUNT CODE ",
         "mobile_word": "code",
@@ -231,10 +231,10 @@ LOCALES = {
     },
     "gr": {
         "comment": "GRECIA",
-        "tag": "SALE5",
+        "tag": "EXTRA5",
         "pct": 5,
-        "coupon": "SALE5",
-        "claim": "&#922;&#913;&#923;&#927;&#922;&#913;&#921;&#929;&#921;&#925;&#917;&#931; &#917;&#922;&#928;&#932;&#937;&#931;&#917;&#921;&#931;",
+        "coupon": "EXTRA5",
+        "claim": "&#916;&#917;&#933;&#932;&#917;&#929;&#917;&#931; &#917;&#922;&#928;&#932;&#937;&#931;&#917;&#921;&#931;",
         "discount": "5% &#956;&#949; &#954;&#969;&#948;&#953;&#954;&#972;",
         "hyva_discount": "5% &#924;&#917; &#922;&#937;&#916;&#921;&#922;&#927; ",
         "mobile_word": "&#954;&#969;&#948;.",
@@ -245,10 +245,10 @@ LOCALES = {
     },
     "ro": {
         "comment": "RUMAN&#205;A",
-        "tag": "SALE5",
+        "tag": "EXTRA5",
         "pct": 5,
-        "coupon": "SALE5",
-        "claim": "REDUCERI DE VAR&#258;",
+        "coupon": "EXTRA5",
+        "claim": "A DOUA REDUCERI DE VAR&#258;",
         "discount": "5% cu codul",
         "hyva_discount": "5% CU CODUL ",
         "mobile_word": "cod",
@@ -259,10 +259,10 @@ LOCALES = {
     },
     "pl": {
         "comment": "POLONIA",
-        "tag": "SALE5",
+        "tag": "EXTRA5",
         "pct": 5,
-        "coupon": "SALE5",
-        "claim": "WYPRZEDA&#379; LETNIA",
+        "coupon": "EXTRA5",
+        "claim": "DRUGA WYPRZEDA&#379; LETNIA",
         "discount": "5% z kodem",
         "hyva_discount": "5% Z KODEM ",
         "mobile_word": "kod",
@@ -273,10 +273,10 @@ LOCALES = {
     },
     "cz": {
         "comment": "REP&#218;BLICA CHECA",
-        "tag": "SALE5",
+        "tag": "EXTRA5",
         "pct": 5,
-        "coupon": "SALE5",
-        "claim": "LETN&#205; V&#221;PRODEJ",
+        "coupon": "EXTRA5",
+        "claim": "DRUH&#221; LETN&#205; V&#221;PRODEJ",
         "discount": "5% s k&#243;dem",
         "hyva_discount": "5% S K&#211;DEM ",
         "mobile_word": "k&#243;d",
@@ -287,10 +287,10 @@ LOCALES = {
     },
     "fi": {
         "comment": "FINLANDIA",
-        "tag": "SALE5",
+        "tag": "EXTRA5",
         "pct": 5,
-        "coupon": "SALE5",
-        "claim": "KES&#196;ALE",
+        "coupon": "EXTRA5",
+        "claim": "TOINEN KES&#196;ALE",
         "discount": "5% koodilla",
         "hyva_discount": "5% KOODILLA ",
         "mobile_word": "koodi",
@@ -301,10 +301,10 @@ LOCALES = {
     },
     "se": {
         "comment": "SUECIA",
-        "tag": "SALE5",
+        "tag": "EXTRA5",
         "pct": 5,
-        "coupon": "SALE5",
-        "claim": "SOMMREA",
+        "coupon": "EXTRA5",
+        "claim": "ANDRA SOMMREA",
         "discount": "5% med koden",
         "hyva_discount": "5% MED KODEN ",
         "mobile_word": "kod",
@@ -565,7 +565,7 @@ def preview_section(tab_id: str, cfg: dict, hyva: bool = False, countdown: bool 
 
 PREVIEW_COUNTDOWN_SCRIPT = """
   (function () {
-    var end = new Date(2026, 6, 14, 23, 59, 59);
+    var end = new Date(2026, 6, 28, 23, 59, 59);
     function fmt(diff) {
       if (diff < 0) diff = 0;
       var s = Math.floor(diff / 1000);
@@ -641,7 +641,7 @@ def update_preview_css(content: str) -> str:
         "background: #ffffff; color: #81a4c9;",
         f"background: {BADGE_BG}; color: {BADGE_TEXT};",
     )
-    for old_bg in ("#81a4c9", "#f1ecdf", "#f4eae0", "#83bb24", "#2d54bb"):
+    for old_bg in ("#81a4c9", "#f1ecdf", "#f4eae0", "#83bb24", "#2d54bb", "#FF464A"):
         content = content.replace(old_bg, BG)
     for old_text in ("#7a5b46", "#695240"):
         content = content.replace(old_text, BROWN)
@@ -650,12 +650,13 @@ def update_preview_css(content: str) -> str:
     for old_hint in (
         "SUMMER7 ES/PT · SUMMER5 resto · 3/6–16/6",
         "QDAYS8 ES/PT · QDAYS6 resto · 23/6–30/6",
+        "SALE7 ES/PT · SALE5 resto · 1/7–14/7",
     ):
-        content = content.replace(old_hint, "SALE7 ES/PT · SALE5 resto · 1/7–14/7")
-    if "SALE7 ES/PT" not in content:
+        content = content.replace(old_hint, "EXTRA7 ES/PT · EXTRA5 resto · 15/7–28/7")
+    if "EXTRA7 ES/PT" not in content:
         content = content.replace(
             '<p class="hint">',
-            '<p class="hint">SALE7 ES/PT · SALE5 resto · 1/7–14/7 · ',
+            '<p class="hint">EXTRA7 ES/PT · EXTRA5 resto · 15/7–28/7 · ',
             1,
         )
     if ".bar-hyva-desktop a" not in content:
