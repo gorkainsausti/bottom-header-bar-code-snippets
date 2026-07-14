@@ -348,42 +348,76 @@ for locale in LOCALE_ORDER:
     )
 
 COUNTDOWN_CLASS = "sale-cd-timer"
+PROMO_BAR_CLASS = "qm-promo-bar"
+PROMO_INNER_CLASS = "qm-promo-inner"
+PROMO_BADGE_CLASS = "qm-promo-badge"
 
-# Estilos de centrado acotados al snippet (inline + !important para no depender de CSS de la página)
-STD_WRAP_STYLE = f"background-color:{STD_BG}; text-align:center !important;"
-STD_DESK_P_STYLE = (
-    f"margin:0 !important; padding:4px 8px !important; color:{BROWN} !important; "
-    f"font-size:16px; text-align:center !important; line-height:1.35;"
-)
-STD_MOB_P_STYLE = (
-    f"margin:0 !important; padding:4px 8px !important; font-size:12px; color:{BROWN} !important; "
-    f"text-align:center !important; line-height:1.35;"
-)
+# CSS acotado solo a .qm-promo-bar — no afecta a otros elementos de la página
+PROMO_SCOPE_STYLE = """<style>
+.qm-promo-bar,
+.qm-promo-bar.extra-menu,
+.qm-promo-bar.hidden,
+.qm-promo-bar.block {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 6px 16px !important;
+  text-align: center !important;
+  float: none !important;
+  position: static !important;
+  left: auto !important;
+  right: auto !important;
+  transform: none !important;
+}
+.qm-promo-bar .qm-promo-inner,
+.qm-promo-bar.extra-menu .qm-promo-inner,
+.qm-promo-bar.extra-menu p.qm-promo-inner {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  text-align: center !important;
+  line-height: 1.35 !important;
+  float: none !important;
+  position: static !important;
+  left: auto !important;
+  right: auto !important;
+  transform: none !important;
+  text-indent: 0 !important;
+}
+.qm-promo-bar .qm-promo-badge {
+  vertical-align: middle !important;
+  display: inline-block !important;
+}
+</style>
+"""
+
+# Estilos inline de color/tamaño (el centrado lo resuelve PROMO_SCOPE_STYLE)
+STD_WRAP_STYLE = f"background-color:{STD_BG};"
+STD_DESK_P_STYLE = f"color:{BROWN} !important; font-size:16px;"
+STD_MOB_P_STYLE = f"font-size:12px; color:{BROWN} !important;"
 STD_BADGE_STYLE = (
     f"background-color:{BADGE_BG}; color:{STD_BADGE_TEXT} !important; padding:2px 8px; "
-    f"border-radius:4px; font-family:monospace; vertical-align:middle !important; display:inline-block !important;"
+    f"border-radius:4px; font-family:monospace;"
 )
 STD_BADGE_MOB_STYLE = (
     f"background-color:{BADGE_BG}; color:{STD_BADGE_TEXT} !important; padding:1px 5px; "
-    f"border-radius:3px; font-family:monospace; vertical-align:middle !important; display:inline-block !important;"
+    f"border-radius:3px; font-family:monospace;"
 )
-HYVA_WRAP_DESK_STYLE = f"background-color:{HYVA_BG}; text-align:center !important;"
-HYVA_WRAP_MOB_STYLE = f"background-color:{HYVA_BG}; text-align:center !important;"
-HYVA_DESK_P_STYLE = (
-    f"margin:0 !important; width:100% !important; padding:4px 8px !important; color:{BROWN} !important; "
-    f"font-size:16px; text-align:center !important; line-height:1.35;"
-)
-HYVA_MOB_P_STYLE = (
-    f"margin:0 !important; width:100% !important; padding:4px 8px !important; "
-    f"text-align:center !important; line-height:1.35;"
-)
+HYVA_WRAP_DESK_STYLE = f"background-color:{HYVA_BG};"
+HYVA_WRAP_MOB_STYLE = f"background-color:{HYVA_BG};"
+HYVA_DESK_P_STYLE = f"color:{BROWN} !important; font-size:16px;"
+HYVA_MOB_P_STYLE = ""
 HYVA_BADGE_STYLE = (
     f"background-color:{BADGE_BG}; color:{HYVA_BADGE_TEXT} !important; padding:2px 8px; "
-    f"border-radius:4px; font-family:monospace; vertical-align:middle !important; display:inline-block !important;"
+    f"border-radius:4px; font-family:monospace;"
 )
 HYVA_BADGE_MOB_STYLE = (
     f"background-color:{BADGE_BG}; color:{HYVA_BADGE_TEXT} !important; padding:1px 5px; "
-    f"border-radius:3px; font-family:monospace; vertical-align:middle !important; display:inline-block !important;"
+    f"border-radius:3px; font-family:monospace;"
 )
 COUNTDOWN_SCRIPT = f"""<script>
 (function() {{
@@ -430,11 +464,11 @@ def standard_html(cfg: dict, countdown: bool = False) -> str:
     suffix = f"\n{COUNTDOWN_SCRIPT}" if countdown else ""
     if countdown:
         mobile_block = f"""  <!-- {c['comment']} - Mobile -->
-  <div class="extra-menu show-mobile" style="{STD_WRAP_STYLE}">
-    <p style="{STD_MOB_P_STYLE}">
+  <div class="{PROMO_BAR_CLASS} extra-menu show-mobile" style="{STD_WRAP_STYLE}">
+    <p class="{PROMO_INNER_CLASS}" style="{STD_MOB_P_STYLE}">
       <span style="display:block;color:{BROWN} !important;">
       <strong style="color:{BROWN} !important;">{pct}%</strong> <span style="color:{BROWN} !important;">{c['mobile_word']}</span> 
-      <strong style="{STD_BADGE_MOB_STYLE}">{c['coupon']}</strong>
+      <strong class="{PROMO_BADGE_CLASS}" style="{STD_BADGE_MOB_STYLE}">{c['coupon']}</strong>
       <span style="color:{BROWN} !important;">&nbsp;|&nbsp;</span>
       <a href="{{{{store direct_url="{c['url']}"}}}}" style="text-decoration:underline; color:{BROWN} !important; font-weight:bold;">
         {c['cta_m']}
@@ -447,10 +481,10 @@ def standard_html(cfg: dict, countdown: bool = False) -> str:
 """
     else:
         mobile_block = f"""  <!-- {c['comment']} - Mobile -->
-  <div class="extra-menu show-mobile" style="{STD_WRAP_STYLE}">
-    <p style="{STD_MOB_P_STYLE}">
+  <div class="{PROMO_BAR_CLASS} extra-menu show-mobile" style="{STD_WRAP_STYLE}">
+    <p class="{PROMO_INNER_CLASS}" style="{STD_MOB_P_STYLE}">
       <strong style="color:{BROWN} !important;">{pct}%</strong> <span style="color:{BROWN} !important;">{c['mobile_word']}</span> 
-      <strong style="{STD_BADGE_MOB_STYLE}">{c['coupon']}</strong>
+      <strong class="{PROMO_BADGE_CLASS}" style="{STD_BADGE_MOB_STYLE}">{c['coupon']}</strong>
       <span style="color:{BROWN} !important;">&nbsp;|&nbsp;</span>
       <a href="{{{{store direct_url="{c['url']}"}}}}" style="text-decoration:underline; color:{BROWN} !important; font-weight:bold;">
         {c['cta_m']}
@@ -459,11 +493,11 @@ def standard_html(cfg: dict, countdown: bool = False) -> str:
   </div>
   
 """
-    return f"""<!-- {c['comment']} - {c['tag']}{' - Countdown' if countdown else ''} - Desktop -->
-<div class="extra-menu show-desktop" style="{STD_WRAP_STYLE}">
-    <p style="{STD_DESK_P_STYLE}">
+    return f"""{PROMO_SCOPE_STYLE}<!-- {c['comment']} - {c['tag']}{' - Countdown' if countdown else ''} - Desktop -->
+<div class="{PROMO_BAR_CLASS} extra-menu show-desktop" style="{STD_WRAP_STYLE}">
+    <p class="{PROMO_INNER_CLASS}" style="{STD_DESK_P_STYLE}">
       <strong style="color:{BROWN} !important;">{c['claim']}</strong> <span style="color:{BROWN} !important;">&#8211; {c['discount']}</span>
-      <strong style="{STD_BADGE_STYLE}">{c['coupon']}</strong>
+      <strong class="{PROMO_BADGE_CLASS}" style="{STD_BADGE_STYLE}">{c['coupon']}</strong>
       <span style="color:{BROWN} !important;">&nbsp;&#8211;&nbsp;</span>
       <a href="{{{{store direct_url="{c['url']}"}}}}" style="color:{BROWN} !important; font-weight:bold; text-decoration:underline;">
         {c['cta_d']}
@@ -480,17 +514,17 @@ def hyva_html(cfg: dict, countdown: bool = False) -> str:
     cd_desktop = countdown_inline(c) if countdown else ""
     suffix = f"\n{COUNTDOWN_SCRIPT}" if countdown else ""
     if countdown:
-        mobile_block = f"""    <div class="block md:hidden text-center p-1" style="{HYVA_WRAP_MOB_STYLE}">
-    <p style="{HYVA_MOB_P_STYLE}"><a href="{{{{store direct_url="{c['url']}"}}}}" style="text-decoration:none;"><span style="display:block;"><span style="color:{BROWN} !important;font-size:12px;">{c['hyva_discount']}</span><strong style="{HYVA_BADGE_MOB_STYLE}">{c['coupon']}</strong><span style="color:{BROWN} !important;font-size:12px;"> | </span><span style="color:{BROWN} !important;font-size:12px;text-decoration:underline;">{c['cta_d']}</span></span><span style="display:block;color:{BROWN} !important;font-size:12px;">{c['ends_in']}&nbsp;<span class="{COUNTDOWN_CLASS}" style="color:{BROWN} !important;font-variant-numeric:tabular-nums;"></span></span></a></p>
+        mobile_block = f"""    <div class="{PROMO_BAR_CLASS} block md:hidden text-center p-1" style="{HYVA_WRAP_MOB_STYLE}">
+    <p class="{PROMO_INNER_CLASS}" style="{HYVA_MOB_P_STYLE}"><a href="{{{{store direct_url="{c['url']}"}}}}" style="text-decoration:none;"><span style="display:block;"><span style="color:{BROWN} !important;font-size:12px;">{c['hyva_discount']}</span><strong class="{PROMO_BADGE_CLASS}" style="{HYVA_BADGE_MOB_STYLE}">{c['coupon']}</strong><span style="color:{BROWN} !important;font-size:12px;"> | </span><span style="color:{BROWN} !important;font-size:12px;text-decoration:underline;">{c['cta_d']}</span></span><span style="display:block;color:{BROWN} !important;font-size:12px;">{c['ends_in']}&nbsp;<span class="{COUNTDOWN_CLASS}" style="color:{BROWN} !important;font-variant-numeric:tabular-nums;"></span></span></a></p>
     </div>
 {suffix}"""
     else:
-        mobile_block = f"""    <div class="block md:hidden text-center p-1" style="{HYVA_WRAP_MOB_STYLE}">
-    <p style="{HYVA_MOB_P_STYLE}"><a href="{{{{store direct_url="{c['url']}"}}}}" style="text-decoration:none;"><span style="color:{BROWN} !important;font-size:12px;">{c['hyva_discount']}</span><strong style="{HYVA_BADGE_MOB_STYLE}">{c['coupon']}</strong><span style="color:{BROWN} !important;font-size:12px;"> | </span><span style="color:{BROWN} !important;font-size:12px;text-decoration:underline;">{c['cta_d']}</span></a></p>
+        mobile_block = f"""    <div class="{PROMO_BAR_CLASS} block md:hidden text-center p-1" style="{HYVA_WRAP_MOB_STYLE}">
+    <p class="{PROMO_INNER_CLASS}" style="{HYVA_MOB_P_STYLE}"><a href="{{{{store direct_url="{c['url']}"}}}}" style="text-decoration:none;"><span style="color:{BROWN} !important;font-size:12px;">{c['hyva_discount']}</span><strong class="{PROMO_BADGE_CLASS}" style="{HYVA_BADGE_MOB_STYLE}">{c['coupon']}</strong><span style="color:{BROWN} !important;font-size:12px;"> | </span><span style="color:{BROWN} !important;font-size:12px;text-decoration:underline;">{c['cta_d']}</span></a></p>
     </div>
 """
-    return f"""<div class="hidden md:block text-center p-1" style="{HYVA_WRAP_DESK_STYLE}">
-    <p style="{HYVA_DESK_P_STYLE}"><b style="color:{BROWN} !important;">{c['claim']}</b> <b style="color:{BROWN} !important;">&#8211; {c['hyva_discount']}</b><strong style="{HYVA_BADGE_STYLE}">{c['coupon']}</strong><b style="color:{BROWN} !important;"> | </b><span style="color:{BROWN} !important;"> <a style="color:{BROWN} !important;text-decoration:underline;" href="{{{{store direct_url="{c['url']}"}}}}"><span style="color:{BROWN} !important;">{c['cta_d']}</span></a></span>{cd_desktop}</p>
+    return f"""{PROMO_SCOPE_STYLE}<div class="{PROMO_BAR_CLASS} hidden md:block text-center p-1" style="{HYVA_WRAP_DESK_STYLE}">
+    <p class="{PROMO_INNER_CLASS}" style="{HYVA_DESK_P_STYLE}"><b style="color:{BROWN} !important;">{c['claim']}</b> <b style="color:{BROWN} !important;">&#8211; {c['hyva_discount']}</b><strong class="{PROMO_BADGE_CLASS}" style="{HYVA_BADGE_STYLE}">{c['coupon']}</strong><b style="color:{BROWN} !important;"> | </b><span style="color:{BROWN} !important;"> <a style="color:{BROWN} !important;text-decoration:underline;" href="{{{{store direct_url="{c['url']}"}}}}"><span style="color:{BROWN} !important;">{c['cta_d']}</span></a></span>{cd_desktop}</p>
     </div>
     
 {mobile_block}"""
@@ -669,6 +703,25 @@ def update_preview_css(content: str) -> str:
             "    .bar-hyva-mobile span { color: #ffffff !important; }\n\n"
             "    .countdown-line { display: block; margin-top: 2px; }\n\n"
             "    .bar-hyva-desktop {",
+        )
+    if ".qm-promo-bar" not in content:
+        content = content.replace(
+            "    .bar-desktop {",
+            "    .qm-promo-bar,\n"
+            "    .bar-desktop,\n"
+            "    .bar-mobile,\n"
+            "    .bar-hyva-desktop,\n"
+            "    .bar-hyva-mobile {\n"
+            "      display: flex !important;\n"
+            "      align-items: center !important;\n"
+            "      justify-content: center !important;\n"
+            "      width: 100% !important;\n"
+            "      box-sizing: border-box !important;\n"
+            "      margin: 0 !important;\n"
+            "      padding: 6px 16px !important;\n"
+            "      text-align: center !important;\n"
+            "    }\n\n"
+            "    .bar-desktop {",
         )
     return content
 
